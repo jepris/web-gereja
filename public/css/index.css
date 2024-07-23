@@ -1,0 +1,405 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* beranda stye start */
+
+.navbar-brand{
+    color: #0127Ff;
+    font-weight: bold;
+}
+
+.nav-link{
+    color: black;
+    font-weight: bold;
+    transition: 0.5s, ease-in, color 0,5s;
+}
+
+.nav-link:hover{
+    background-color: #0127Ff;
+    opacity: 0.66;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.navbar-brand img {
+    height: 50px; /* Sesuaikan tinggi gambar */
+    margin-right: 10px; /* Ruang antara gambar dan teks */
+}
+
+.carousel{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.carousel-item img{
+    height: 665px
+}
+
+/* .jadwal{
+    display: flexbox;
+    justify-content: center;
+    align-items: center
+    ;}
+    
+    .jadwal span{
+        font-weight: bold;
+        font-size: 1.5rem;
+        align-items: center;
+    } */
+    /* .jadwal-section{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.jadwal span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+} */
+
+.jadwal{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.jadwal table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.jadwal th, td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+}
+
+.jadwal th {
+    background-color: #0127Ff;
+    color: white;
+}
+
+/* .jadwal a {
+	text-decoration: none;
+	color: #337ab7;
+}
+
+.jadwal a:hover {
+	color: #23527c;
+} */
+
+.berita-konten{
+    background-color: rgb(227, 155, 72);
+}
+
+.judul-berita p{
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: white;
+    stroke: black;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.konten-berita{
+    padding-left: 60px;
+    padding-right: 60px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.konten-coloum{
+    border: 1px solid black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.konten-berita a{
+    text-decoration: none;
+    color: white;
+}
+
+.berita-selanjutnya{
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.berita-selanjutnya a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1.2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.berita-selanjutnya a:hover{
+    background-color: yellowgreen;
+}
+
+.map-gereja{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+.contact-person{
+    height: 300px;
+    background-color: #0127Ff;
+    color: white;
+    padding: 20px;
+}
+
+.contact-person .row{
+    padding-left: 45px;
+    padding-top: 45px;
+    padding-right: 45px;
+}
+
+.contact-us{
+    padding-left: 30px;
+}
+
+.navigasi-coloum{
+    padding-left: 50px;
+}
+
+.contact-person li{
+    list-style: none;
+}
+
+.contact-person a{
+    text-decoration: none;
+    color: #fff;
+    margin-left: -30px;
+}
+
+.contact-person .contact-image{
+    width: 50%;
+    margin-top: -30px;
+    padding-left: 40px;
+}
+
+
+/* footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .social-links a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background-color: #555;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+
+  .back-to-top:hover {
+    background-color: #555;
+  }
+
+  .back-to-top i {
+    font-size: 20px;
+  }
+
+  /* beranda style end */
+
+ /* tentang style start */
+
+ .image{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+    
+ .tentang{
+    margin-top: 20px;
+     background-color: rgba(244, 238, 238, 0.781);
+     padding-top: 15px;
+     padding-left: 15px;
+     padding-right: 15px;
+     padding-bottom: 15px;
+ }
+
+ .tentang-judul{
+    padding-left: 50px;
+ }
+
+ .tentang-judul h3{
+    font-weight: bold;
+    font-style: oblique;
+ }
+
+.tentang-image1{
+    height: 600px;
+}
+
+.sejarah-gereja{
+    padding-top: 20px;
+}
+
+.sejarah-gereja p{
+    padding-left: 40px;
+}
+
+.tentang-gereja-image1{
+    height: 350px;
+    margin-left: 50px;
+}
+
+.tentang-gereja-image2{
+    height: 350px;
+    margin-left: 10px;
+}
+
+.visi-misi{
+    margin-top: 50px;
+}
+
+.visi-misi p{
+    padding-left: 40px;
+}
+
+.judul-visimisi h3{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.font-warta{
+    margin-top: 40px;
+    margin-bottom: -40px;
+    font-weight: bold;
+}
+
+.kontak{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.table-kontak{
+    justify-content: center;
+    width: 700px;
+    text-align: center;
+
+}
+
+.link-kontak{
+    text-decoration: none;
+    color: white;
+    background-color: yellowgreen;
+    margin: 5px;  
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.link-kontak:hover{
+    background-color: #0127Ff;
+}
+
+ /* tentang style end */
+
+/* layanan style start */
+
+.layanan{
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.layanan-isi{
+    font-size: 1.2rem;
+}
+
+.layanan-isi a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* layanan style end */
+
+/* warta berita style start */
+
+.warta-berita{
+    background-color: rgb(227, 155, 72);
+    padding-top: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.warta-berita-judul{
+    color: #0127Ff;
+    margin-bottom: 30px;
+}
+
+.warta-berita-konten .card{
+    background-color: rgb(227, 155, 72);
+    margin-left: 60px;
+    border: none;
+}
+
+/* warta berita style end */
+
+/* galleri */
+.galeri-img{
+    height: 200px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
