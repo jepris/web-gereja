@@ -1,59 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- tittle -->
-    <title>Huria Kristen Batak Protestan Perumnas Batu Onom</title>
-
-    <!-- insert bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!-- css -->
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-</head>
+@include('layout.header')
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg border-bottom border-2 border-primary mb-3">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="{{ asset('img/logo hkbp.pngw') }}" alt="Logo">HKBP Perumnas Batu Onom</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="beranda.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tentang.html">Tentang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="warta.html">Warta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galleri.html">Galleri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="layanan.html">Layanan</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Akun
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Login</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('layout.navbar')
 
     <!-- foto corousel autoslide 6 gambar -->
     <section>
@@ -309,17 +258,7 @@
     </section>
 
     <!-- footer -->
-    <footer>
-        <p>All Rights Reserved. © 2024 HKBP PERUMNAS BATU ONOM</p>
-
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-
-        <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
-    </footer>
+    @include('layout.footer')
 
     <!-- insert bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
