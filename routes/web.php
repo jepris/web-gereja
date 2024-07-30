@@ -16,9 +16,40 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/form_kontak', function () {
-    return view('form.form_kontak');
+Route::get('/form-kontak', function () {
+    return view('form.form-kontak');
 });
+
+// butuh buat referensi
+Route::get('/form-baptis', function () {
+    return view('form.form-baptis');
+});
+Route::get('/form-jemaat-lahir', function () {
+    return view('form.form-jemaat-lahir');
+});
+Route::get('/form-jemaat-meninggal', function () {
+    return view('form.form-jemaat-meninggal');
+});
+Route::get('/form-jemaat-sakit', function () {
+    return view('form.form-jemaat-sakit');
+});
+Route::get('/form-pendaftaran-jemaat', function () {
+    return view('form.form-pendaftaran-jemaat');
+});
+Route::get('/form-pendaftaran-nikah', function () {
+    return view('form.form-pendaftaran-nikah');
+});
+Route::get('/form-pendaftaran-sidi', function () {
+    return view('form.form-pendaftaran-sidi');
+});
+Route::get('/form-pindah-jemaat', function () {
+    return view('form.form-pindah-jemaat');
+});
+
+
+
+
+
 Route::get('/tentang', function () {
     return view('tentang');
 

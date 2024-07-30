@@ -40,10 +40,10 @@
                         placeholder="Jamuan, Layanan Doa, ..">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label fw-bold">Perihal</label>
+                    <label for="exampleFormControlTextarea1" class="form-label fw-bold">Rincian</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                 </div>
-                <a href="#" class="btn btn-primary d-block justify-content-end">Kirim</a>
+                <a href="#" class="btn btn-success d-block justify-content-end">Kirim</a>
                 <a href="javascript:history.back()" class="btn btn-secondary d-block justify-content-end mt-2">back</a>
             </div>
         </div>

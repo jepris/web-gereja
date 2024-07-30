@@ -106,7 +106,7 @@
                         </tr>
                         <tr>
                             <td>Atau anda dapat mengirim pesan</td>
-                            <td> : <a href="/form_kontak" class="link-kontak"> disini...</a></td>
+                            <td> : <a href="/form-kontak" class="link-kontak"> disini...</a></td>
                         </tr>
                     </tbody>
                 </table>
