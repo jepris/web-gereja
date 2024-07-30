@@ -28,7 +28,7 @@
                         <a class="nav-link" href="beranda.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tentang.html">Tentang</a>
+                        <a class="nav-link" href="/tentang">Tentang</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="warta.html">Warta</a>
