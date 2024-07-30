@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tittle -->
-    <title>Huria Kristen Batak Protestan Perumnas Batu Onom</title>
+    <title> @yield('title')</title>
 
     <!-- insert bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,7 +19,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg border-bottom border-2 border-primary mb-3">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="{{ asset('img/logo hkbp.png') }}" alt="Logo">HKBP Perumnas Batu Onom</a>
+            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo hkbp.png') }}" alt="Logo">HKBP Perumnas Batu Onom</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

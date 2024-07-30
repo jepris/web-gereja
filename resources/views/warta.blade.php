@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'Warta')
 @section('content')
 <div class="container">
     <section>
@@ -16,19 +16,19 @@
                     <tbody>
                         <tr>
                             <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="form-kontak.html" class="link-kontak"> Download...</a></td>
+                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
                         </tr>
                         <tr>
                             <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="form-kontak.html" class="link-kontak"> Download...</a></td>
+                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
                         </tr>
                         <tr>
                             <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="form-kontak.html" class="link-kontak"> Download...</a></td>
+                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
                         </tr>
                         <tr>
                             <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="form-kontak.html" class="link-kontak"> Download...</a></td>
+                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
                         </tr>
                     </tbody>
                 </table>

@@ -15,9 +15,5 @@ class DashboardController extends Controller
         $news = News::orderBy('created_at', 'desc')->take(4)->get();
         return view('beranda', compact('schedules', 'news'));
     }
-    public function warta()
-    {
-        $news = News::all();
-        return view('warta', compact('news'));
-    }
+    
 }

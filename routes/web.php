@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Warta;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WartaController;
 use App\Http\Controllers\DashboardController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,9 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('beranda');
-// });
+Route::get('/form_kontak', function () {
+    return view('form.form_kontak');
+});
 Route::get('/tentang', function () {
     return view('tentang');
 
@@ -31,6 +32,8 @@ Route::get('/layanan', function () {
 });
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
-Route::get('/warta', [DashboardController::class, 'warta'])->name('beranda');
+Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
+
+
 
 

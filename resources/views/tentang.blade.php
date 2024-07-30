@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'Tentang')
 @section('content')
 <div class="container">
     <div class="image">
@@ -106,7 +106,7 @@
                         </tr>
                         <tr>
                             <td>Atau anda dapat mengirim pesan</td>
-                            <td> : <a href="form-kontak.html" class="link-kontak"> disini...</a></td>
+                            <td> : <a href="/form_kontak" class="link-kontak"> disini...</a></td>
                         </tr>
                     </tbody>
                 </table>

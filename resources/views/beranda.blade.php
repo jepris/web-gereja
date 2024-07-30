@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'HKBP Perumnas Batu Onom')
 @section('content')
 <section>
     <div class="carousel">
