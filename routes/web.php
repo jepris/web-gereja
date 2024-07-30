@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
+// Route::get('/', function () {
+//     return view('beranda');
+// });
 Route::get('/tentang', function () {
     return view('tentang');
+
 });
 
+Route::get('/galeri', function () {
+    return view('galeri');
+});
+Route::get('/layanan', function () {
+    return view('layanan');
+});
+Route::get('/', [DashboardController::class, 'index']);
+Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
+Route::get('/warta', [DashboardController::class, 'warta'])->name('beranda');
 
 
