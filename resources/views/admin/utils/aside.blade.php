@@ -112,7 +112,7 @@
                         </li>
                         <li class="nav-header fw-bold">HOME</li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/schedule" class="nav-link">
                                 {{-- <i class="nav-icon fas fa-th"></i> --}}
                                 <p>
                                     Jadwal Ibadah
@@ -120,7 +120,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/news" class="nav-link">
                                 {{-- <i class="nav-icon fas fa-copy"></i> --}}
                                 <p>
                                     Berita Gereja

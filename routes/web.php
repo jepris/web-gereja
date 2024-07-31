@@ -3,8 +3,10 @@
 use App\Models\Warta;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WartaController;
-use App\Http\Controllers\JemaatController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\JemaatController;
+use App\Http\Controllers\Admin\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,5 +78,8 @@ Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
 
 
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
+// Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
+Route::resource('schedule', ScheduleController::class);
+Route::resource('news', NewsController::class);
 
 
