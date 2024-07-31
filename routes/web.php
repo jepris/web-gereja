@@ -76,5 +76,6 @@ Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
 
 
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
+Route::get('/jemaat/tambahdata', [JemaatController::class, 'tambahdata'])->name('tambahdata');
 
 

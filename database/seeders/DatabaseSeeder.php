@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
         DB::table('jemaats')->insert([
             [
                 'name' => 'Jepri Simbolon',
-                'birth_date' => Carbon::create('24 02 1945'),
+                'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-1945')->format('d-m-Y'),                
                 'alamat' => 'jl. Nalabarca 2',
                 'notelp' => '85212296366',
                 'umur' => '21',
