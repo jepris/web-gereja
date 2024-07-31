@@ -46,6 +46,10 @@ Route::get('/form-pindah-jemaat', function () {
     return view('form.form-pindah-jemaat');
 });
 
+// dashboard admin
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
 
 
 
