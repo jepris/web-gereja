@@ -52,9 +52,9 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/jemaat', function () {
-    return view('admin.data-jemaat.jemaat');
-});
+// Route::get('/jemaat', function () {
+//     return view('admin.data-jemaat.jemaat');
+// });
 
 
 
@@ -75,6 +75,6 @@ Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
 
 
-// Route::get('admin/jemaat', [JemaatController::class, 'index'])->name('jemaat');
+Route::get('/admin/jemaat', [JemaatController::class, 'index'])->name('jemaat');
 
 

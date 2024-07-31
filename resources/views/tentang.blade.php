@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@extends('modals.modal-kontak')
 @section('title', 'Tentang - HKBP Perumnas Batu Onom')
 @section('content')
 <div class="container">
@@ -43,49 +44,6 @@
         <div class="kontak">
             <div class="kontak-isi">
                 <h4>Kontak HKBP Perumnas Batu Onom</h4>
-                <!-- <div class="kontak-isi">
-                    <div class="row">
-                        <div class="col">
-                            <p>Pendeta</p>
-                        </div>
-                        <div class="col">
-                            <p>: 11</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>Bibelvrou</p>
-                        </div>
-                        <div class="col">
-                            <p>: 11</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>Sintua</p>
-                        </div>
-                        <div class="col">
-                            <p>: 11</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>Email</p>
-                        </div>
-                        <div class="col">
-                            <p>: 11</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>Atau anda dapat mengirim pesan</p>
-                        </div>
-                        <div class="col">
-                            <a href="#">Disini...</a>
-                        </div>
-                    </div>
-                </div> -->
-
                 <table class="table table-kontak table-sm table-borderless">
                     <tbody>
                         <tr>
@@ -106,7 +64,9 @@
                         </tr>
                         <tr>
                             <td>Atau anda dapat mengirim pesan</td>
-                            <td> : <a href="/form-kontak" class="link-kontak"> disini...</a></td>
+                            <td> : <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#form-kontak">
+                                disini . . .
+                              </button></td>
                         </tr>
                     </tbody>
                 </table>
