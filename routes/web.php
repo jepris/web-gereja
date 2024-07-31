@@ -75,6 +75,6 @@ Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
 
 
-Route::get('/admin/jemaat', [JemaatController::class, 'index'])->name('jemaat');
+Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
 
 
