@@ -48,6 +48,7 @@
                     <tr>
                         <th>Ibadah</th>
                         <th>Hari</th>
+                        <th>Jam</th>
                         <th>Keterangan</th>
                     </tr>
                 </thead>
@@ -56,6 +57,7 @@
                     <tr>
                         <td>{{ $schedule->nama_ibadah }}</td>
                         <td>{{ $schedule->hari }}</td>
+                        <td>{{ $schedule->jam }}</td>
                         <td>{{ $schedule->keterangan }}</td>
                     </tr>
                     @endforeach

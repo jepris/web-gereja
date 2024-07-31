@@ -12,21 +12,20 @@
                         <th scope="col">Nama Jemaat</th>
                         <th scope="col">Tanggal Lahir</th>
                         <th scope="col">Alamat</th>
-                        <th scope="col">Wijk</th>
                         <th scope="col">No. Telepon</th>
                         <th scope="col">Umur</th>
                         <th scope="col" c>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($jemaats as $data)
                     <tr>
-                        <td scope="row" class="text-center">1</td>
-                        <td>Jepri Simbolon</td>
-                        <td>24 Februari 2024</td>
-                        <td>jl.Nalabarca 2 Kebon Jeruk</td>
-                        <td class="text-center">4</td>
-                        <td>085212273884</td>
-                        <td class="text-center">20</td>
+                        <td scope="row" class="text-center">{{ $data->id }}</td>
+                        <td>{{ $data->name }}</td>
+                        <td>{{ $data->birth_date }}</td>
+                        <td>{{ $data->alamat }}</td>
+                        <td>0{{ $data->notelp }}</td>
+                        <td class="text-center">{{ $data->umur }}</td>
                         <td class="text-center">
                             <div class="action">
                                 <a href="#" class="btn btn-warning">Edit</a>
@@ -35,6 +34,7 @@
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

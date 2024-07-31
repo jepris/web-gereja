@@ -1,11 +1,13 @@
 <?php
 
 namespace Database\Seeders;
-use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use App\Models\Schedule;
 use App\Models\News;
+use App\Models\Schedule;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -24,11 +26,13 @@ class DatabaseSeeder extends Seeder
             [
                 'nama_ibadah' => 'Misa Minggu',
                 'hari' => 'Minggu',
+                'jam' => '08.00 - 10.00',
                 'keterangan' => 'Ibadah utama setiap minggu.',
             ],
             [
                 'nama_ibadah' => 'Doa Malam',
                 'hari' => 'Rabu',
+                'jam' => '08.00 - 10.00',
                 'keterangan' => 'Ibadah doa malam minggu.',
             ],
             // Tambahkan data lainnya jika diperlukan
@@ -48,6 +52,18 @@ class DatabaseSeeder extends Seeder
         //     ],
         //     // Tambahkan data lainnya jika diperlukan
         // ]);
+
+        DB::table('jemaats')->insert([
+            [
+                'name' => 'Jepri Simbolon',
+                'birth_date' => Carbon::create('24 02 1945'),
+                'alamat' => 'jl. Nalabarca 2',
+                'notelp' => '85212296366',
+                'umur' => '21',
+            ],
+            // Tambahkan data lainnya jika diperlukan
+        ]);
+
         News::factory()->count(5)->create();
     }
 }

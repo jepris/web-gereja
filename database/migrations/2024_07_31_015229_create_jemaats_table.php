@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('jemaats', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->date('dd, mm, YY')('birth_date');
+            $table->string('alamat');
+            $table->bigInteger('notelp');
+            $table->integer('umur');
             $table->timestamps();
         });
     }
