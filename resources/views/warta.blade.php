@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Warta')
+@section('title', 'Warta - HKBP Perumnas Batu Onom')
 @section('content')
 <div class="container">
     <section>

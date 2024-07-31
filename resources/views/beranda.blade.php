@@ -69,11 +69,11 @@
         <div class="judul-berita">
             <p>Berita & Pengumuman Kegiatan HKBP Perumnas Batu Onom</p>
         </div>
+        
         <div class="konten-berita">
-            
             <div class="row">
                 @foreach ($news   as $item)
-                <div class="col konten-coloum">
+                <div class="col-6 konten-coloum">
                     <a href="">
                         <div class="row">
                             <div class="col">

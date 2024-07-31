@@ -87,8 +87,8 @@
         <aside class="main-sidebar elevation-3">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link text-decoration-none fs-6">
-                <img src="{{ asset('img/logo hkbp.png') }}" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{ asset('img/logo hkbp.png') }}" alt="logo gereja"
+                    class="brand-image img-circle elevation-1" style="opacity: .8">
                 <span class=" brand-text text-primary fw-bold">HKBP Perumnas</span> <br>
                 <span class=" brand-text text-primary fw-bold">Batu Onom</span>
             </a>
@@ -311,6 +311,15 @@
             <section class="content">
                 <div class="container-fluid">
                     <h3 class="mt-3 fw-bold">Data Jemaat HKBP Perumnas Batu Onom</h3>
+                    <div class="tambah-jemaat">
+                        <ul class="navbar-nav ml">
+                            <li><a href="#" class="btn btn-success mb-3 mt-5">+ Tambah Data</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li></li>
+                        </ul>
+                    </div>
                     <div class="data-jemaat">
                         <table class="table table-bordered border border-dark border-3">
                             <thead class="">

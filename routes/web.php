@@ -3,6 +3,7 @@
 use App\Models\Warta;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WartaController;
+use App\Http\Controllers\JemaatController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -51,6 +52,10 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
+Route::get('/jemaat', function () {
+    return view('admin.data-jemaat.jemaat');
+});
+
 
 
 
@@ -70,5 +75,6 @@ Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
 
 
+// Route::get('admin/jemaat', [JemaatController::class, 'index'])->name('jemaat');
 
 

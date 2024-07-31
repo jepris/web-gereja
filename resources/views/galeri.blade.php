@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Galeri')
+@section('title', 'Galeri - HKBP Perumnas Batu Onom')
 @section('content')
 <div class="container">
     <section class="mt-5 mb-4">
