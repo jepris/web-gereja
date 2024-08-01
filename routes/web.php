@@ -4,6 +4,7 @@ use App\Models\Warta;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WartaController;
 use App\Http\Controllers\JemaatController;
+use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -75,7 +76,7 @@ Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
 
 
-Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
-Route::get('/jemaat/tambahdata', [JemaatController::class, 'tambahdata'])->name('tambahdata');
+Route::resource('jemaat',JemaatController::class);
+Route::resource('keuangan',KeuanganController::class);
 
 
