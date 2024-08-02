@@ -2,11 +2,13 @@
 
 use App\Models\Warta;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WartaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\WartaController;
+use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\JemaatController;
 use App\Http\Controllers\Admin\ScheduleController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,12 +76,14 @@ Route::get('/layanan', function () {
 });
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
-Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
-
+Route::get('/warta', [DashboardController::class, 'warta'])->name('beranda');
+Route::get('wartas/{warta}/download', [DashboardController::class, 'download'])->name('wartas.download');
 
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
 // Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 Route::resource('schedule', ScheduleController::class);
 Route::resource('news', NewsController::class);
+Route::resource('wartas', WartaController::class);
+Route::resource('images', GaleriController::class);
 
 

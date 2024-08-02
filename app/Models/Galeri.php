@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Warta extends Model
+class Galeri extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama_minggu', 
-        'tanggal_warta', 
-        'file_path'
+        'title',
+        'date',
+        'path', 
     ];
 }

@@ -14,22 +14,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($wartas as $warta)
                         <tr>
-                            <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
+                            <td class="ps-3 pt-3">{{ $warta->tanggal_warta }}</td>
+                            <td class="d-flex justify-content-center"><a href="{{ route('wartas.download', $warta->id) }}" class="link-kontak">Download</a></td>
                         </tr>
-                        <tr>
-                            <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
-                        </tr>
-                        <tr>
-                            <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
-                        </tr>
-                        <tr>
-                            <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
-                        </tr>
+                        @endforeach
+                       
                     </tbody>
                 </table>
             </div>
