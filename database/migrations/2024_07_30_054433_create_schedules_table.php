@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_ibadah');
             $table->string('hari');
+            $table->string('jam');
             $table->string('keterangan');
             $table->timestamps();
         });

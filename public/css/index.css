@@ -414,7 +414,9 @@ footer {
     background-color: #0127Ff;
 } */
 
-.data-jemaat thead th{
+
+.data-jemaat-dashboard thead th, .data-jemaat thead th{
     background-color: #0127Ff;
     color: white;
 }
+

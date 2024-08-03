@@ -2,6 +2,8 @@
 
 use App\Models\Warta;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\JadwalController;
+use App\Http\Controllers\Admin\KeuanganController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\WartaController;
@@ -51,11 +53,6 @@ Route::get('/form-pindah-jemaat', function () {
     return view('form.form-pindah-jemaat');
 });
 
-// dashboard admin
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
-
 // Route::get('/jemaat', function () {
 //     return view('admin.data-jemaat.jemaat');
 // });
@@ -85,5 +82,13 @@ Route::resource('schedule', ScheduleController::class);
 Route::resource('news', NewsController::class);
 Route::resource('wartas', WartaController::class);
 Route::resource('images', GaleriController::class);
+Route::get('/dashboard',[JemaatController::class, 'dashboard'])->name('dashboard');
+
+// tampilan data internal admin
+Route::resource('jadwal',JadwalController::class);
+Route::resource('jemaat',JemaatController::class);
+Route::resource('keuangan',KeuanganController::class);
+Route::get('/birthday',[JemaatController::class, 'birthday'])->name('birthday');
+
 
 

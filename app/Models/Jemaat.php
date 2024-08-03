@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Jemaat extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'birth_date', 
+        'alamat', 
+        'wijk', 
+        'notelp',
+        'umur'
+    ];
+    // protected $date = [
+        
+    // ];
 }

@@ -3,12 +3,18 @@
 namespace Database\Seeders;
 
 use App\Models\Galeri;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
+// // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Seeder;
+// use App\Models\Schedule;
+// use Faker\Factory as Faker;
+use Carbon\Carbon;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use App\Models\Schedule;
-use Faker\Factory as Faker;
 use App\Models\News;
+use App\Models\Schedule;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 class DatabaseSeeder extends Seeder
 
 {
@@ -36,11 +42,13 @@ class DatabaseSeeder extends Seeder
             [
                 'nama_ibadah' => 'Misa Minggu',
                 'hari' => 'Minggu',
+                'jam' => '08.00 - 10.00',
                 'keterangan' => 'Ibadah utama setiap minggu.',
             ],
             [
                 'nama_ibadah' => 'Doa Malam',
                 'hari' => 'Rabu',
+                'jam' => '08.00 - 10.00',
                 'keterangan' => 'Ibadah doa malam minggu.',
             ],
             // Tambahkan data lainnya jika diperlukan
@@ -60,6 +68,19 @@ class DatabaseSeeder extends Seeder
         //     ],
         //     // Tambahkan data lainnya jika diperlukan
         // ]);
+
+        // DB::table('jemaats')->insert([
+        //     [
+        //         'name' => 'Jepri Simbolon',
+        //         'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-1945')->format('Y-m-d'),                
+        //         'alamat' => 'jl. Nalabarca 2',
+        //         'wijk' => '13',
+        //         'notelp' => '85212296366',
+        //         'umur' => '21 Tahun',
+        //     ],
+        //     // Tambahkan data lainnya jika diperlukan
+        // ]);
+
         News::factory()->count(5)->create();
     }
 }
