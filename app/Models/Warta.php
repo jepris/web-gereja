@@ -11,6 +11,6 @@ class Warta extends Model
     protected $fillable = [
         'nama_minggu', 
         'tanggal_warta', 
-        'file_path'
+        'file'
     ];
 }

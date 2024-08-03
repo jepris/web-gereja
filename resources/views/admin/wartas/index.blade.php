@@ -27,7 +27,9 @@
                         <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                         <td>{{ $warta-> nama_minggu}}</td>
                         <td>{{ $warta-> tanggal_warta}}</td>
-                        <td><a href="{{ route('wartas.download', $warta->id) }}">Download</a></td>
+                        <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{route('wartas.download', asset($data->file)) }}"
+                            target="_blank">Download</a></td>
+                        {{-- <td><a href="{{ route('wartas.download', $warta->id) }}">Download</a></td> --}}
                         <td class="text-center">
                             <div class="action">
                                 

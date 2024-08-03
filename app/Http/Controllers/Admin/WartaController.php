@@ -28,22 +28,29 @@ class WartaController extends Controller
             'tanggal_warta' => 'required|date',
             'file' => 'required|mimes:pdf|max:2048',
         ]);
-
+        $file = $request->file('file');
+        $fileName = time().'_'.$file->getClientOriginalName();
+        $filePath = 'files/' . $fileName;
+        $file->move(public_path('files'), $fileName);
         // $filePath = $request->file('file')->store('wartas');
         $file = $request->file('file');
         $pdfName = time() . '-' . $file->getClientOriginalName();
         $filePath = $file->storeAs('public/uploads', $pdfName);
-
+        Warta::create([
+            'tanggal' => $request->tanggal,
+            'keterangan' => $request->keterangan,
+            'file' => $filePath
+        ]);
         // Warta::create([
         //     'nama_minggu'=> $request->nama_minggu,
         //     'tanggal_warta' => $request->tanggal_warta,
         //     'file_path' => $filePath,
         // ]);
-        $pdfModel = new Warta();
-        $pdfModel->nama_minggu = $request->nama_minggu;
-        $pdfModel->tanggal_warta = $request->tanggal_warta;
-        $pdfModel->file_path = $filePath;
-        $pdfModel->save();
+        // $pdfModel = new Warta();
+        // $pdfModel->nama_minggu = $request->nama_minggu;
+        // $pdfModel->tanggal_warta = $request->tanggal_warta;
+        // $pdfModel->file_path = $filePath;
+        // $pdfModel->save();
 
         return redirect()->route('wartas.index')->with('success', 'Warta created successfully.');
     }

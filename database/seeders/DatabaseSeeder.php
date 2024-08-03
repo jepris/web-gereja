@@ -23,15 +23,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $faker = Faker::create();
+        // $faker = Faker::create();
 
-        foreach(range(1, 10) as $index) {
-            Galeri::create([
-                'title' => $faker->sentence,
-                'date' => $faker->date,
-                'path' => null, // No path, so it uses dummy image
-            ]);
-        }
+        // foreach(range(1, 10) as $index) {
+        //     Galeri::create([
+        //         'title' => $faker->sentence,
+        //         'date' => $faker->date,
+        //         'path' => null, // No path, so it uses dummy image
+        //     ]);
+        // }
         DB::table('schedules')->insert([
             [
                 'nama_ibadah' => 'Misa Minggu',

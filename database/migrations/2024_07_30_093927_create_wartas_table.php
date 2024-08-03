@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_minggu');
             $table->date('tanggal_warta');
-            $table->string('file_path');
+            $table->string('file');
             $table->timestamps();
         });
     }
