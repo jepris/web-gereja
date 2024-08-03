@@ -76,6 +76,7 @@ Route::get('/dashboard',[JemaatController::class, 'dashboard'])->name('dashboard
 
 // tampilan data internal admin
 Route::resource('jadwal',JadwalController::class);
+Route::resource('warta',WartaController::class);
 Route::resource('jemaat',JemaatController::class);
 Route::resource('keuangan',KeuanganController::class);
 Route::get('/birthday',[JemaatController::class, 'birthday'])->name('birthday');
