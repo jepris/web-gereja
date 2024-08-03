@@ -12,6 +12,7 @@
                             <th scope="col">Nama Jemaat</th>
                             <th scope="col">Tanggal Lahir</th>
                             <th scope="col">Alamat</th>
+                            <th scope="col">Wijk</th>
                             <th scope="col">No. Telepon</th>
                             <th scope="col">Umur</th>
                             <th scope="col" c>Action</th>
@@ -20,10 +21,11 @@
                     <tbody>
                         @foreach ($jemaats as $data)
                             <tr>
-                                <td scope="row" class="text-center">{{ $data->id }}</td>
+                                <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $data->name }}</td>
-                                <td>{{ \Carbon\Carbon::parse($data->birth_date)->format('d-m-Y')}}</td>
+                                <td>{{ \Carbon\Carbon::parse($data->birth_date)->format('d-m-Y') }}</td>
                                 <td>{{ $data->alamat }}</td>
+                                <td class="text-center ">{{ $data->wijk }}</td>
                                 <td>0{{ $data->notelp }}</td>
                                 <td class="text-center">{{ $data->umur }}</td>
                                 <td class="text-center">
@@ -41,6 +43,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <nav aria-label="Page navigation">
+                    {{ $jemaats->links('pagination::bootstrap-5') }}
+                </nav>
             </div>
         </div>
     </section>
@@ -68,9 +73,16 @@
                             <input type="text" name="alamat" class="form-control" id="alamat" required>
                         </div>
                         <div class="mb-3">
+                            <label for="wijk" class="form-label fw-bold">Wijk</label>
+                            <select class="form-select" name="wijk" aria-label="Default select example" id="wijk">
+                                @for ($i = 0; $i <= 16; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <label for="notelp" class="form-label fw-bold">no, Handphone</label>
-                            <input type="number" name="notelp" class="form-control" id="notelp"
-                                required>
+                            <input type="number" name="notelp" class="form-control" id="notelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="umur" class="form-label fw-bold">Umur</label>
@@ -78,7 +90,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                         <button type="submit" class="btn btn-success">Save changes</button>
                     </div>
                 </form>
@@ -101,32 +113,40 @@
                             </div>
                             <div class="mb-3">
                                 <label for="name" class="form-label fw-bold">Nama</label>
-                                <input type="text" value="{{ $data->name }}" class="form-control" name="name" id="name"
-                                    required>
+                                <input type="text" value="{{ $data->name }}" class="form-control" name="name"
+                                    id="name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="tanggallahir" class="form-label fw-bold">Tanggal Lahir</label>
-                                <input type="date" value="{{ $data->birth_date }}" name="birth_date" class="form-control"
-                                    id="tanggallahir" required>
+                                <input type="date" value="{{ $data->birth_date }}" name="birth_date"
+                                    class="form-control" id="tanggallahir" required>
                             </div>
                             <div class="mb-3">
                                 <label for="alamat" class="form-label fw-bold">alamat</label>
-                                <input type="text" value="{{ $data->alamat }}" name="alamat" class="form-control" id="alamat"
-                                    required>
+                                <input type="text" value="{{ $data->alamat }}" name="alamat" class="form-control"
+                                    id="alamat" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="wijk" class="form-label fw-bold">alamat</label>
+                                <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>
+                                    @for ($i = 0; $i <= 16; $i++)
+                                        <option value="wijk{{ $i }}" {{ $data->wijk == "wijk".$i ? 'selected' : '' }}>{{ $i }}</option>
+                                    @endfor
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="notelp" class="form-label fw-bold">no, Handphone</label>
-                                <input type="number" value="0{{ $data->notelp }}" name="notelp" class="form-control" id="notelp"
-                                    required>
+                                <input type="number" value="0{{ $data->notelp }}" name="notelp" class="form-control"
+                                    id="notelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="umur" class="form-label fw-bold">Umur</label>
-                                <input type="number" value="{{ $data->umur }}" name="umurS" class="form-control" id="umur"
-                                    required>
+                                <input type="number" value="{{ $data->umur }}" name="umur" class="form-control"
+                                    id="umur" required>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-success">Save changes</button>
                         </div>
                     </form>

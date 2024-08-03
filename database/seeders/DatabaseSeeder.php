@@ -58,8 +58,9 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Jepri Simbolon',
                 'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-1945')->format('Y-m-d'),                
                 'alamat' => 'jl. Nalabarca 2',
+                'wijk' => '13',
                 'notelp' => '85212296366',
-                'umur' => '21',
+                'umur' => '21 Tahun',
             ],
             // Tambahkan data lainnya jika diperlukan
         ]);

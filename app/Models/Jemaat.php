@@ -12,6 +12,7 @@ class Jemaat extends Model
         'name',
         'birth_date', 
         'alamat', 
+        'wijk', 
         'notelp',
         'umur'
     ];

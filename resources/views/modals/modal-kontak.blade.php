@@ -1,6 +1,9 @@
 <div class="modal fade" id="form-kontak" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
         <div class="modal-body">
           <form action="">
             <div class="form-judul">
@@ -35,8 +38,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <a href="#" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</a>
-          <a href="javascript:history.back()" type="button" class="btn btn-success">Kirim</a>
+          <button  type="submit" class="btn btn-success">Kirim</button>
         </div>
       </div>
     </div>

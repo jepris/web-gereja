@@ -48,11 +48,6 @@ Route::get('/form-pindah-jemaat', function () {
     return view('form.form-pindah-jemaat');
 });
 
-// dashboard admin
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
-
 // Route::get('/jemaat', function () {
 //     return view('admin.data-jemaat.jemaat');
 // });
@@ -76,7 +71,12 @@ Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
 
 
+Route::get('/dashboard',[JemaatController::class, 'dashboard'])->name('dashboard');
+
+// tampilan data internal admin
 Route::resource('jemaat',JemaatController::class);
 Route::resource('keuangan',KeuanganController::class);
+Route::get('/birthday',[JemaatController::class, 'birthday'])->name('birthday');
+
 
 

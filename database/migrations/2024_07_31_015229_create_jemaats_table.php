@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('birth_date');            
             $table->string('alamat');
+            $table->string('wijk');
             $table->bigInteger('notelp');
             $table->integer('umur');
             $table->timestamps();

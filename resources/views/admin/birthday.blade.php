@@ -3,7 +3,7 @@
 
 <section class="content">
     <div class="container-fluid">
-        <h3 class="mt-3 fw-bold">Data Jemaat HKBP Perumnas Batu Onom</h3>
+        <h3 class="mt-3 fw-bold">Data Jemaat yang Berulang Tahun Setiap Minggu</h3>
         <div class="data-jemaat-dashboard" style="overflow-x: auto; max-height: 200px; overflow-y: auto;">
             <table class="table table-bordered">
                 <thead class="sticky-top">
@@ -18,7 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($jemaats as $data)
+                    @foreach ($jemaats as $index => $data)
                         <tr>
                             <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                             <td>{{ $data->name }}</td>

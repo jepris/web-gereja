@@ -18,7 +18,7 @@
                     <tbody>
                         @foreach ($keuangans as $data)
                             <tr>
-                                <td scope="row" class="text-center">{{ $data->id }}</td>
+                                <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
                                 <td>{{ $data->keterangan }}</td>
                                 <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ asset($data->file) }}"
@@ -46,9 +46,12 @@
     <div class="modal fade" id="createdata" tabindex="-1" aria-labelledby="cratedataLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
                 <form action="{{ route('keuangan.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="modal-body">
                         <div class="form-judul">
                             <h4 class="card-title fw-bold d-flex justify-content-center">Tambah Warta Keuangan</h4>
                         </div>
@@ -66,7 +69,6 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-success">Save changes</button>
                     </div>
                 </form>
@@ -80,6 +82,9 @@
             aria-labelledby="editdataLabel{{ $data->id }}" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                     <div class="modal-body">
                     <form action="{{ route('keuangan.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -102,7 +107,6 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-success">Save changes</button>
                         </div>
                     </form>
