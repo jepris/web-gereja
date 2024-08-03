@@ -4,7 +4,7 @@
 <section class="content">
     <div class="container-fluid">
         <h3 class="mt-3 fw-bold">Data Jemaat HKBP Perumnas Batu Onom</h3>
-        <div class="data-jemaat-dashboard" style="overflow-x: auto; max-height: 200px; overflow-y: auto;">
+        <div class="data-jemaat-dashboard" style="overflow-x: auto; max-height: 250px; overflow-y: auto;">
             <table class="table table-bordered">
                 <thead class="sticky-top">
                     <tr class="text-center">

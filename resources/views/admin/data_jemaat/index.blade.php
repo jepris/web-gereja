@@ -54,12 +54,15 @@
     <div class="modal fade" id="createdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+                <div class="modal-header">
+                    <div class="form-judul">
+                        <h4 class="card-title fw-bold d-flex justify-content-center">Tambah Data Jemaat</h4>
+                    </div>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
                 <form action="{{ route('jemaat.store') }}" method="POST">
                     @csrf
                     <div class="modal-body">
-                        <div class="form-judul">
-                            <h4 class="card-title fw-bold d-flex justify-content-center">Tambah Data Jemaat</h4>
-                        </div>
                         <div class="mb-3">
                             <label for="name" class="form-label fw-bold">Nama</label>
                             <input type="text" name="name" class="form-control" id="name" required>
@@ -104,13 +107,16 @@
             aria-labelledby="editdataLabel{{ $data->id }}" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="form-judul">
+                            <h4 class="card-title fw-bold d-flex justify-content-center">Edit Data Jemaat</h4>
+                        </div>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
                     <form action="{{ route('jemaat.update', $data->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="modal-body">
-                            <div class="form-judul">
-                                <h4 class="card-title fw-bold d-flex justify-content-center">Edit Data Jemaat</h4>
-                            </div>
                             <div class="mb-3">
                                 <label for="name" class="form-label fw-bold">Nama</label>
                                 <input type="text" value="{{ $data->name }}" class="form-control" name="name"
