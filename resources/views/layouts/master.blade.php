@@ -95,7 +95,15 @@
         <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
     </footer>
 
-@include('modals.modal-kontak')
+@include('modals.kontak')
+@include('modals.baptis')
+@include('modals.lahir')
+@include('modals.meninggal')
+@include('modals.newjemaat')
+@include('modals.nikah')
+@include('modals.pindah')
+@include('modals.sakit')
+@include('modals.sidi')
     <!-- insert bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
