@@ -19,8 +19,7 @@
                             <tr>
                                 <td>{{ $data->name }}</td>
                                 <td>{{ $data->hari }}</td>
-                                <td>{{ \Carbon\Carbon::parse($jadwal->keterangan)->format('H:i') }}</td>
-                                <td class="text-center ">{{ $data->wijk }}</td>
+                                <td>{{ $data->keterangan ? \Carbon\Carbon::parse($data->keterangan)->format('H:i') : '-' }}</td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"
@@ -53,7 +52,7 @@
                     </div>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('jadwal.store') }}" method="POST">
+                <form action="{{ route('jadwal.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
@@ -66,11 +65,10 @@
                         </div>
                         <div class="mb-3">
                             <label for="keterangan" class="form-label fw-bold">Jadwal Ibadah</label>
-                            <input type="time" name="keterangan" class="form-control" id="keterangan" required>
+                            <input type="time" name="keterangan" class="form-control" id="keterangan">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                         <button type="submit" class="btn btn-success">Save changes</button>
                     </div>
                 </form>
@@ -90,7 +88,7 @@
                         </div>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('jadwal.update', $data->id) }}" method="POST">
+                    <form action="{{ route('jadwal.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="modal-body">
@@ -106,12 +104,11 @@
                             </div>
                             <div class="mb-3">
                                 <label for="keterangan" class="form-label fw-bold">Jadwal Ibadah</label>
-                                <input type="time" value="{{ \Carbon\Carbon::parse($jadwal->keterangan)->format('H:i') }}" name="keterangan" class="form-control"
+                                <input type="time" value="{{ \Carbon\Carbon::parse($data->keterangan)->format('H:i') }}" name="keterangan" class="form-control"
                                     id="keterangan" required>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-success">Save changes</button>
                         </div>
                     </form>

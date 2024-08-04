@@ -1,51 +1,50 @@
 @extends('layouts.master')
 @section('title', 'Layanan - HKBP Perumnas Batu Onom')
+@extends('modals.baptis')
+@extends('modals.lahir')
+@extends('modals.meninggal')
+@extends('modals.newjemaat')
+@extends('modals.nikah')
+@extends('modals.pindah')
+@extends('modals.sakit')
+@extends('modals.sidi')
 
 @section('content')
     <div class="container">
         <section>
             <div class="layanan">
                 <div class="layanan-isi">
-                    <h4 class="fw-bold " style="text-decoration: underline;">Layanan Jemaat HKBP Perumnas Batu Onom Online
+                    <h4 class="fw-bold " style="text-decoration: underline; color: #0127Ff;">Layanan Jemaat HKBP Perumnas Batu Onom Online
                     </h4>
                     <p>Untuk dapat meningkatkan pelayanan terhadap jemaat, HKBP Perumnas Batu Onom membuka jalur
                         pelayanan
                         via
                         online. Silahkan klik link di bawah sesuai dengan layanan yang diinginkan</p>
                     <ul>
-                        <!-- <li><a href="">Pendaftaran Jemaat Baru</a></li>
-                <li><a href="">Pemberitahuan Anak Lahir</a></li>
-                <li><a href="">Permohonan Baptisan</a></li>
-                <li><a href="">Pendaftaran Sidi/Katekisasi</a></li>
-                <li><a href="">Pendaftaran Pra-Nikah (konseling / Martumpol)</a></li>
-                <li><a href="">Pendaftaran Pernikahan</a></li>
-                <li><a href="">Pemberitahuan jemaat Sakit</a></li>
-                <li><a href="">Permohonan Pindah Jemaat/Wijk</a></li>
-                <li><a href="">Pemberitahuan Jemaat Meninggal Dunia</a></li> -->
-                        <li>Pendaftaran Jemaat Baru <a href="/form-pendaftaran-jemaat">
-                                << Here>>
-                            </a></li>
-                        <li>Pemberitahuan Anak Lahir <a href="/form-jemaat-lahir">
-                                << Here>>
-                            </a></li>
-                        <li>Permohonan Baptisan <a href="/form-baptis">
-                                << Here>>
-                            </a></li>
-                        <li>Pendaftaran Sidi/Katekisasi <a href="/form-pendaftaran-sidi">
-                                << Here>>
-                            </a></li>
-                        <li>Pendaftaran Pernikahan <a href="/form-pendaftaran-nikah">
-                                << Here>>
-                            </a></li>
-                        <li>Pemberitahuan jemaat Sakit <a href="/form-jemaat-sakit">
-                                << Here>>
-                            </a></li>
-                        <li>ermohonan Pindah Jemaat/Wijk <a href="/form-pindah-jemaat">
-                                << Here>>
-                            </a></li>
-                        <li>Pemberitahuan Jemaat Meninggal Dunia <a href="/form-jemaat-meninggal">
-                                << Here>>
-                            </a></li>
+                        <li class="mb-3">Pendaftaran Jemaat Baru <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newjemaat">
+                            disini . . .
+                          </button></li>
+                        <li class="mb-3">Pemberitahuan Anak Lahir <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lahir">
+                            disini . . .
+                          </button></li>
+                        <li class="mb-3">Permohonan Baptisan <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#baptis">
+                            disini . . .
+                          </button></li>
+                        <li class="mb-3">Pendaftaran Sidi/Katekisasi <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sidi">
+                            disini . . .
+                          </button></li>
+                        <li class="mb-3">Pendaftaran Pernikahan <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nikah">
+                            disini . . .
+                          </button></li>
+                        <li class="mb-3">Pemberitahuan jemaat Sakit <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sakit">
+                            disini . . .
+                          </button></li>
+                        <li class="mb-3">Permohonan Pindah Jemaat/Wijk <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pindah">
+                            disini . . .
+                          </button></li>
+                        <li class="mb-3">Pemberitahuan Jemaat Meninggal Dunia <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meninggal">
+                            disini . . .
+                          </button></li>
                     </ul>
                 </div>
             </div>

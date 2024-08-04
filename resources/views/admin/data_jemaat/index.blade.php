@@ -78,7 +78,7 @@
                         <div class="mb-3">
                             <label for="wijk" class="form-label fw-bold">Wijk</label>
                             <select class="form-select" name="wijk" aria-label="Default select example" id="wijk">
-                                @for ($i = 0; $i <= 16; $i++)
+                                @for ($i = 1; $i <= 20; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
                             </select>
@@ -133,9 +133,9 @@
                                     id="alamat" required>
                             </div>
                             <div class="mb-3">
-                                <label for="wijk" class="form-label fw-bold">alamat</label>
+                                <label for="wijk" class="form-label fw-bold">Wijk</label>
                                 <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>
-                                    @for ($i = 0; $i <= 16; $i++)
+                                    @for ($i = 0; $i <= 20; $i++)
                                         <option value="wijk{{ $i }}" {{ $data->wijk == "wijk".$i ? 'selected' : '' }}>{{ $i }}</option>
                                     @endfor
                                 </select>
