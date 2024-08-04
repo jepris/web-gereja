@@ -72,7 +72,7 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta-jemaat', [DashboardController::class, 'wartajemaat']);
 Route::get('/download-warta/{filename}', [DashboardController::class, 'downloadWarta'])->name('downloadWarta');
-Route::get('/galeri', [DashboardController::class, 'galeri']);
+Route::get('/image', [DashboardController::class, 'image']);
 // Route::get('wartas/{warta}/download', [DashboardController::class, 'download'])->name('wartas.download');
 
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');

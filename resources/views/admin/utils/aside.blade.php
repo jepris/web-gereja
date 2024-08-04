@@ -38,7 +38,6 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -81,7 +80,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar elevation-3">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link text-decoration-none fs-6">
+            <a href="/dashboard" class="brand-link text-decoration-none fs-6">
                 <img src="{{ asset('img/logo hkbp.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class=" brand-text text-primary fw-bold">HKBP Perumnas</span> <br>
@@ -107,11 +106,7 @@
                         </li>
                         <li class="nav-header fw-bold">HOME</li>
                         <li class="nav-item">
-<<<<<<< HEAD
                             <a href="/schedule" class="nav-link">
-=======
-                            <a href="/jadwal" class="nav-link">
->>>>>>> fudo
                                 {{-- <i class="nav-icon fas fa-th"></i> --}}
                                 <p>
                                     Jadwal Ibadah

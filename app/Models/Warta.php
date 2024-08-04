@@ -9,8 +9,8 @@ class Warta extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama_minggu', 
-        'tanggal_warta', 
+        'title', 
+        'date', 
         'file'
     ];
 }

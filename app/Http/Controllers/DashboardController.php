@@ -34,7 +34,7 @@ class DashboardController extends Controller
             return redirect()->back()->with('error', 'File not found.');
         }
     }
-    public function galeri()
+    public function image()
     {
         $galeri = Galeri::all();
         return view('galeri', compact('galeri'));

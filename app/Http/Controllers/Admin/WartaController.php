@@ -18,8 +18,8 @@ class WartaController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'nama_minggu' => 'required',
-            'tanggal_warta' => 'required|date ',
+            'title' => 'required',
+            'date' => 'required|date ',
             'file' => 'required|mimes:pdf|max:15728640'
         ]);
 
@@ -29,8 +29,8 @@ class WartaController extends Controller
         $file->move(public_path('warta'), $fileName);
 
         Warta::create([
-            'nama_minggu' => $request->nama_minggu,
-            'tanggal_warta' => $request->tanggal_warta,
+            'title' => $request->title,
+            'date' => $request->date,
             'file' => $filePath
         ]);
 
@@ -40,8 +40,8 @@ class WartaController extends Controller
 
     public function update(Request $request, Warta $warta){
         $request->validate([
-            'nama_minggu' => 'required',
-            'tanggal_warta' => 'required|date ',
+            'title' => 'required',
+            'date' => 'required|date ',
             'file' => 'required|mimes:pdf|max:15728640'
         ]);
 
@@ -65,13 +65,16 @@ class WartaController extends Controller
     public function destroy(Warta $warta){
         $warta->delete();
         return redirect()->route('warta.index');
-    }
 
+
+        
+    }
     // public function index()
     // {
     //     $wartas = Warta::all();
     //     return view('admin.wartas.index', compact('wartas'));
     // }
+
     // public function create()
     // {
     //     return view('wartas.create');
@@ -80,35 +83,26 @@ class WartaController extends Controller
     // public function store(Request $request)
     // {
     //     $request->validate([
-    //         'nama_minggu'=> 'required',
-    //         'tanggal_warta' => 'required|date',
+    //         'title' => 'required',
+    //         'date' => 'required|date',
     //         'file' => 'required|mimes:pdf|max:2048',
     //     ]);
-    //     $file = $request->file('file');
-    //     $fileName = time().'_'.$file->getClientOriginalName();
-    //     $filePath = 'files/' . $fileName;
-    //     $file->move(public_path('files'), $fileName);
-    //     // $filePath = $request->file('file')->store('wartas');
-    //     $file = $request->file('file');
-    //     $pdfName = time() . '-' . $file->getClientOriginalName();
-    //     $filePath = $file->storeAs('public/uploads', $pdfName);
-    //     Warta::create([
-    //         'tanggal' => $request->tanggal,
-    //         'keterangan' => $request->keterangan,
-    //         'file' => $filePath
-    //     ]);
-    //     // Warta::create([
-    //     //     'nama_minggu'=> $request->nama_minggu,
-    //     //     'tanggal_warta' => $request->tanggal_warta,
-    //     //     'file_path' => $filePath,
-    //     // ]);
-    //     // $pdfModel = new Warta();
-    //     // $pdfModel->nama_minggu = $request->nama_minggu;
-    //     // $pdfModel->tanggal_warta = $request->tanggal_warta;
-    //     // $pdfModel->file_path = $filePath;
-    //     // $pdfModel->save();
 
-    //     return redirect()->route('wartas.index')->with('success', 'Warta created successfully.');
+    //     $filePath = $request->file('file')->store('files', 'public');
+
+    //     Warta::create([
+    //         'title' => $request->title,
+    //         'date' => $request->date,
+    //         'file' => $filePath,
+    //     ]);
+
+    //     return redirect()->route('wartas.index')
+    //         ->with('success', 'Warta created successfully.');
+    // }
+
+    // public function show(Warta $warta)
+    // {
+    //     return view('wartas.show', compact('warta'));
     // }
 
     // public function edit(Warta $warta)
@@ -119,32 +113,35 @@ class WartaController extends Controller
     // public function update(Request $request, Warta $warta)
     // {
     //     $request->validate([
-    //         'nama_minggu'=> 'required',
-    //         'tanggal_warta' => 'required|date',
-    //         'file' => 'sometimes|mimes:pdf|max:2048',
+    //         'title' => 'required',
+    //         'date' => 'required|date',
+    //         'file' => 'mimes:pdf|max:2048',
     //     ]);
 
     //     if ($request->hasFile('file')) {
-    //         Storage::delete($warta->file_path);
-    //         $filePath = $request->file('file')->store('wartas');
-    //         $warta->file_path = $filePath;
+    //         Storage::delete('public/' . $warta->file);
+    //         $filePath = $request->file('file')->store('files', 'public');
+    //     } else {
+    //         $filePath = $warta->file;
     //     }
-    //     $warta->nama_minggu = $request->nama_minggu;
-    //     $warta->tanggal_warta = $request->tanggal_warta;
-    //     $warta->save();
 
-    //     return redirect()->route('wartas.index')->with('success', 'Warta updated successfully.');
+    //     $warta->update([
+    //         'title' => $request->title,
+    //         'date' => $request->date,
+    //         'file' => $filePath,
+    //     ]);
+
+    //     return redirect()->route('wartas.index')
+    //         ->with('success', 'Warta updated successfully.');
     // }
 
     // public function destroy(Warta $warta)
     // {
-    //     Storage::delete($warta->file_path);
+    //     Storage::delete('public/' . $warta->file);
     //     $warta->delete();
-    //     return redirect()->route('wartas.index')->with('success', 'Warta deleted successfully.');
+
+    //     return redirect()->route('wartas.index')
+    //         ->with('success', 'Warta deleted successfully.');
     // }
 
-    // public function download(Warta $warta)
-    // {
-    //     return Storage::download($warta->file_path);
-    // }
 }

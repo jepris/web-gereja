@@ -37,7 +37,7 @@
                         <a class="nav-link" href="/warta-jemaat">Warta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/galeri">Galleri</a>
+                        <a class="nav-link" href="/image">Galleri</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/layanan">Layanan</a>

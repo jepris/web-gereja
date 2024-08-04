@@ -79,7 +79,7 @@
                     <a href="">
                         <div class="row">
                             <div class="col">
-                                <img src="{{ asset('storage/' . $item->gambar) }}" class="img-fluid rounded-start" alt="{{ $item->title }}">
+                                <img src="{{ asset('storage/' . $item->file) }}" class="galeri-img" alt="{{ $item->title }}">
                                 {{-- <img src="/img/aset4.jpg" class="img-fluid rounded-start" alt="image"> --}}
                             </div>
                             <div class="col">
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="berita-selanjutnya">
-            <a href="/warta" class="">Selanjutnya >> </a>
+            <a href="/warta-jemaat" class="">Selanjutnya >> </a>
         </div>
     </section>
 

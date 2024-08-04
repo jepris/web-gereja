@@ -4,6 +4,11 @@
         <div class="container-fluid">
             <h3 class="mt-3 fw-bold">Data Jemaat HKBP Perumnas Batu Onom</h3>
             <button class="btn btn-success mb-3" data-toggle="modal" data-target="#createdata">+ Tambah Data</button>
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
             <div class="data-jemaat">
                 <table class="table table-bordered border border-dark border-3">
                     <thead class="">

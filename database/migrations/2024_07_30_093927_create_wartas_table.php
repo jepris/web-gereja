@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('wartas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_minggu');
-            $table->date('tanggal_warta');
+            $table->string('title');
+            $table->date('date');
             $table->string('file');
             $table->timestamps();
         });

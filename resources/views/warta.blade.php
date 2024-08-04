@@ -16,9 +16,9 @@
                     <tbody>
                         @foreach ($wartajemaat as $data)
                         <tr>
-                            <td class="ps-3 pt-3">{{ $data->tanggal_warta }}</td>
+                            <td class="ps-3 pt-3">{{ $data->date }}</td>
                             <td class="d-flex justify-content-center">
-                                <a class="btn btn-success" href="{{ asset('files/' . $data->file) }}" target="_blank">Download</a>
+                                <a class="btn btn-success" href="{{ asset('storage/' . $data->file) }}" target="_blank">Download</a>
                             </td>
                             
                             {{-- <td><a href="{{ route('downloadWarta') }}" class="btn btn-primary">Download Warta Jemaat</a></td> --}}

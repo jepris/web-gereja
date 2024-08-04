@@ -24,23 +24,20 @@ class GaleriController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'date' => 'required|date ',
-            'file' => 'required|mimes:jpeg,png,jpg,gif,svg|max:15728640'
+            'date' => 'required|date',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $file = $request->file('file');
-        $fileName = time().'_'.$file->getClientOriginalName();
-        $filePath = 'files/' . $fileName;
-        $file->move(public_path('img'), $fileName);
+        $imagePath = $request->file('file')->store('images', 'public');
 
         Galeri::create([
             'title' => $request->title,
             'date' => $request->date,
-            'file' => $filePath
+            'file' => $imagePath,
         ]);
-        ///
 
-        return redirect()->route('images.index')->with('success', 'Image uploaded successfully.');
+        return redirect()->route('images.index')
+            ->with('success', 'Galeri created successfully.');
     }
 
     public function show(Galeri $image)
@@ -57,56 +54,34 @@ class GaleriController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'date' => 'required|date ',
-            'file' => 'required|mimes:jpeg,png,jpg,gif,svg|max:15728640'
+            'date' => 'required|date',
+            'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $data = $request->only('nama_minggu','tanggal');
-        if($request->hasFile('file')){
-            if ($image->file && file_exists(public_path($image->file))) {
-                unlink(public_path($image->file));
-            }
-            $file = $request->file('file');
-            $fileName = time().'_'.$file->getClientOriginalName();
-            $filePath = 'files/' . $fileName;
-            $file->move(public_path('img'), $fileName);
-        
-        $data['file'] = $filePath;
+        if ($request->hasFile('file')) {
+            Storage::delete('public/' . $image->file);
+            $imagePath = $request->file('gambar')->store('images', 'public');
+        } else {
+            $imagePath = $image->file;
         }
-        $image->update($data);
 
-        // $request->validate([
-        //     'title' => 'required',
-        //     'date' => 'required|date',
-        // ]);
+        $image->update([
+            'title' => $request->title,
+            'date' => $request->date,
+            'file' => $imagePath,
+        ]);
 
-        // if ($request->hasFile('image')) {
-        //     $request->validate([
-        //         'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        //     ]);
-
-        //     // Hapus gambar lama
-        //     if ($image->path) {
-        //         Storage::disk('public')->delete($image->path);
-        //     }
-
-        //     $path = $request->file('image')->store('images', 'public');
-        //     $image->path = $path;
-        // }
-
-        // $image->title = $request->title;
-        // $image->date = $request->date;
-        // $image->save();
-
-        return redirect()->route('images.index')->with('success', 'Image updated successfully.');
+        return redirect()->route('images.index')
+            ->with('success', 'Galeri updated successfully.');
     }
 
     public function destroy(Galeri $image)
     {
-        if ($image->path) {
-            Storage::disk('public')->delete($image->path);
-        }
+        Storage::delete('public/' . $image->file);
         $image->delete();
-        return redirect()->route('images.index')->with('success', 'Image deleted successfully.');
+
+        return redirect()->route('images.index')
+            ->with('success', 'Galeri deleted successfully.');
     }
+
 }

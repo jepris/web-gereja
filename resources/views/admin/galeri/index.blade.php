@@ -4,6 +4,11 @@
         <div class="container-fluid">
             <h3 class="mt-3 fw-bold">Galeri HKBP Perumnas Batu Onom</h3>
             <button class="btn btn-success mb-3" data-toggle="modal" data-target="#createdata">+ Tambah Data</button>
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
             <div class="data-jemaat">
                 <table class="table table-bordered border border-dark border-3">
                     <thead class="">
@@ -21,9 +26,7 @@
                                 <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $data->title }}</td>
                                 <td>{{ \Carbon\Carbon::parse($data->date)->format('d-m-Y') }}</td>
-                                {{-- <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ asset($data->file) }}"
-                                        target="_blank">Download</a></td> --}}
-                                <td><img src="{{ asset('img/' . $data->file) }}" width="200"></td>
+                                <td><img src="{{ asset('storage/' . $data->file) }}" width="100"></td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"
@@ -94,7 +97,7 @@
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
-                            <label for="title" class="form-label fw-bold">Nama Minggu</label>
+                            <label for="title" class="form-label fw-bold">Title</label>
                             <textarea name="title" class="form-control" id="title" required>{{ $data->title }}</textarea>
                         </div>
                             <div class="mb-3">

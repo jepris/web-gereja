@@ -6,6 +6,11 @@
         <h3 class="mt-3 fw-bold">Jadwal Ibadah HKBP Perumnas Batu Onom</h3>
         <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
         <br><br>
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
         @if (session('success'))
             <div class="alert alert-success mt-3">{{ session('success') }}</div>
         @endif
