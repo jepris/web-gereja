@@ -71,10 +71,8 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta', [WartaController::class, 'index'])->name('beranda');
 
-
-Route::get('/dashboard',[JemaatController::class, 'dashboard'])->name('dashboard');
-
 // tampilan data internal admin
+Route::get('/dashboard',[JemaatController::class, 'dashboard'])->name('dashboard');
 Route::resource('jadwal',JadwalController::class);
 Route::resource('jemaat',JemaatController::class);
 Route::resource('keuangan',KeuanganController::class);
