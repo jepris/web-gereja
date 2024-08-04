@@ -107,8 +107,11 @@
                         </li>
                         <li class="nav-header fw-bold">HOME</li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a href="/schedule" class="nav-link">
-                            {{-- <a href="/jadwal" class="nav-link"> --}}
+=======
+                            <a href="/jadwal" class="nav-link">
+>>>>>>> fudo
                                 {{-- <i class="nav-icon fas fa-th"></i> --}}
                                 <p>
                                     Jadwal Ibadah

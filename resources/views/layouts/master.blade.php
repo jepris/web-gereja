@@ -34,7 +34,7 @@
                         <a class="nav-link" href="/tentang">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/warta">Warta</a>
+                        <a class="nav-link" href="/warta-jemaat">Warta</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/galeri">Galleri</a>

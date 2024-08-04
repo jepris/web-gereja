@@ -11,6 +11,6 @@ class Galeri extends Model
     protected $fillable = [
         'title',
         'date',
-        'path', 
+        'file', 
     ];
 }

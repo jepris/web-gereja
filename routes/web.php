@@ -65,16 +65,15 @@ Route::get('/tentang', function () {
 
 });
 
-Route::get('/galeri', function () {
-    return view('galeri');
-});
 Route::get('/layanan', function () {
     return view('layanan');
 });
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
-Route::get('/warta', [DashboardController::class, 'warta'])->name('beranda');
-Route::get('wartas/{warta}/download', [DashboardController::class, 'download'])->name('wartas.download');
+Route::get('/warta-jemaat', [DashboardController::class, 'wartajemaat']);
+Route::get('/download-warta/{filename}', [DashboardController::class, 'downloadWarta'])->name('downloadWarta');
+Route::get('/galeri', [DashboardController::class, 'galeri']);
+// Route::get('wartas/{warta}/download', [DashboardController::class, 'download'])->name('wartas.download');
 
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
 // Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
@@ -85,7 +84,7 @@ Route::resource('images', GaleriController::class);
 Route::get('/dashboard',[JemaatController::class, 'dashboard'])->name('dashboard');
 
 // tampilan data internal admin
-Route::resource('jadwal',JadwalController::class);
+// Route::resource('jadwal',JadwalController::class);
 Route::resource('jemaat',JemaatController::class);
 Route::resource('keuangan',KeuanganController::class);
 Route::get('/birthday',[JemaatController::class, 'birthday'])->name('birthday');

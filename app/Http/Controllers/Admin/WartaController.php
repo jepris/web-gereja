@@ -29,8 +29,8 @@ class WartaController extends Controller
         $file->move(public_path('warta'), $fileName);
 
         Warta::create([
-            'tanggal' => $request->tanggal,
-            'keterangan' => $request->keterangan,
+            'nama_minggu' => $request->nama_minggu,
+            'tanggal_warta' => $request->tanggal_warta,
             'file' => $filePath
         ]);
 
@@ -53,7 +53,7 @@ class WartaController extends Controller
             $file = $request->file('file');
             $fileName = time().'_'.$file->getClientOriginalName();
             $filePath = 'files/' . $fileName;
-            $file->move(public_path('files'), $fileName);
+            $file->move(public_path('warta'), $fileName);
         
         $data['file'] = $filePath;
         }

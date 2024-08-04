@@ -14,11 +14,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($wartas as $warta)
+                        @foreach ($wartajemaat as $data)
                         <tr>
-                            <td class="ps-3 pt-3">{{ $warta->tanggal_warta }}</td>
-                            <td class="d-flex justify-content-center"><a href="{{ route('wartas.download', $warta->id) }}" class="link-kontak">Download</a></td>
-                        </tr>
+                            <td class="ps-3 pt-3">{{ $data->tanggal_warta }}</td>
+                            <td class="d-flex justify-content-center">
+                                <a class="btn btn-success" href="{{ asset('files/' . $data->file) }}" target="_blank">Download</a>
+                            </td>
+                            
+                            {{-- <td><a href="{{ route('downloadWarta') }}" class="btn btn-primary">Download Warta Jemaat</a></td> --}}
                         @endforeach
                        
                     </tbody>

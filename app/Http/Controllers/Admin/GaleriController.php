@@ -24,17 +24,21 @@ class GaleriController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'date' => 'required|date',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'date' => 'required|date ',
+            'file' => 'required|mimes:jpeg,png,jpg,gif,svg|max:15728640'
         ]);
 
-        $path = $request->file('image')->store('images', 'public');
+        $file = $request->file('file');
+        $fileName = time().'_'.$file->getClientOriginalName();
+        $filePath = 'files/' . $fileName;
+        $file->move(public_path('img'), $fileName);
 
         Galeri::create([
             'title' => $request->title,
             'date' => $request->date,
-            'path' => $path,
+            'file' => $filePath
         ]);
+        ///
 
         return redirect()->route('images.index')->with('success', 'Image uploaded successfully.');
     }
@@ -53,26 +57,46 @@ class GaleriController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'date' => 'required|date',
+            'date' => 'required|date ',
+            'file' => 'required|mimes:jpeg,png,jpg,gif,svg|max:15728640'
         ]);
 
-        if ($request->hasFile('image')) {
-            $request->validate([
-                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-
-            // Hapus gambar lama
-            if ($image->path) {
-                Storage::disk('public')->delete($image->path);
+        $data = $request->only('nama_minggu','tanggal');
+        if($request->hasFile('file')){
+            if ($image->file && file_exists(public_path($image->file))) {
+                unlink(public_path($image->file));
             }
-
-            $path = $request->file('image')->store('images', 'public');
-            $image->path = $path;
+            $file = $request->file('file');
+            $fileName = time().'_'.$file->getClientOriginalName();
+            $filePath = 'files/' . $fileName;
+            $file->move(public_path('img'), $fileName);
+        
+        $data['file'] = $filePath;
         }
+        $image->update($data);
 
-        $image->title = $request->title;
-        $image->date = $request->date;
-        $image->save();
+        // $request->validate([
+        //     'title' => 'required',
+        //     'date' => 'required|date',
+        // ]);
+
+        // if ($request->hasFile('image')) {
+        //     $request->validate([
+        //         'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        //     ]);
+
+        //     // Hapus gambar lama
+        //     if ($image->path) {
+        //         Storage::disk('public')->delete($image->path);
+        //     }
+
+        //     $path = $request->file('image')->store('images', 'public');
+        //     $image->path = $path;
+        // }
+
+        // $image->title = $request->title;
+        // $image->date = $request->date;
+        // $image->save();
 
         return redirect()->route('images.index')->with('success', 'Image updated successfully.');
     }
