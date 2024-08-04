@@ -39,6 +39,9 @@ class DashboardController extends Controller
         $galeri = Galeri::all();
         return view('galeri', compact('galeri'));
     }
+    public function tentang(){
+        return view('tentang');
+    }
 
     
 }

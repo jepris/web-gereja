@@ -53,38 +53,25 @@ Route::get('/form-pindah-jemaat', function () {
     return view('form.form-pindah-jemaat');
 });
 
-// Route::get('/jemaat', function () {
-//     return view('admin.data-jemaat.jemaat');
-// });
-
-
-
-
-Route::get('/tentang', function () {
-    return view('tentang');
-
-});
-
 Route::get('/layanan', function () {
     return view('layanan');
 });
+//user
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta-jemaat', [DashboardController::class, 'wartajemaat']);
 Route::get('/download-warta/{filename}', [DashboardController::class, 'downloadWarta'])->name('downloadWarta');
 Route::get('/image', [DashboardController::class, 'image']);
+Route::get('/tentang', [DashboardController::class, 'tentang']);
 // Route::get('wartas/{warta}/download', [DashboardController::class, 'download'])->name('wartas.download');
 
+//Admin
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
-// Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 Route::resource('schedule', ScheduleController::class);
 Route::resource('news', NewsController::class);
 Route::resource('wartas', WartaController::class);
 Route::resource('images', GaleriController::class);
 Route::get('/dashboard',[JemaatController::class, 'dashboard'])->name('dashboard');
-
-// tampilan data internal admin
-// Route::resource('jadwal',JadwalController::class);
 Route::resource('jemaat',JemaatController::class);
 Route::resource('keuangan',KeuanganController::class);
 Route::get('/birthday',[JemaatController::class, 'birthday'])->name('birthday');
