@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@extends('modals.modal-kontak')
+@extends('modals.kontak')
 @section('title', 'Tentang - HKBP Perumnas Batu Onom')
 @section('content')
 <div class="container">
@@ -64,7 +64,7 @@
                         </tr>
                         <tr>
                             <td>Atau anda dapat mengirim pesan</td>
-                            <td> : <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#form-kontak">
+                            <td> : <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#kontak">
                                 disini . . .
                               </button></td>
                         </tr>

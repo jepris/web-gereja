@@ -24,10 +24,14 @@ class JadwalController extends Controller
         $request->validate([
             'name' => 'required',
             'hari' => 'required|date',
-            'keterangan' => 'required|data_format:H:i'
+            'keterangan' => 'nullable|date_format:H:i'
         ]);
 
-        Jadwal::create($request->all());
+        Jadwal::create([
+            'name' => $request->input('name'),
+            'hari' => $request->input('hari'),
+            'keterangan' => $request->input('keterangan'),
+        ]);
         return redirect()->route('jadwal.index');
     }
 
@@ -39,7 +43,7 @@ class JadwalController extends Controller
         $request->validate([
             'name' => 'required',
             'hari' => 'required|date',
-            'keterangan' => 'required|data_format:H:i'
+            'keterangan' => 'nullable|date_format:H:i'
         ]);
 
         $jadwal = Jadwal::findOrFail($id);

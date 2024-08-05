@@ -65,8 +65,6 @@ class WartaController extends Controller
     public function destroy(Warta $warta){
         $warta->delete();
         return redirect()->route('warta.index');
-
-
         
     }
     // public function index()

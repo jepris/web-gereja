@@ -2,14 +2,16 @@
 
 use App\Models\Warta;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\JadwalController;
-use App\Http\Controllers\Admin\KeuanganController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\HuriaController;
 use App\Http\Controllers\Admin\WartaController;
 use App\Http\Controllers\Admin\GaleriController;
+use App\Http\Controllers\Admin\JadwalController;
 use App\Http\Controllers\Admin\JemaatController;
+use App\Http\Controllers\Admin\KeuanganController;
 use App\Http\Controllers\Admin\ScheduleController;
+use App\Models\Huria;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -53,9 +55,9 @@ Route::get('/form-pindah-jemaat', function () {
     return view('form.form-pindah-jemaat');
 });
 
-Route::get('/layanan', function () {
-    return view('layanan');
-});
+// Route::get('/layanan', function () {
+//     return view('layanan');
+// });
 //user
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
@@ -63,6 +65,12 @@ Route::get('/warta-jemaat', [DashboardController::class, 'wartajemaat']);
 Route::get('/download-warta/{filename}', [DashboardController::class, 'downloadWarta'])->name('downloadWarta');
 Route::get('/image', [DashboardController::class, 'image']);
 Route::get('/tentang', [DashboardController::class, 'tentang']);
+Route::get('/hurias', [HuriaController::class, 'index'])->name('index');
+Route::get('/hurias', [HuriaController::class, 'create'])->name('hurias.create');
+Route::post('/hurias', [HuriaController::class, 'store'])->name('hurias.store');
+// Route::resource('hurias', HuriaController::class);
+
+
 // Route::get('wartas/{warta}/download', [DashboardController::class, 'download'])->name('wartas.download');
 
 //Admin
