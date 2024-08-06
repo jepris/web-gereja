@@ -24,16 +24,58 @@ class DatabaseSeeder extends Seeder
 
         DB::table('schedules')->insert([
             [
-                'nama_ibadah' => 'Misa Minggu',
+                'nama_ibadah' => 'Ibadah Sekolah Minggu',
                 'hari' => 'Minggu',
                 'jam' => '08.00 - 10.00',
-                'keterangan' => 'Ibadah utama setiap minggu.',
+                'keterangan' => 'Gedung Sekolah Minggu',
             ],
             [
-                'nama_ibadah' => 'Doa Malam',
-                'hari' => 'Rabu',
+                'nama_ibadah' => 'Ibadah Minggu Bahasa Indonesia',
+                'hari' => 'Minggu',
                 'jam' => '08.00 - 10.00',
-                'keterangan' => 'Ibadah doa malam minggu.',
+                'keterangan' => 'Gedung HKBP Perumnas Batu Onom',
+            ],
+            [
+                'nama_ibadah' => 'Ibadah Minggu Bahasa Batak',
+                'hari' => 'Minggu',
+                'jam' => '10.00 - 12.00',
+                'keterangan' => 'Gedung HKBP Perumnas Batu Onom',
+            ],
+            [
+                'nama_ibadah' => 'Ibadah Minggu Remaja Naposo',
+                'hari' => 'Minggu',
+                'jam' => '16.00 - 18.00',
+                'keterangan' => 'Gedung HKBP Perumnas Batu Onom',
+            ],
+            [
+                'nama_ibadah' => 'Kebaktian Partangiangan Sektor 1,3,6,11,16',
+                'hari' => 'Selasa',
+                'jam' => '19.30 - 21.00',
+                'keterangan' => 'Di Rumah Jemaat',
+            ],
+            [
+                'nama_ibadah' => 'Kebaktian Partangiangan Sektor 2,5,7,8,9,10',
+                'hari' => 'Rabu',
+                'jam' => '19.30 - 21.00',
+                'keterangan' => 'Di Rumah Jemaat',
+            ],
+            [
+                'nama_ibadah' => 'Kebaktian Partangiangan Sektor 4,12,13,14,15',
+                'hari' => 'Kamis',
+                'jam' => '19.30 - 21.00',
+                'keterangan' => 'Di Rumah Jemaat',
+            ],
+            [
+                'nama_ibadah' => 'Kunjungan Jemaat Sakit',
+                'hari' => 'Selasa dan Jumat',
+                'jam' => '10.00 - 17.00',
+                'keterangan' => 'Kunjungan',
+            ],
+            [
+                'nama_ibadah' => 'Kebaktian Partangiangan Remaja Naposo',
+                'hari' => 'Sabtu',
+                'jam' => '19.30 - 21.00',
+                'keterangan' => 'Gedung Konsistori Lantai 2',
             ],
             // Tambahkan data lainnya jika diperlukan
         ]);
@@ -60,7 +102,7 @@ class DatabaseSeeder extends Seeder
                 'alamat' => 'jl. Nalabarca 2',
                 'wijk' => '13',
                 'notelp' => '85212296366',
-                'umur' => '21 Tahun',
+                'umur' => '21',
             ],
             // Tambahkan data lainnya jika diperlukan
         ]);

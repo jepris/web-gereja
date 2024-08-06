@@ -32,7 +32,7 @@
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"
                                             data-target="#editdata{{ $data->id }}">Edit</button>
-                                        <form action="{{ route('jemaat.destroy', $data->id) }}" method="POST">
+                                        <form action="{{ route('admin-jemaat.destroy', $data->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -60,7 +60,7 @@
                     </div>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('jemaat.store') }}" method="POST">
+                <form action="{{ route('admin-jemaat.store') }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
@@ -113,7 +113,7 @@
                         </div>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('jemaat.update', $data->id) }}" method="POST">
+                    <form action="{{ route('admin-jemaat.update', $data->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="modal-body">
