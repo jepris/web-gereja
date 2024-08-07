@@ -38,8 +38,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label fw-bold">Info anggota keluarga yang
-                            akan
-                            sidi (Nama/gender/tanggal lahir)</label>
+                            akan sidi (Nama/gender/tanggal lahir)</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                     </div>
                     <div class="mb-3">
