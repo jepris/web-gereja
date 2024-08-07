@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Schedule;
 use App\Models\News;
+use App\Models\Warta;
+use App\Models\Galeri;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -15,5 +18,30 @@ class DashboardController extends Controller
         $news = News::orderBy('created_at', 'desc')->take(4)->get();
         return view('beranda', compact('schedules', 'news'));
     }
+    public function wartajemaat()
+    {
+        $news = News::all();
+        $wartajemaat= Warta::all();
+        return view('warta', compact('news','wartajemaat'));
+    }
+    public function downloadWarta($filename)
+    {
+        $filePath = public_path("warta/{$filename}");
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath);
+        } else {
+            return redirect()->back()->with('error', 'File not found.');
+        }
+    }
+    public function image()
+    {
+        $galeri = Galeri::all();
+        return view('galeri', compact('galeri'));
+    }
+    public function tentang(){
+        return view('tentang');
+    }
+
     
 }

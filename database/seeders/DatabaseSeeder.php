@@ -1,6 +1,13 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\Galeri;
+// use Illuminate\Support\Facades\DB;
+// // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Seeder;
+// use App\Models\Schedule;
+// use Faker\Factory as Faker;
 use Carbon\Carbon;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\News;
@@ -9,6 +16,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
+
 {
     /**
      * Seed the application's database.
@@ -21,7 +29,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        // $faker = Faker::create();
 
+        // foreach(range(1, 10) as $index) {
+        //     Galeri::create([
+        //         'title' => $faker->sentence,
+        //         'date' => $faker->date,
+        //         'path' => null, // No path, so it uses dummy image
+        //     ]);
+        // }
         DB::table('schedules')->insert([
             [
                 'nama_ibadah' => 'Ibadah Sekolah Minggu',

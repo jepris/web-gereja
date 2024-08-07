@@ -14,22 +14,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($wartajemaat as $data)
                         <tr>
-                            <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
-                        </tr>
-                        <tr>
-                            <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
-                        </tr>
-                        <tr>
-                            <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
-                        </tr>
-                        <tr>
-                            <td class="ps-3 pt-3">Warta tanggal 21 Juli 2024</td>
-                            <td class="d-flex justify-content-center"><a href="/form_kontak" class="link-kontak"> Download...</a></td>
-                        </tr>
+                            <td class="ps-3 pt-3">{{ $data->date }}</td>
+                            <td class="d-flex justify-content-center">
+                                <a class="btn btn-success" href="{{ asset('storage/' . $data->file) }}" target="_blank">Download</a>
+                            </td>
+                            
+                            {{-- <td><a href="{{ route('downloadWarta') }}" class="btn btn-primary">Download Warta Jemaat</a></td> --}}
+                        @endforeach
+                       
                     </tbody>
                 </table>
             </div>

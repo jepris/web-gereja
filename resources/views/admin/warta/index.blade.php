@@ -53,7 +53,7 @@
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form action="{{ route('keuangan.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('wartas.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                         <div class="mb-3">
                             <label for="tanggal" class="form-label fw-bold">Tanggal</label>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="keterangan" class="form-label fw-bold">Keterangan</label>
-                            <textarea class="form-control" name="keterangan" id="keterangan"></textarea>
+                            <textarea class="form-control" name="keterangan" id="keterangan"></textarea  required>
                           </div>
                         <div class="mb-3">
                             <label for="file" class="form-label fw-bold">File Warta Keuangan (.pdf)</label>

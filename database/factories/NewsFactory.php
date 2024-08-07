@@ -19,7 +19,7 @@ class NewsFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
-            'img' => $this->faker->imageUrl(640, 480, 'news', true), // URL gambar tiruan
+         
         ];
     }
 }

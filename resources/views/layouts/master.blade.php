@@ -34,13 +34,13 @@
                         <a class="nav-link" href="/tentang">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/warta">Warta</a>
+                        <a class="nav-link" href="/warta-jemaat">Warta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/galeri">Galleri</a>
+                        <a class="nav-link" href="/image">Galleri</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/layanan">Layanan</a>
+                        <a class="nav-link" href="/hurias">Layanan</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/profile" role="button" data-bs-toggle="dropdown"
