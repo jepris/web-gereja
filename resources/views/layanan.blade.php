@@ -1,13 +1,5 @@
 @extends('layouts.master')
 @section('title', 'Layanan - HKBP Perumnas Batu Onom')
-{{-- @extends('modals.baptis')
-@extends('modals.lahir')
-@extends('modals.meninggal')
-@extends('modals.newjemaat')
-@extends('modals.nikah')
-@extends('modals.pindah')
-@extends('modals.sakit')
-@extends('modals.sidi') --}}
 
 @section('content')
     <div class="container">
@@ -21,11 +13,11 @@
                         via
                         online. Silahkan klik link di bawah sesuai dengan layanan yang diinginkan</p>
                     <ul>
-                        <li class="mb-3">Pendaftaran Jemaat Baru <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newjemaat"><a href="/hurias/newjemaat"></a>
-                            disini . . .
+                        <li class="mb-3">Pendaftaran Jemaat Baru <button type="button" class="btn btn-primary" ><a href="/hurias/newjemaat">
+                            disini . . .</a>
                           </button></li>
-                        <li class="mb-3">Pemberitahuan Anak Lahir <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lahir">
-                            disini . . .
+                        <li class="mb-3">Pemberitahuan Anak Lahir <button type="button" class="btn btn-primary" ><a href="/hurias/newbaby">
+                          disini . . .</a>
                           </button></li>
                         <li class="mb-3">Permohonan Baptisan <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#baptis">
                             disini . . .

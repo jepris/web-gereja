@@ -26,57 +26,17 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/form-kontak', function () {
-    return view('form.form-kontak');
-});
-
-// butuh buat referensi
-Route::get('/form-baptis', function () {
-    return view('form.form-baptis');
-});
-Route::get('/form-jemaat-lahir', function () {
-    return view('form.form-jemaat-lahir');
-});
-Route::get('/form-jemaat-meninggal', function () {
-    return view('form.form-jemaat-meninggal');
-});
-Route::get('/form-jemaat-sakit', function () {
-    return view('form.form-jemaat-sakit');
-});
-Route::get('/form-pendaftaran-jemaat', function () {
-    return view('form.form-pendaftaran-jemaat');
-});
-Route::get('/form-pendaftaran-nikah', function () {
-    return view('form.form-pendaftaran-nikah');
-});
-Route::get('/form-pendaftaran-sidi', function () {
-    return view('form.form-pendaftaran-sidi');
-});
-Route::get('/form-pindah-jemaat', function () {
-    return view('form.form-pindah-jemaat');
-});
-
-// Route::get('/layanan', function () {
-//     return view('layanan');
-// });
-//user
+// Bagian User route
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta-jemaat', [DashboardController::class, 'wartajemaat']);
 Route::get('/download-warta/{filename}', [DashboardController::class, 'downloadWarta'])->name('downloadWarta');
 Route::get('/image', [DashboardController::class, 'image']);
 Route::get('/tentang', [DashboardController::class, 'tentang']);
-Route::get('/hurias', [DashboardController::class, 'layanan']);
-Route::get('/hurias/newjemaat', [HuriaController::class, 'create'])->name('hurias.create');
-Route::post('/hurias', [HuriaController::class, 'store'])->name('hurias.store');
-// Route::get('/hurias', [HuriaController::class, 'createbaby'])->name('hurias.createbaby');
-Route::post('/hurias', [LahirController::class, 'storebaby'])->name('baby.storebaby');
-// Route::resource('hurias', HuriaController::class);
+Route::get('/layanan', [DashboardController::class, 'layanan']);
 
 
-// Route::get('wartas/{warta}/download', [DashboardController::class, 'download'])->name('wartas.download');
-
-//Admin
+// Bagian Admin route
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
 Route::resource('schedule', ScheduleController::class);
 Route::resource('news', NewsController::class);

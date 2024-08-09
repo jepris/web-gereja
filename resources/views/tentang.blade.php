@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@extends('modals.kontak')
+{{-- @extends('modals.kontak') --}}
 @section('title', 'Tentang - HKBP Perumnas Batu Onom')
 @section('content')
 <div class="container">

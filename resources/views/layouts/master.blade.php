@@ -40,7 +40,7 @@
                         <a class="nav-link" href="/image">Galleri</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/hurias">Layanan</a>
+                        <a class="nav-link" href="/layanan">Layanan</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/profile" role="button" data-bs-toggle="dropdown"
