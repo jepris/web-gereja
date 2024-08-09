@@ -4,7 +4,7 @@
     <div class="container mt-2 mb-4">
         <div class="formulir d-flex justify-content-center">
             <div class="col-8">
-                <h4 class="text-center fw-bold mb-5">Formulir Pendaftaran Sidi</h4>
+                <h4 class="text-center fw-bold mb-5">Formulir Pendaftaran Baptis</h4>
                 <form action="">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label fw-bold">Nama / Kelurga</label>
