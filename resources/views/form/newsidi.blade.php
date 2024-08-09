@@ -5,10 +5,11 @@
         <div class="formulir d-flex justify-content-center">
             <div class="col-8">
                 <h4 class="text-center fw-bold mb-5">Formulir Pendaftaran Jemaat Sidi</h4>
-                <form action="">
+                <form action="{{ route('hurias.storesidi') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label fw-bold">Nama Ayah (Wali)</label>
-                        <input type="text" name="wali" class="form-control" id="exampleFormControlInput1"
+                        <label for="wali" class="form-label fw-bold">Nama Ayah (Wali)</label>
+                        <input type="text" name="wali" class="form-control" id="wali"
                             placeholder="nama lengkap" required>
                     </div>
                     <div class="mb-3">
@@ -20,31 +21,31 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label fw-bold">No. Handphone</label>
-                        <input type="number" name="notelp" class="form-control" id="exampleFormControlInput1"
+                        <label for="notelp" class="form-label fw-bold">No. Handphone</label>
+                        <input type="number" name="notelp" class="form-control" id="notelp"
                             placeholder="08xxxxxxxxxx" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label fw-bold">alamat</label>
-                        <input type="text" name="alamat" class="form-control" id="exampleFormControlInput1" placeholder="jalan --" required>
+                        <label for="alamat" class="form-label fw-bold">alamat</label>
+                        <input type="text" name="alamat" class="form-control" id="alamat" placeholder="jalan --" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label fw-bold">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
+                        <label for="email" class="form-label fw-bold">Email address</label>
+                        <input type="email" name="email" class="form-control" id="email"
                             placeholder="name@example.com" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label fw-bold">Info anggota keluarga yang
+                        <label for="keterangan" class="form-label fw-bold">Info anggota keluarga yang
                             akan sidi (Nama/gender/tanggal lahir)</label>
-                        <textarea class="form-control" name="keterangan" id="exampleFormControlTextarea1" rows="4" required></textarea>
+                        <textarea class="form-control" name="keterangan" id="keterangan" rows="4" required></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="formFile" class="form-label">Upload Akte Kelahiran</label>
-                        <input class="form-control" name="fileakte" accept=".pdf" type="file" id="formFile" required>
+                        <label for="fileaket" class="form-label">Upload Akte Kelahiran</label>
+                        <input class="form-control" name="fileakte" accept=".pdf" type="file" id="fileaket" required>
                     </div>
                     <div class="mb-3">
-                        <label for="formFile" class="form-label">Upload Surat Baptis</label>
-                        <input class="form-control" name="filebaptis" accept=".pdf" type="file" id="formFile" required>
+                        <label for="filebaptis" class="form-label">Upload Surat Baptis</label>
+                        <input class="form-control" name="filebaptis" accept=".pdf" type="file" id="filebaptis" required>
                     </div>
                     <button type="submit" class="btn btn-success">Kirim</button>
                 </form>

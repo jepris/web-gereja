@@ -36,22 +36,25 @@ Route::get('/image', [DashboardController::class, 'image']);
 Route::get('/tentang', [DashboardController::class, 'tentang']);
 Route::get('/layanan', [DashboardController::class, 'layanan']);
 Route::get('/hurias', [CreateController::class, 'index'])->name('hurias.index');
+Route::get('/tentang', [CreateController::class, 'tentang'])->name('tentangg.tentang');
 Route::get('/hurias/newkontak', [CreateController::class, 'createkontak'])->name('createkontak');
 Route::get('/hurias/newbaptis', [CreateController::class, 'createbaptis'])->name('createbaptis');
 Route::get('/hurias/newlahir', [CreateController::class, 'createlahir'])->name('createlahir');
 Route::get('/hurias/newsidi', [CreateController::class, 'createsidi'])->name('createsidi');
 Route::get('/hurias/newnikah', [CreateController::class, 'createnikah'])->name('createnikah');
 Route::get('/hurias/newsakit', [CreateController::class, 'createsakit'])->name('createsakit');
-Route::get('/hurias/newgereja', [CreateController::class, 'createpindah'])->name('createpindah');
+Route::get('/hurias/newpindah', [CreateController::class, 'createpindah'])->name('createpindah');
 Route::get('/hurias/newmeninggal', [CreateController::class, 'createmeninggal'])->name('createmeninggal');
 
-Route::post('/hurias', [CreateController::class, 'storelahir'])->name('hurias.storelahir');
-Route::post('/hurias', [CreateController::class, 'storebaptis'])->name('hurias.storebaptis');
-Route::post('/hurias', [CreateController::class, 'storesidi'])->name('hurias.storesidi');
-Route::post('/hurias', [CreateController::class, 'storenikah'])->name('hurias.storenikah');
-Route::post('/hurias', [CreateController::class, 'storesakit'])->name('hurias.storesakit');
-Route::post('/hurias', [CreateController::class, 'storepindah'])->name('hurias.storepindah');
-Route::post('/hurias', [CreateController::class, 'storemeninggal'])->name('hurias.storemeninggal');
+
+Route::post('/hurias/newlahir', [CreateController::class, 'storelahir'])->name('hurias.storelahir');
+Route::post('/hurias/newbaptis', [CreateController::class, 'storebaptis'])->name('hurias.storebaptis');
+Route::post('/hurias/newsidi', [CreateController::class, 'storesidi'])->name('hurias.storesidi');
+Route::post('/hurias/newnikah', [CreateController::class, 'storenikah'])->name('hurias.storenikah');
+Route::post('/hurias/newsakit', [CreateController::class, 'storesakit'])->name('hurias.storesakit');
+Route::post('/hurias/newpindah', [CreateController::class, 'storepindah'])->name('hurias.storepindah');
+Route::post('/hurias/newmeninggal', [CreateController::class, 'storemeninggal'])->name('hurias.storemeninggal');
+Route::post('/hurias/newkontak', [CreateController::class, 'storekontak'])->name('hurias.storekontak');
 
 
 // Bagian Admin route

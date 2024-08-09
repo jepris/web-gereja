@@ -64,14 +64,27 @@
                         </tr>
                         <tr>
                             <td>Atau anda dapat mengirim pesan</td>
-                            <td> : <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#kontak">
-                                disini . . .
+                            <td> : <button type="button" class="btn btn-success" >
+                                <a href="/hurias/newkontak" role="button">Disini</a>
                               </button></td>
                         </tr>
                     </tbody>
                 </table>
+                @if(Session::has('message'))
+                            <div id="success-alert" class="alert alert-success">
+                                {{ Session::get('message') }}
+                            </div>
+                @endif
             </div>
         </div>
     </section>
 </div>
+<script>
+    setTimeout(function() {
+        var alert = document.getElementById('success-alert');
+        if (alert) {
+            alert.style.display = 'none';
+        }
+    }, 5000); // Pesan akan menghilang setelah 5 detik
+</script>
 @endsection
