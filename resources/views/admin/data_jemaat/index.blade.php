@@ -65,7 +65,7 @@
                     </div>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('admin-jemaat.store') }}" method="POST">
+                <form action="{{ route('jemaat.store') }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
@@ -118,7 +118,7 @@
                         </div>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('admin-jemaat.update', $data->id) }}" method="POST">
+                    <form action="{{ route('jemaat.update', $data->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="modal-body">

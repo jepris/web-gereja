@@ -290,7 +290,8 @@ footer {
 
 .tentang-gereja-image1{
     height: 350px;
-    margin-left: 50px;
+    margin-left: 120px;
+    box-shadow: #555;
 }
 
 .tentang-gereja-image2{
