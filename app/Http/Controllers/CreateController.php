@@ -89,9 +89,7 @@ class CreateController extends Controller
             'notelp' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'lahir' => 'required',
-            'jeniskelamin' => 'required',
-            'rs' => 'required',
+            'keterangan' => 'required',
         ]);
         
         Baptis::create([
@@ -100,10 +98,7 @@ class CreateController extends Controller
             'notelp' => $request->notelp,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'lahir' => $request->lahir,
-            'jeniskelamin' => $request->jeniskelamin,
-            'rs' => $request->rs,
-           
+            'keterangan' => $request->keterangan,
         ]);
 
 
@@ -113,25 +108,25 @@ class CreateController extends Controller
     public function storesidi(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'wali' => 'required',
             'wijk' => 'required',
             'notelp' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'lahir' => 'required',
-            'jeniskelamin' => 'required',
-            'rs' => 'required',
+            'keterangan' => 'required',
+            'fileakte' => 'required|mime:pdf',
+            'filebaptis' => 'required|mime:pdf',
         ]);
         
         Sidi::create([
-            'name' => $request->name,
+            'wali' => $request->name,
             'wijk' => $request->wijk,
             'notelp' => $request->notelp,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'lahir' => $request->lahir,
-            'jeniskelamin' => $request->jeniskelamin,
-            'rs' => $request->rs,
+            'keterangan' => $request->lahir,
+            'fileaket' => $path,
+            'filebaptis' => $paths,
            
         ]);
 
@@ -147,9 +142,7 @@ class CreateController extends Controller
             'notelp' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'lahir' => 'required',
-            'jeniskelamin' => 'required',
-            'rs' => 'required',
+            'keterangan' => 'required',
         ]);
         
         Nikah::create([
@@ -158,9 +151,8 @@ class CreateController extends Controller
             'notelp' => $request->notelp,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'lahir' => $request->lahir,
-            'jeniskelamin' => $request->jeniskelamin,
-            'rs' => $request->rs,
+            'keterangan' => $request->keterangan,
+
            
         ]);
 
@@ -176,9 +168,7 @@ class CreateController extends Controller
             'notelp' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'lahir' => 'required',
-            'jeniskelamin' => 'required',
-            'rs' => 'required',
+            'keterangan' => 'required',
         ]);
         
         Sakit::create([
@@ -187,9 +177,7 @@ class CreateController extends Controller
             'notelp' => $request->notelp,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'lahir' => $request->lahir,
-            'jeniskelamin' => $request->jeniskelamin,
-            'rs' => $request->rs,
+            'keterangan' => $request->keterangan,
            
         ]);
 
@@ -205,9 +193,8 @@ class CreateController extends Controller
             'notelp' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'lahir' => 'required',
-            'jeniskelamin' => 'required',
-            'rs' => 'required',
+            'tujuan' => 'required',
+           
         ]);
         
         Pindah::create([
@@ -216,9 +203,7 @@ class CreateController extends Controller
             'notelp' => $request->notelp,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'lahir' => $request->lahir,
-            'jeniskelamin' => $request->jeniskelamin,
-            'rs' => $request->rs,
+            'tujuan' => $request->tujuan,
            
         ]);
 
@@ -234,20 +219,16 @@ class CreateController extends Controller
             'notelp' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'lahir' => 'required',
-            'jeniskelamin' => 'required',
-            'rs' => 'required',
+            'keterangan' => 'required',
         ]);
         
         Meninggal::create([
-            'name' => $request->name,
+           'name' => $request->name,
             'wijk' => $request->wijk,
             'notelp' => $request->notelp,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'lahir' => $request->lahir,
-            'jeniskelamin' => $request->jeniskelamin,
-            'rs' => $request->rs,
+            'keterangan' => $request->keterangan,
            
         ]);
 

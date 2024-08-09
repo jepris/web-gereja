@@ -45,9 +45,15 @@ Route::get('/hurias/newsakit', [CreateController::class, 'createsakit'])->name('
 Route::get('/hurias/newgereja', [CreateController::class, 'createpindah'])->name('createpindah');
 Route::get('/hurias/newmeninggal', [CreateController::class, 'createmeninggal'])->name('createmeninggal');
 
-Route::post('/hurias', [CreateController::class, 'store'])->name('hurias.store');
-Route::post('/hurias', [CreateController::class, 'store'])->name('hurias.store');
-Route::post('/hurias', [CreateController::class, 'store'])->name('hurias.store');
+Route::post('/hurias', [CreateController::class, 'storelahir'])->name('hurias.storelahir');
+Route::post('/hurias', [CreateController::class, 'storebaptis'])->name('hurias.storebaptis');
+Route::post('/hurias', [CreateController::class, 'storesidi'])->name('hurias.storesidi');
+Route::post('/hurias', [CreateController::class, 'storenikah'])->name('hurias.storenikah');
+Route::post('/hurias', [CreateController::class, 'storesakit'])->name('hurias.storesakit');
+Route::post('/hurias', [CreateController::class, 'storepindah'])->name('hurias.storepindah');
+Route::post('/hurias', [CreateController::class, 'storemeninggal'])->name('hurias.storemeninggal');
+
+
 // Bagian Admin route
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
 Route::resource('schedule', ScheduleController::class);
