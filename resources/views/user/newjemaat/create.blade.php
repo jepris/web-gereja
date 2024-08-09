@@ -1,3 +1,5 @@
+@extends('layouts.master')
+@section('content')
 <div class="modal fade" id="newjemaat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -8,7 +10,7 @@
     </div>
       
         <div class="modal-body">
-          {{-- <form action="{{ route('hurias.store') }}" method="POST" enctype="multipart/form-data"> --}}
+          <form action="{{ route('hurias.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="nama" class="form-label fw-bold">Nama</label>
@@ -48,3 +50,4 @@
       </div>
     </div>
   </div>
+@endsection

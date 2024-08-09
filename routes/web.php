@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\HuriaController;
+use App\Http\Controllers\Admin\LahirController;
 use App\Http\Controllers\Admin\WartaController;
 use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\JadwalController;
@@ -65,9 +66,11 @@ Route::get('/warta-jemaat', [DashboardController::class, 'wartajemaat']);
 Route::get('/download-warta/{filename}', [DashboardController::class, 'downloadWarta'])->name('downloadWarta');
 Route::get('/image', [DashboardController::class, 'image']);
 Route::get('/tentang', [DashboardController::class, 'tentang']);
-Route::get('/hurias', [HuriaController::class, 'index'])->name('index');
-Route::get('/hurias', [HuriaController::class, 'create'])->name('hurias.create');
+Route::get('/hurias', [DashboardController::class, 'layanan']);
+Route::get('/hurias/newjemaat', [HuriaController::class, 'create'])->name('hurias.create');
 Route::post('/hurias', [HuriaController::class, 'store'])->name('hurias.store');
+// Route::get('/hurias', [HuriaController::class, 'createbaby'])->name('hurias.createbaby');
+Route::post('/hurias', [LahirController::class, 'storebaby'])->name('baby.storebaby');
 // Route::resource('hurias', HuriaController::class);
 
 
