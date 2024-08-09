@@ -74,3 +74,6 @@ route::get('/login', function(){
 route::get('/regis', function(){
     return view('auth.regis');
 });
+route::get('/berita', function(){
+    return view('berita');
+});

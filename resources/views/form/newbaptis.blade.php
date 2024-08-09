@@ -5,8 +5,12 @@
         <div class="formulir d-flex justify-content-center">
             <div class="col-8">
                 <h4 class="text-center fw-bold mb-5">Formulir Pendaftaran Baptis</h4>
+<<<<<<< HEAD
                 <form action="{{ route('hurias.storebaptis') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+=======
+                <form action="">
+>>>>>>> d7219c7 (birthday)
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label fw-bold">Nama / Kelurga</label>
                         <input type="text" name="name" class="form-control" id="exampleFormControlInput1"

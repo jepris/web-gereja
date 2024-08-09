@@ -57,12 +57,21 @@ class JemaatController extends Controller
     }
 
     // menarik data jemaat dan diurutkan berdasarkan tanggal lahir
-    public function birthday(){
-        $startOfWeek = Carbon::now()->startOfWeek();
-        $endOfWeek = Carbon::now()->endOfWeek();
+    public function birthday()
+{
+    $today = Carbon::today();
+    $startOfWeek = $today->startOfWeek()->format('m-d');
+    $endOfWeek = $today->endOfWeek()->format('m-d');
 
-        $jemaats = Jemaat::whereBetween('birth_date', [$startOfWeek, $endOfWeek])->orderBy('birth_date','asc')->get();
-        return view('admin.birthday', compact('jemaats'));
-    }
+    $jemaats = Jemaat::where(function ($query) use ($startOfWeek, $endOfWeek) {
+        $query->whereRaw("DATE_FORMAT(birth_date, '%m-%d') >= ?", [$startOfWeek])
+              ->whereRaw("DATE_FORMAT(birth_date, '%m-%d') <= ?", [$endOfWeek]);
+    })
+    ->orderByRaw("DATE_FORMAT(birth_date, '%m-%d') ASC")
+    ->get();
+
+    return view('admin.birthday', compact('jemaats'));
+}
+
 
 }
