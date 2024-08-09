@@ -59,5 +59,9 @@ Route::resource('jemaat',JemaatController::class);
 Route::resource('keuangan',KeuanganController::class);
 Route::get('/birthday',[JemaatController::class, 'birthday'])->name('birthday');
 
-
-
+route::get('/login', function(){
+    return view('auth.login');
+});
+route::get('/regis', function(){
+    return view('auth.regis');
+});
