@@ -13,6 +13,11 @@
                         pelayanan
                         via
                         online. Silahkan klik link di bawah sesuai dengan layanan yang diinginkan</p>
+                        @if(Session::has('message'))
+                            <div id="success-alert" class="alert alert-success">
+                                {{ Session::get('message') }}
+                            </div>
+                        @endif
                     <ul>
                         <li class="mb-3">Pemberitahuan Anak Lahir 
                           <a class="btn btn-primary" href="/hurias/newlahir" role="button">Link</a></li>
@@ -40,4 +45,12 @@
             </div>
         </section>
     </div>
+    <script>
+      setTimeout(function() {
+          var alert = document.getElementById('success-alert');
+          if (alert) {
+              alert.style.display = 'none';
+          }
+      }, 5000); // Pesan akan menghilang setelah 5 detik
+  </script>
 @endsection

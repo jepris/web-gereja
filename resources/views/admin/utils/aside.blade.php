@@ -150,49 +150,49 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item ms-4">
-                                    <a href="pages/forms/general.html" class="nav-link">
-                                        {{-- <i class="far fa-circle nav-icon"></i> --}}
+                                {{-- <li class="nav-item ms-4">
+                                    <a href="/lahir" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
                                         <p>Jemaat Baru</p>
                                     </a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item ms-4">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="/pindah" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Pindah</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="/lahir" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Lahir</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="/baptis" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Baptis</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="/sidi" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Sidi/Malua</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="/nikah" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Pernikahan</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="/sakit" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Sakit</p>
                                     </a>
                                 </li>
-                                <li class="nav-item ms-4">
+                                <li class="/meninggal">
                                     <a href="pages/forms/general.html" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Meninggal</p>
@@ -202,7 +202,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/kontak" class="nav-link">
                                 {{-- <i class="nav-icon fas fa-table"></i> --}}
                                 <p>
                                     Kontak Keluhan
