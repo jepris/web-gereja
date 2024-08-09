@@ -11,8 +11,8 @@
     <form action="">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label fw-bold">Nama / Keluarga</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1"
-                placeholder="nama lengkap">
+            <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+                placeholder="nama lengkap" required>
         </div>
         <div class="mb-3">
             <label for="wijk" class="form-label fw-bold">Wijk</label>
@@ -24,20 +24,20 @@
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label fw-bold">No. Handphone</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="08xxxxxxxxxx">
+            <input type="number" name="notelp" class="form-control" id="exampleFormControlInput1" placeholder="08xxxxxxxxxx" required>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label fw-bold">alamat</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="jalan --">
+            <input type="text" name="alamat" class="form-control" id="exampleFormControlInput1" placeholder="jalan --" required>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label fw-bold">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1"
-                placeholder="name@example.com">
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
+                placeholder="name@example.com" requiredw>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label fw-bold">Info Anggota Keluarga yang Meninggal</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Nama/Gender/tanggal lahir"></textarea>
+            <textarea class="form-control" name="keterangan" id="exampleFormControlTextarea1" rows="4" placeholder="Nama/Gender/tanggal lahir" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Kirim</button>
     </form>
