@@ -14,9 +14,8 @@
                         via
                         online. Silahkan klik link di bawah sesuai dengan layanan yang diinginkan</p>
                     <ul>
-<<<<<<< HEAD
                         <li class="mb-3">Pemberitahuan Anak Lahir 
-                          <a class="btn btn-primary" href="/hurias/newbaby" role="button">Link</a></li>
+                          <a class="btn btn-primary" href="/hurias/newlahir" role="button">Link</a></li>
                           
                         <li class="mb-3">Permohonan Baptisan 
                           <a class="btn btn-primary" href="/hurias/newbaptis" role="button">Link</a></li>
@@ -31,42 +30,11 @@
                           <a class="btn btn-primary" href="/hurias/newsakit" role="button">Link</a></li>
                           </li>
                         <li class="mb-3">Permohonan Pindah Jemaat/Wijk 
-                          <a class="btn btn-primary" href="/hurias/newgereja" role="button">Link</a></li>
+                          <a class="btn btn-primary" href="/hurias/newpindah" role="button">Link</a></li>
                           
                         <li class="mb-3">Pemberitahuan Jemaat Meninggal Dunia 
                           <a class="btn btn-primary" href="/hurias/newmeninggal" role="button">Link</a></li>
                           
-=======
-                        <a href=""></a> disini . . .</a>
-                        </button></li>
-                        <li class="mb-3">Pemberitahuan Anak Lahir <a type="button" class="btn btn-primary"><a
-                                    href="/hurias/newbaby">
-                                    disini . . .</a>
-                            </a></li>
-                        <li class="mb-3">Permohonan Baptisan <a href="/">
-                                disini . . .
-                            </a></li>
-                        <li class="mb-3">Pendaftaran Sidi/Katekisasi <button type="button" class="btn btn-primary"
-                                data-bs-toggle="modal" data-bs-target="#sidi">
-                                disini . . .
-                            </button></li>
-                        <li class="mb-3">Pendaftaran Pernikahan <button type="button" class="btn btn-primary"
-                                data-bs-toggle="modal" data-bs-target="#nikah">
-                                disini . . .
-                            </button></li>
-                        <li class="mb-3">Pemberitahuan jemaat Sakit <button type="button" class="btn btn-primary"
-                                data-bs-toggle="modal" data-bs-target="#sakit">
-                                disini . . .
-                            </button></li>
-                        <li class="mb-3">Permohonan Pindah Jemaat/Wijk <button type="button" class="btn btn-primary"
-                                data-bs-toggle="modal" data-bs-target="#pindah">
-                                disini . . .
-                            </button></li>
-                        <li class="mb-3">Pemberitahuan Jemaat Meninggal Dunia <button type="button"
-                                class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meninggal">
-                                disini . . .
-                            </button></li>
->>>>>>> 486ceebba85df9de93e94c927e61da2a09aadcee
                     </ul>
                 </div>
             </div>
