@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\JadwalController;
 use App\Http\Controllers\Admin\JemaatController;
 use App\Http\Controllers\Admin\KeuanganController;
 use App\Http\Controllers\Admin\ScheduleController;
+use App\Http\Controllers\CreateController;
 use App\Models\Huria;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -34,8 +35,17 @@ Route::get('/download-warta/{filename}', [DashboardController::class, 'downloadW
 Route::get('/image', [DashboardController::class, 'image']);
 Route::get('/tentang', [DashboardController::class, 'tentang']);
 Route::get('/layanan', [DashboardController::class, 'layanan']);
+Route::get('/hurias/newkontak', [CreateController::class, 'createkontak'])->name('createkontak');
+Route::get('/hurias/newbaby', [CreateController::class, 'createbaby'])->name('createbaby');
+Route::get('/hurias/newsidi', [CreateController::class, 'createsidi'])->name('createsidi');
+Route::get('/hurias/newnikah', [CreateController::class, 'createnikah'])->name('createnikah');
+Route::get('/hurias/newsakit', [CreateController::class, 'createsakit'])->name('createsakit');
+Route::get('/hurias/newgereja', [CreateController::class, 'creategereja'])->name('creategereja');
+Route::get('/hurias/newmeninggal', [CreateController::class, 'createmeninggal'])->name('createmeninggal');
 
-
+Route::post('/hurias', [CreateController::class, 'store'])->name('hurias.store');
+Route::post('/hurias', [CreateController::class, 'store'])->name('hurias.store');
+Route::post('/hurias', [CreateController::class, 'store'])->name('hurias.store');
 // Bagian Admin route
 Route::get('/jemaat', [JemaatController::class, 'index'])->name('jemaat');
 Route::resource('schedule', ScheduleController::class);
