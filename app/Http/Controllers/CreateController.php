@@ -28,29 +28,12 @@ class CreateController extends Controller
         Baby::create([
             'title' => $request->title,
             'date' => $request->date,
-            'file' => $imagePath,
+           
         ]);
 
 
         return redirect()->route('images.index')
             ->with('success', 'Galeri created successfully.');
     }
-    public function storebaptis(Request $request)
-    {
-        $request->validate([
-            'title' => 'required',
-            'date' => 'required|date',
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        
-        Baby::create([
-            'title' => $request->title,
-            'date' => $request->date,
-            'file' => $imagePath,
-        ]);
-        
 
-        return redirect()->route('images.index')
-            ->with('success', 'Galeri created successfully.');
-    }
 }
