@@ -4,13 +4,9 @@
     <div class="container mt-2 mb-4">
         <div class="formulir d-flex justify-content-center">
             <div class="col-8">
-                <h4 class="text-center fw-bold mb-5">Formulir Pendaftaran Baptis</h4>
-<<<<<<< HEAD
-                <form action="">
-=======
+                <h4 class="text-center fw-bold mb-5">Formulir Pendaftaran Sidi</h4>
                 <form action="{{ route('hurias.storebaptis') }}" method="POST" enctype="multipart/form-data">
                     @csrf
->>>>>>> 72389758dc7d56a49825c5d55d4f1af80fb52d92
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label fw-bold">Nama / Kelurga</label>
                         <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
