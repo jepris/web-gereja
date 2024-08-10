@@ -192,8 +192,8 @@
                                         <p>Jemaat Sakit</p>
                                     </a>
                                 </li>
-                                <li class="/meninggal">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                <li class="nav-item ms-4">
+                                    <a href="/meninggal" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Meninggal</p>
                                     </a>
