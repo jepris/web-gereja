@@ -70,7 +70,7 @@ class JemaatController extends Controller
     ->orderByRaw("DATE_FORMAT(birth_date, '%m-%d') ASC")
     ->get();
 
-    return view('admin.birthday', compact('jemaats'));
+    return view('admin.internal.birthday', compact('jemaats'));
 }
 
 

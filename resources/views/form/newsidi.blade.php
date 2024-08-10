@@ -40,8 +40,8 @@
                         <textarea class="form-control" name="keterangan" id="keterangan" rows="4" required></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="fileaket" class="form-label">Upload Akte Kelahiran</label>
-                        <input class="form-control" name="fileakte" accept=".pdf" type="file" id="fileaket" required>
+                        <label for="fileakte" class="form-label">Upload Akte Kelahiran</label>
+                        <input class="form-control" name="fileakte" accept=".pdf" type="file" id="fileakte" required>
                     </div>
                     <div class="mb-3">
                         <label for="filebaptis" class="form-label">Upload Surat Baptis</label>

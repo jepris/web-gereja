@@ -157,13 +157,13 @@
                                     </a>
                                 </li> --}}
                                 <li class="nav-item ms-4">
-                                    <a href="/pindah" class="nav-link">
+                                    <a href="/pindahs" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Pindah</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="/lahir" class="nav-link">
+                                    <a href="/lahirs" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Lahir</p>
                                     </a>
@@ -175,25 +175,25 @@
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="/sidi" class="nav-link">
+                                    <a href="/sidis" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Sidi/Malua</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="/nikah" class="nav-link">
+                                    <a href="/nikahs" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Pernikahan</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
-                                    <a href="/sakit" class="nav-link">
+                                    <a href="/sakits" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Sakit</p>
                                     </a>
                                 </li>
-                                <li class="nav-item ms-4">
-                                    <a href="/meninggal" class="nav-link">
+                                <li  class="nav-item ms-4">
+                                    <a href="/meninggals" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Meninggal</p>
                                     </a>
@@ -246,7 +246,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/wartasakit" class="nav-link">
                                 {{-- <i class="nav-icon far fa-envelope"></i> --}}
                                 <p>
                                     Jemaat Sakit
@@ -255,7 +255,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/wartanikah" class="nav-link">
                                 {{-- <i class="nav-icon far fa-envelope"></i> --}}
                                 <p>
                                     Jemaat Menikah
@@ -264,7 +264,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/wartameninggal" class="nav-link">
                                 {{-- <i class="nav-icon far fa-envelope"></i> --}}
                                 <p>
                                     Jemaat Meninggal
