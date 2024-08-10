@@ -60,7 +60,8 @@
     @foreach ($lahirs as $data)
         <div class="modal fade" id="editdata{{ $data->id }}" tabindex="-1"
             aria-labelledby="editdataLabel{{ $data->id }}" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            {{-- <div class="modal-dialog" role="document"> --}}
+            <div class="modal-dialog" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="form-judul">
@@ -74,7 +75,7 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="name" class="form-label fw-bold">Nama</label>
-                            <textarea name="name" class="form-control" id="name" required>{{ $data->name }}</textarea>
+                            <input type="text" name="name" class="form-control" id="name" required>{{ $data->name }}</input>
                         </div>
                         <div class="mb-3">
                             <label for="wijk" class="form-label fw-bold">Wijk</label>

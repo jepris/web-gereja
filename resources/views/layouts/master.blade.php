@@ -49,6 +49,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/login">Login</a></li>
+                            <li><a class="dropdown-item" href="/login">Logout</a></li>
+                        @auth
+                            @if (Auth::user()->role === 'admin')
+                                <!-- Item menu khusus admin -->
+                                <li><a href="{{ route('dashboard') }}">Admin Dashboard</a></li>
+                            @endif
+                        @endauth
                         </ul>
                     </li>
                 </ul>

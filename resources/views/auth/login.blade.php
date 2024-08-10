@@ -33,7 +33,7 @@
                     <button class="button">Log in</button>
                     <div class="register">
                         <p>Don't Have a Account |
-                            <a href="/regis" class="a-register">
+                            <a href="/register" class="a-register">
                                 <b>Register</b></a>
                         </p>
                     </div>

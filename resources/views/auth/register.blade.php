@@ -21,20 +21,22 @@
                     <div class="card-body">
                         <img src="/img/logo hkbp.png" class="image-berita1" alt="">
                         <h4 class="headered text-center fs-3 fw-bold mb-4 pt-4">Buat Akun Baru</h4>
-                        <form action="">
+                        
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">Nama Lengkap</label>
-                                <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+                                <label for="name" class="form-label fw-bold">Nama Lengkap</label>
+                                <input type="text" name="name" class="form-control" id="name"
                                     placeholder="nama lengkap" required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">Tanggal Lahir</label>
+                                <label for="birth_date" class="form-label fw-bold">Tanggal Lahir</label>
                                 <input type="date" name="birth_date" class="form-control"
-                                    id="exampleFormControlInput1" placeholder="08xxxxxxxxxx" required>
+                                    id="birth_date"required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">alamat</label>
-                                <input type="text" name="alamat" class="form-control" id="exampleFormControlInput1"
+                                <label for="alamat" class="form-label fw-bold">alamat</label>
+                                <input type="text" name="alamat" class="form-control" id="alamat"
                                     placeholder="jalan --" required>
                             </div>
                             <div class="mb-3">
@@ -55,16 +57,18 @@
                                 <input type="number" name="umur" class="form-control" id="umur" required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label fw-bold">Email address</label>
-                                <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
+                                <label for="email" class="form-label fw-bold">Email address</label>
+                                <input type="email" name="email" class="form-control" id="email"
                                     placeholder="name@example.com" required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label fw-bold">Password</label>
+                                <label for="password" class="form-label fw-bold">Password</label>
                                 <input type="password" name="password" class="form-control"
-                                    id="exampleFormControlInput1" required>
+                                    id="password" required>
                             </div>
-                            <button type="submit" class="btn btn-success">Kirim</button>
+                            <div>
+                                <button type="submit">Register</button>
+                            </div>
                         </form>
                     </div>
                 </div>
