@@ -43,5 +43,9 @@ class DashboardController extends Controller
         return view('tentang');
     }
 
+    public function layanan()
+    {
+        return view('layanan');
+    }
     
 }
