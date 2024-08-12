@@ -26,7 +26,7 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label fw-bold">Nama Lengkap</label>
-                                <input type="text" name="name" class="form-control" id="name"
+                                <input type="text" name="name" class="form-control"
                                     placeholder="nama lengkap" required>
                             </div>
                             <div class="mb-3">
@@ -36,13 +36,13 @@
                             </div>
                             <div class="mb-3">
                                 <label for="alamat" class="form-label fw-bold">alamat</label>
-                                <input type="text" name="alamat" class="form-control" id="alamat"
+                                <input type="text" name="alamat" class="form-control" 
                                     placeholder="jalan --" required>
                             </div>
                             <div class="mb-3">
                                 <label for="wijk" class="form-label fw-bold">Wijk</label>
                                 <select class="form-select" name="wijk" aria-label="Default select example"
-                                    id="wijk">
+                                >
                                     @for ($i = 1; $i <= 20; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
@@ -50,21 +50,21 @@
                             </div>
                             <div class="mb-3">
                                 <label for="notelp" class="form-label fw-bold">no, Handphone</label>
-                                <input type="number" name="notelp" class="form-control" id="notelp" required>
+                                <input type="number" name="notelp" class="form-control"  required>
                             </div>
                             <div class="mb-3">
                                 <label for="umur" class="form-label fw-bold">Umur</label>
-                                <input type="number" name="umur" class="form-control" id="umur" required>
+                                <input type="number" name="umur" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label fw-bold">Email address</label>
-                                <input type="email" name="email" class="form-control" id="email"
+                                <input type="email" name="email" class="form-control" 
                                     placeholder="name@example.com" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label fw-bold">Password</label>
                                 <input type="password" name="password" class="form-control"
-                                    id="password" required>
+                                     required>
                             </div>
                             <div>
                                 <button type="submit">Register</button>

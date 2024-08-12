@@ -20,26 +20,26 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'birth_date' => 'required|date|max:255',
+            'birth_date' => 'required|date',
             'wijk' => 'required|string|max:255',
             'notelp' => 'required|string|max:255',
-            'umur' => 'required|string|max:255',
+            'umur' => 'required|integer|max:120', // disarankan menggunakan integer untuk umur
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
-
+        dd('Validation passed');
         User::create([
             'name' => $request->name,
-            'birth_date' => $request->email,
-            'wijk' => $request->email,
-            'emanotelpil' => $request->email,
-            'umur' => $request->email,
+            'birth_date' => $request->birth_date,
+            'wijk' => $request->wijk,
+            'notelp' => $request->notelp,
+            'umur' => $request->umur,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'user',
         ]);
-
-        return redirect()->route('login')->with('status', 'Registration successful! Please log in.');
+        dd($request->all());
+        // return redirect()->route('login')->with('status', 'Registration successful! Please log in.');
     }
 
     // Menampilkan halaman login
