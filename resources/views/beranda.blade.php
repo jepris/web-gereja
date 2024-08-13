@@ -85,7 +85,8 @@
                             <div class="col">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $item->title }}</h5>
-                                    <p class="card-text">{{ $item->description }}</p>
+                                    <p>{{ Str::limit($item->description, 100) }}
+                                    <a href="{{ route('news.show', $item->id) }}">Selengkapnya</a>
                                 </div>
                             </div>
                         </div>

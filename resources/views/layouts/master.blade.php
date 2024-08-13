@@ -43,18 +43,29 @@
                         <a class="nav-link" href="/layanan">Layanan</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/profile" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Akun
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/login">Login</a></li>
-                            <li><a class="dropdown-item" href="/login">Logout</a></li>
                         @auth
+                            <li>
+                                <p>welcome back, {{ auth()->user()->name  }}</p>
+                            </li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                   <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
                             @if (Auth::user()->role === 'admin')
-                                <!-- Item menu khusus admin -->
-                                <li><a href="{{ route('dashboard') }}">Admin Dashboard</a></li>
+                            <!-- Item menu khusus admin -->
+                            <li><a href="{{ route('dashboard') }}">Admin Dashboard</a></li>
                             @endif
+                            
+                        @else
+                            <li><a class="dropdown-item" href="/login">Login</a></li>
+
                         @endauth
                         </ul>
                     </li>

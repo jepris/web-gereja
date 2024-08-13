@@ -25,24 +25,29 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="mb-3">
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name"
+                                placeholder="nama lengkap" required value="{{ old('name') }}">
                                 <label for="name" class="form-label fw-bold">Nama Lengkap</label>
-                                <input type="text" name="name" class="form-control"
-                                    placeholder="nama lengkap" required>
+                                @error('name')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="birth_date" class="form-label fw-bold">Tanggal Lahir</label>
                                 <input type="date" name="birth_date" class="form-control"
-                                    id="birth_date"required>
+                                    id="birth_date"required value="{{ old('birth_date') }}">
                             </div>
                             <div class="mb-3">
                                 <label for="alamat" class="form-label fw-bold">alamat</label>
-                                <input type="text" name="alamat" class="form-control" 
-                                    placeholder="jalan --" required>
+                                <input type="text" name="alamat" class="form-control" id="alamat"
+                                    placeholder="jalan --" required value="{{ old('alamat') }}">
                             </div>
                             <div class="mb-3">
                                 <label for="wijk" class="form-label fw-bold">Wijk</label>
                                 <select class="form-select" name="wijk" aria-label="Default select example"
-                                >
+                                    id="wijk">
                                     @for ($i = 1; $i <= 20; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
@@ -50,21 +55,31 @@
                             </div>
                             <div class="mb-3">
                                 <label for="notelp" class="form-label fw-bold">no, Handphone</label>
-                                <input type="number" name="notelp" class="form-control"  required>
+                                <input type="number" name="notelp" class="form-control" id="notelp" required value="{{ old('notelp') }}">
                             </div>
                             <div class="mb-3">
                                 <label for="umur" class="form-label fw-bold">Umur</label>
-                                <input type="number" name="umur" class="form-control" required>
+                                <input type="number" name="umur" class="form-control" id="umur" required value="{{ old('umur') }}">
                             </div>
                             <div class="mb-3">
+                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                                placeholder="name@example.com" required value="{{ old('email') }}">
                                 <label for="email" class="form-label fw-bold">Email address</label>
-                                <input type="email" name="email" class="form-control" 
-                                    placeholder="name@example.com" required>
+                                @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
+                                <input type="password" name="password" class="form-control @error('name') is-invalid @enderror"
+                                id="password" required>
                                 <label for="password" class="form-label fw-bold">Password</label>
-                                <input type="password" name="password" class="form-control"
-                                     required>
+                                @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
                             <div>
                                 <button type="submit">Register</button>

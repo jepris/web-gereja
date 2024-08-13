@@ -13,19 +13,35 @@
         <!-- form box -->
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                @if(Session::has('message'))
+                    <div id="success-alert" class="alert alert-success">
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <h2>
                         <!-- <ion-icon name="ticket-outline"></ion-icon> -->
                         Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="number" class="form-control" id="exampleFormControlInput1" required>
-                        <label for="exampleFormControlInput1" class="form-label fw-bold">No. Handphone</label>
+                        <input type="number" class="form-control  @error('notelp') is-invalid @enderror" id="notelp" name="notelp" required value="{{ old('notelp') }}>
+                        <label for="notelp" class="form-label fw-bold">No. Handphone</label>
+                        @error('notelp')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                        @enderror
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" class="form-control" id="exampleFormControlInput1" required>
-                        <label for="exampleFormControlInput1" class="form-label fw-bold">Password</label>
+                        <input type="password" class="form-control  @error('password') is-invalid @enderror" id="password" name="password" required>
+                        <label for="password" class="form-label fw-bold">Password</label>
+                        @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                        @enderror
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember me | <a href="#"><b>Forget Password</b></a></label>

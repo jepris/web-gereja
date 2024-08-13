@@ -27,10 +27,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register.form');
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register.form')->middleware('guest');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form')->middleware('guest');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -106,7 +106,7 @@ Route::get('/tentang', [DashboardController::class, 'tentang']);
 Route::get('/layanan', [DashboardController::class, 'layanan']);
 Route::get('/hurias', [CreateController::class, 'index'])->name('hurias.index');
 Route::get('/tentang', [CreateController::class, 'tentang'])->name('tentang.tentang');
-
+Route::get('/warta-jemaat/{id}', [DashboardController::class, 'shownews'])->name('news.show');
 // post function
 
 
