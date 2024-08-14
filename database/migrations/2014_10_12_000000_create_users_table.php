@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('birth_date');
-            $table->date('alamat');
-            $table->date('wijk');
-            $table->date('notelp');
-            $table->date('umur');
+            $table->string('alamat');
+            $table->string('wijk');
+            $table->bigInteger('notelp');
+            $table->string('umur');
             $table->string('role')->default('user');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

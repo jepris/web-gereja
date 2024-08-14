@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg border-bottom border-2 border-primary mb-3">
         <div class="container">
@@ -67,7 +67,7 @@
     @yield('content')
 
     <!-- contact person -->
-    <section>
+    <section class="footer mt-auto bg-light">
         <div class="contact-person">
             <div class="row">
                 <div class="col-4 cpntact-us">
@@ -115,15 +115,8 @@
         </div>
     </section>
     <!-- footer -->
-    <footer>
+    <footer >
         <p>All Rights Reserved. © 2024 HKBP PERUMNAS BATU ONOM</p>
-
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-
         <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
     </footer>
 

@@ -114,7 +114,7 @@
                             <tr>
                                 <td>Atau anda dapat mengirim pesan</td>
                                 <td> : <button type="button" class="btn btn-success" >
-                                    <a href="/hurias/newkontak" role="button">Disini</a>
+                                    <a href="/hurias/newkontak" style="text-decoration: none;color:white" role="button">Disini</a>
                                   </button></td>
                             </tr>
                         </tbody>

@@ -31,9 +31,9 @@ class AuthController extends Controller
         User::create([
             'name' => $request->name,
             'birth_date' => $request->email,
-            'wijk' => $request->email,
-            'emanotelpil' => $request->email,
-            'umur' => $request->email,
+            'wijk' => $request->wijk,
+            'notelp' => $request->notelp,
+            'umur' => $request->umur,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'user',
@@ -85,6 +85,6 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('/');
     }
 }

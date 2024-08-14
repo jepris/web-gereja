@@ -4,6 +4,7 @@
 <div class="container">
     <section class="mt-5 mb-4">
         <div class="galleri">
+            <h3 class="fw-bold">Galeri Foto HKBP Perumnas Batu Onom</h3>
             @foreach ($galeri as $item)
             <div class="row">
                 <div class="col">
