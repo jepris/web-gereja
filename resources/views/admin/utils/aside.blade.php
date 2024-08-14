@@ -68,8 +68,13 @@
                             Akun
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Beranda</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="/beranda">Beranda</a></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                   <button type="submit" class="dropdown-item mt-2">Logout</button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </li>

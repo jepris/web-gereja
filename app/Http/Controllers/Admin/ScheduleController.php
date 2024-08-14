@@ -25,6 +25,7 @@ class ScheduleController extends Controller
         $request->validate([
             'nama_ibadah'=> 'required', 
             'hari'=> 'required', 
+            'jam'=> 'required', 
             'keterangan'=> 'required',
         ]);
 
@@ -42,7 +43,8 @@ class ScheduleController extends Controller
         $request->validate([
             'nama_ibadah' => 'required',
             'hari' => 'required',
-            'waktu' => 'required',
+            'jam' => 'required',
+            'keterangan' => 'required',
         ]);
 
         $schedule->update($request->all());

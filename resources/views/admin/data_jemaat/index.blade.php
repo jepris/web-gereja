@@ -37,7 +37,7 @@
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"
                                             data-target="#editdata{{ $data->id }}">Edit</button>
-                                        <form action="{{ route('admin-jemaat.destroy', $data->id) }}" method="POST">
+                                        <form action="{{ route('jemaat.destroy', $data->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>

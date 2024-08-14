@@ -23,25 +23,30 @@
                     <h2>
                         <!-- <ion-icon name="ticket-outline"></ion-icon> -->
                         Login</h2>
-                    <div class="inputbox">
+                        <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="number" class="form-control" id="exampleFormControlInput1" required>
-                        <label for="exampleFormControlInput1" class="form-label fw-bold">No. Handphone</label>
-                    </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" class="form-control  @error('password') is-invalid @enderror" id="password" name="password" required>
-                        <label for="password" class="form-label fw-bold">Password</label>
-                        @error('password')
+                        <input type="number" class="form-control  @error('notelp') is-invalid @enderror" id="notelp" name="notelp" required value="{{ old('notelp') }}">
+                        <label for="notelp" class="form-label fw-bold">No. Handphone</label>
+                        @error('notelp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                         @enderror
                     </div>
+                        <div class="inputbox">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            <input type="password" class="form-control  @error('password') is-invalid @enderror" id="password" name="password" required>
+                            <label for="password" class="form-label fw-bold">Password</label>
+                            @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                            @enderror
+                        </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember me | <a href="#"><b>Forget Password</b></a></label>
                     </div>
-                    <button class="button" type="submit">Log in</button>
+                    <button class="button">Log in</button>
                     <div class="register">
                         <p>Don't Have a Account |
                             <a href="/register" class="a-register">

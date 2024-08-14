@@ -15,6 +15,7 @@
                         <tr class="text-center">
                             <th scope="col">Nama Ibadah</th>
                             <th scope="col">Hari</th>
+                            <th scope="col">Jam</th>
                             <th scope="col">Jadawl Ibadah</th>
                             <th scope="col" c>Action</th>
                         </tr>
@@ -24,6 +25,7 @@
                             <tr>
                                 <td>{{ $data->name }}</td>
                                 <td>{{ $data->hari }}</td>
+                                <td>{{ $data->jam }}</td>
                                 <td>{{ $data->keterangan ? \Carbon\Carbon::parse($data->keterangan)->format('H:i') : '-' }}</td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
