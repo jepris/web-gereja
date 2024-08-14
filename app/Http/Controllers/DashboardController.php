@@ -24,6 +24,11 @@ class DashboardController extends Controller
         $wartajemaat= Warta::all();
         return view('warta', compact('news','wartajemaat'));
     }
+    public function shownews($id)
+    {
+        $news = News::findOrFail($id);
+        return view('berita', compact('news'));
+    }
     public function downloadWarta($filename)
     {
         $filePath = public_path("warta/{$filename}");

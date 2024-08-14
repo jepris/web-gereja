@@ -17,8 +17,8 @@ return new class extends Migration
             $table->date('birth_date');
             $table->string('alamat');
             $table->string('wijk');
-            $table->bigInteger('notelp');
-            $table->string('umur');
+            $table->string('notelp');
+            $table->integer('umur');
             $table->string('role')->default('user');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
