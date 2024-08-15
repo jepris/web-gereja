@@ -44,7 +44,7 @@ class ScheduleController extends Controller
             'nama_ibadah' => 'required',
             'hari' => 'required',
             'jam' => 'required',
-            'keterangan' => 'required',
+            'waktu' => 'required',
         ]);
 
         $schedule->update($request->all());

@@ -72,7 +72,7 @@ class NewsController extends Controller
         ]);
 
         return redirect()->route('news.index')
-            ->with('success', 'Galeri updated successfully.');
+            ->with('success', 'Berita updated successfully.');
     }
 
     public function destroy(News $newss)
@@ -81,7 +81,7 @@ class NewsController extends Controller
         $newss->delete();
 
         return redirect()->route('news.index')
-            ->with('success', 'Galeri deleted successfully.');
+            ->with('success', 'Berita deleted successfully.');
     }
 
 
