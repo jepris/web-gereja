@@ -80,7 +80,7 @@
                         <div class="mb-3">
                             <label for="wijk" class="form-label fw-bold">Wijk</label>
                             <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>{{ $data->wijk }}>
-                                @for ($i = 1; $i <= 20; $i++)
+                                @for ($i = 1; $i <= 16; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
                             </select>

@@ -114,10 +114,10 @@ class DatabaseSeeder extends Seeder
         DB::table('jemaats')->insert([
             [
                 'name' => 'Jepri Simbolon',
-                'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-1945')->format('Y-m-d'),                
+                'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-2002')->format('Y-m-d'),                
                 'alamat' => 'jl. Nalabarca 2',
                 'wijk' => '13',
-                'notelp' => '85212296366',
+                'notelp' => '85212298688',
                 'umur' => '21',
             ],
             // Tambahkan data lainnya jika diperlukan
