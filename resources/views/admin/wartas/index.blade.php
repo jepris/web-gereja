@@ -26,12 +26,20 @@
                                 <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $data->title }}</td>
                                 <td>{{ \Carbon\Carbon::parse($data->date)->format('d-m-Y') }}</td>
-                                <td><a href="{{ asset('storage/' . $data->file) }}" target="_blank">Lihat File</a></td>
+                                {{-- <td align="center">
+                                    <a href="warta/{{ $data->file }}"><button class="btn btn-success" type="button">
+                                        Download</button></a>
+                                </td> --}}
+                                {{-- <td> <a href="{{ route('pdf.show', ['filename' => $data]) }}" target="_blank">Lihat {{ $data }}</a> |</td> --}}
+                                <td>
+                                <a href="{{ route('pdf.download', ['filename' => $data->file]) }}">Download {{ $data->file }}</a>
+
+                                </td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"
                                             data-target="#editdata{{ $data->id }}">Edit</button>
-                                        <form action="{{ route('images.destroy', $data->id) }}" method="POST">
+                                        <form action="{{ route('wartas.destroy', $data->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>

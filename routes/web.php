@@ -52,9 +52,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/nikahs',[LayananController::class, 'indexnikah'])->name('nikahs.indexnikah');
     Route::get('/sakits',[LayananController::class, 'indexsakit'])->name('sakits.indexsakit');
     Route::get('/meninggals',[LayananController::class, 'indexmeninggal'])->name('meninggals.indexmeninggal');
+    Route::get('/kontaks',[LayananController::class, 'indexkontak'])->name('kontaks.indexkontak');
     Route::get('/wartasakit',[LayananController::class, 'wartasakit'])->name('wartasakit');
     Route::get('/wartameninggal',[LayananController::class, 'wartameninggal'])->name('wartameninggal');
     Route::get('/wartanikah',[LayananController::class, 'wartanikah'])->name('wartanikah');
+
+    Route::get('/pdf/{filename}', [WartaController::class, 'show'])->name('pdf.show');
+    Route::get('/download/pdf/{filename}', [WartaController::class, 'download'])->name('pdf.download');
 
     Route::delete('/lahirs/{id}', [LayananController::class, 'destroylahir'])->name('lahirs.destroylahir');
     Route::delete('/pindahs/{id}', [LayananController::class, 'destroypindah'])->name('pindahs.destroypindah');
@@ -63,6 +67,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::delete('/nikahs/{id}', [LayananController::class, 'destroynikah'])->name('nikahs.destroynikah');
     Route::delete('/sakits/{id}', [LayananController::class, 'destroysakit'])->name('sakits.destroysakit');
     Route::delete('/meninggals/{id}', [LayananController::class, 'destroymeninggal'])->name('meninggals.destroymeninggal');
+    Route::delete('/kontaks/{id}', [LayananController::class, 'destroykontak'])->name('kontaks.destroykontak');
 
     Route::put('/lahirs/{id}', [LayananController::class, 'updatelahir'])->name('lahirs.updatelahir');
     Route::put('/pindah/{id}', [LayananController::class, 'updatepindah'])->name('pindahs.updatepindah');
@@ -71,7 +76,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::put('/nikahs/{id}', [LayananController::class, 'updatenikah'])->name('nikahs.updatenikah');
     Route::put('/sakits/{id}', [LayananController::class, 'updatesakit'])->name('sakits.updatesakit');
     Route::put('/meninggals/{id}', [LayananController::class, 'updatemeninggal'])->name('meninggals.updatemeninggal');
+    Route::put('/kontaks/{id}', [LayananController::class, 'updatekontak'])->name('kontaks.updatekontak');
 
+    
 
 });
 

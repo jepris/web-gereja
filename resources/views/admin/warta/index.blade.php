@@ -21,8 +21,9 @@
                                 <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $data->keterangan }}</td>
                                 <td>{{ \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
-                                <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ asset($data->file) }}"
-                                        target="_blank">Download</a></td>
+                                {{-- <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ asset($data->file) }}"
+                                        target="_blank">Download</a></td> --}}
+                                
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"
