@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Baptis;
+use App\Models\Kontak;
 use App\Models\Lahir;
 use App\Models\Meninggal;
 use App\Models\Nikah;
@@ -239,6 +240,32 @@ class LayananController extends Controller
         $meninggal = Meninggal::findOrFail($id);
         $meninggal->delete();
         return redirect()->route('meninggals.indexmeninggal');
+    }
+
+    //kontak
+    public function indexkontak(){
+        $kontaks = Kontak::all();
+        return view('admin.layanan.kontak', compact('kontaks'));
+    }
+
+    public function updatekontak(Request $request,$id){
+        $request->validate([
+            'name' => 'required',
+            'notelp' => 'required',
+            'alamat' => 'required',
+            'email' => 'required',
+            'perihal' => 'required',
+            'keterangan' => 'required',
+        ]);
+        $kontak = Kontak::findOrFail($id);
+        $kontak->update($request->all());
+        return redirect()->route('kontaks.indexkontak');
+    }
+
+    public function destroykontak($id){
+        $kontak = Kontak::findOrFail($id);
+        $kontak->delete();
+        return redirect()->route('kontaks.indexkontak');
     }
 
 

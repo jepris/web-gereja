@@ -68,4 +68,27 @@ class WartaController extends Controller
         
     }
 
+    public function show($filename)
+    {
+        $filePath = public_path("warta/{$filename}");
+
+        if (!file_exists($filePath)) {
+            return abort(404, 'File not found.');
+        }
+
+        return response()->file($filePath);
+    }
+
+    // Untuk mendownload PDF
+    public function download($filename)
+    {
+        $filePath = public_path("warta/{$filename}");
+
+        if (!file_exists($filePath)) {
+            return abort(404, 'File not found.');
+        }
+
+        return response()->download($filePath);
+    }
+
 }
