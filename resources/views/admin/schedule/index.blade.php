@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Keterangan</label>
-                                        <input type="keterangan" name="waktu" class="form-control" value="{{ $schedule->keterangan }}" required>
+                                        <input type="text" name="jam" class="form-control" value="{{ $schedule->keterangan }}" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </form>

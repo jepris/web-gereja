@@ -101,12 +101,14 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="title" class="form-label fw-bold">Title</label>
-                            <textarea name="title" class="form-control" id="title" required>{{ $data->title }}</textarea>
+                            <input type="text" name="title" value="{{ $data->title }}" class="form-control"
+                                id="title" required>
                         </div>
-                            <div class="mb-3">
-                                <label for="description" class="form-label fw-bold">Keterangan</label>
-                                <textarea name="description" class="form-control" id="description" required>{{ $data->description }}</textarea>
-                            </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label fw-bold">Keterangan</label>
+                            <input type="text" name="description" value="{{ $data->description }}"
+                                class="form-control" id="description" required>
+                        </div>
                             <div class="mb-3">
                                 <label for="file" class="form-label fw-bold">Gambar </label>
                                 <input type="file" class="form-control" id="file" name="file"
