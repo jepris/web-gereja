@@ -5,10 +5,10 @@
             <h3 class="mt-3 fw-bold">Berita HKBP Perumnas Batu Onom</h3>
             <button class="btn btn-success mb-3" data-toggle="modal" data-target="#createdata">+ Tambah Data</button>
             @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <div class="data-jemaat">
                 <table class="table table-bordered border border-dark border-3">
                     <thead class="">
@@ -25,7 +25,7 @@
                             <tr>
                                 <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $data->title }}</td>
-                                <td>{{ $data->title }}</td>
+                                <td>{{ $data->description }}</td>
                                 <td><img src="{{ asset('storage/' . $data->file) }}" width="100"></td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
@@ -57,24 +57,27 @@
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="title" class="form-label fw-bold">Title</label>
-                        <textarea class="form-control" name="title" id="title"></textarea>
-                      </div>
+                    <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="title" class="form-label fw-bold">Title</label>
+                            <input type="text" class="form-control" name="title" id="title">
+                        </div>
                         <div class="mb-3">
                             <label for="description" class="form-label fw-bold">Keterangan</label>
-                            <textarea class="form-control" name="description" id="description"></textarea>
+                            <input class="form-control" type="text" name="description" id="description">
                         </div>
                         <div class="mb-3">
                             <label for="file" class="form-label fw-bold">Gambar </label>
-                            <input type="file" name="file" class="form-control" id="file" accept=".jpg, .jpeg, .png, .gif, .svg" required>
+                            <input type="file" name="file" class="form-control" id="file"
+                                accept=".jpg, .jpeg, .png, .gif, .svg" required>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Save changes</button>
-                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Save changes</button>
+                </div>
+                </form>
                 </form>
             </div>
         </div>
@@ -98,21 +101,24 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="title" class="form-label fw-bold">Title</label>
-                            <textarea name="title" class="form-control" id="title" required>{{ $data->title }}</textarea>
+                            <input type="text" name="title" value="{{ $data->title }}" class="form-control"
+                                id="title" required>
                         </div>
-                            <div class="mb-3">
-                                <label for="description" class="form-label fw-bold">Keterangan</label>
-                                <textarea name="description" class="form-control" id="description" required>{{ $data->description }}</textarea>
-                            </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label fw-bold">Keterangan</label>
+                            <input type="text" name="description" value="{{ $data->description }}"
+                                class="form-control" id="description" required>
+                        </div>
                             <div class="mb-3">
                                 <label for="file" class="form-label fw-bold">Gambar </label>
-                                <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png, .gif, .svg" required>
+                                <input type="file" class="form-control" id="file" name="file"
+                                    accept=".jpg, .jpeg, .png, .gif, .svg" required>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">Save changes</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Save changes</button>
+                    </div>
                 </div>
             </div>
         </div>

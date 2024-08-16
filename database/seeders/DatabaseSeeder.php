@@ -111,18 +111,31 @@ class DatabaseSeeder extends Seeder
         //     // Tambahkan data lainnya jika diperlukan
         // ]);
 
-        DB::table('jemaats')->insert([
+        // DB::table('jemaats')->insert([
+        //     [
+        //         'name' => 'Jepri Simbolon',
+        //         'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-1945')->format('Y-m-d'),                
+        //         'alamat' => 'jl. Nalabarca 2',
+        //         'wijk' => '13',
+        //         'notelp' => '85212296366',
+        //         'umur' => '21 Tahun',
+        //     ],
+        //     // Tambahkan data lainnya jika diperlukan
+        // ]);
+        DB::table('users')->insert([
             [
-                'name' => 'Jepri Simbolon',
-                'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-2002')->format('Y-m-d'),                
-                'alamat' => 'jl. Nalabarca 2',
+                'name' => 'admin',
+                'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-2002')->format('Y-m-d'),
+                'alamat' => 'jalan angsana',
                 'wijk' => '13',
-                'notelp' => '85212298688',
+                'notelp' => '085212298588',
                 'umur' => '21',
-            ],
-            // Tambahkan data lainnya jika diperlukan
-        ]);
+                'email' => 'admin@gmail.com',
+                'password' => 'admin123',
+                'role' => 'admin',
+            ]
+            ]);
 
-        News::factory()->count(5)->create();
+                    News::factory()->count(5)->create();
     }
 }

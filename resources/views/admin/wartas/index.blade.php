@@ -32,8 +32,10 @@
                                 </td> --}}
                                 {{-- <td> <a href="{{ route('pdf.show', ['filename' => $data]) }}" target="_blank">Lihat {{ $data }}</a> |</td> --}}
                                 <td>
-                                <a href="{{ route('pdf.download', ['filename' => $data->file]) }}">Download {{ $data->file }}</a>
-
+                                {{-- <a href="{{ route('pdf.download', ['filename' => $data->file]) }}">Download {{ $data->file }}</a> --}}
+                                <a href="{{ route('wartas.show', $data->id) }}" target="_blank">Lihat PDF</a> |
+                                <a class="btn btn-success" href="{{ asset($data->file) }}"
+                                    target="_blank">Download</a>
                                 </td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">

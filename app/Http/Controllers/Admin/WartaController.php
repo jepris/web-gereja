@@ -38,14 +38,15 @@ class WartaController extends Controller
 
     }
 
-    public function update(Request $request, Warta $warta){
+    public function update(Request $request, $id){
         $request->validate([
             'title' => 'required',
             'date' => 'required|date ',
             'file' => 'required|mimes:pdf|max:15728640'
         ]);
+        $warta = Warta::findOrFail($id);
 
-        $data = $request->only('nama_minggu','tanggal');
+        $data = $request->only('title','date');
         if($request->hasFile('file')){
             if ($warta->file && file_exists(public_path($warta->file))) {
                 unlink(public_path($warta->file));
@@ -62,33 +63,33 @@ class WartaController extends Controller
         return redirect()->route('wartas.index');
     }
 
-    public function destroy(Warta $warta){
-        $warta->delete();
-        return redirect()->route('warta.index');
+    public function destroy($id){
+        $warta = Warta::findOrFail($id);
+    if ($warta->file && file_exists(public_path($warta->file))) {
+        unlink(public_path($warta->file));
+    }
+
+    $warta->delete();
+
+    return redirect()->route('wartas.index')
+        ->with('success', 'Warta deleted successfully.');
         
     }
 
-    public function show($filename)
+    public function show($id)
     {
-        $filePath = public_path("warta/{$filename}");
+        $file = Warta::findOrFail($id);
+        $filePath = public_path("warta/{$file->file}");
 
         if (!file_exists($filePath)) {
             return abort(404, 'File not found.');
+        }
+
+        if (request()->has('download')) {
+            return response()->download($filePath);
         }
 
         return response()->file($filePath);
-    }
-
-    // Untuk mendownload PDF
-    public function download($filename)
-    {
-        $filePath = public_path("warta/{$filename}");
-
-        if (!file_exists($filePath)) {
-            return abort(404, 'File not found.');
-        }
-
-        return response()->download($filePath);
     }
 
 }
