@@ -50,17 +50,18 @@ class GaleriController extends Controller
         return view('images.edit', compact('image'));
     }
 
-    public function update(Request $request, Galeri $image)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'required',
             'date' => 'required|date',
             'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
+        $image = Galeri::findOrFail($id);
+        $imagePath = $image->file;
         if ($request->hasFile('file')) {
             Storage::delete('public/' . $image->file);
-            $imagePath = $request->file('gambar')->store('images', 'public');
+            $imagePath = $request->file('file')->store('images', 'public');
         } else {
             $imagePath = $image->file;
         }
@@ -75,9 +76,14 @@ class GaleriController extends Controller
             ->with('success', 'Galeri updated successfully.');
     }
 
-    public function destroy(Galeri $image)
+    public function destroy($id)
     {
-        Storage::delete('public/' . $image->file);
+        $image = Galeri::findOrFail($id);
+
+        // Hapus file dari storage jika ada
+        if ($image->file && Storage::exists('public/' . $image->file)) {
+            Storage::delete('public/' . $image->file);
+        }
         $image->delete();
 
         return redirect()->route('images.index')

@@ -26,6 +26,7 @@ class ScheduleController extends Controller
         $request->validate([
             'nama_ibadah'=> 'required', 
             'hari'=> 'required', 
+            'hari'=> 'required', 
             'jam'=> 'required', 
             'keterangan'=> 'required',
         ]);
@@ -48,9 +49,7 @@ class ScheduleController extends Controller
             'keterangan' => 'required',
         ]);
 
-        // $schedule = Schedule::findOrFail($id);
-        // $schedule->update($request->all());
-        Schedule::find($id)->update($request->all());
+        $schedule->update($request->all());
         return redirect()->route('schedule.index')->with('success', 'Jadwal ibadah berhasil diperbarui.');
     }
 

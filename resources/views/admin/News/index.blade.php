@@ -96,18 +96,16 @@
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('news.update', $data->id) }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            @method('PUT')
-                            <div class="mb-3">
-                                <label for="title" class="form-label fw-bold">Title</label>
-                                <input type="text" name="title" value="{{ $data->title }}" class="form-control"
-                                    id="title" required>
-                            </div>
+                    <form action="{{ route('news.update', $data->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="mb-3">
+                            <label for="title" class="form-label fw-bold">Title</label>
+                            <textarea name="title" class="form-control" id="title" required>{{ $data->title }}</textarea>
+                        </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label fw-bold">Keterangan</label>
-                                <input type="text" name="description" value="{{ $data->description }}"
-                                    class="form-control" id="description" required>
+                                <textarea name="description" class="form-control" id="description" required>{{ $data->description }}</textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="file" class="form-label fw-bold">Gambar </label>
