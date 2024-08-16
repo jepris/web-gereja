@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class ScheduleController extends Controller
 {
@@ -25,6 +26,7 @@ class ScheduleController extends Controller
         $request->validate([
             'nama_ibadah'=> 'required', 
             'hari'=> 'required', 
+            'jam'=> 'required', 
             'keterangan'=> 'required',
         ]);
 
@@ -37,15 +39,18 @@ class ScheduleController extends Controller
         return view('schedule.edit', compact('jadwalIbadah'));
     }
 
-    public function update(Request $request, Schedule $schedule)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nama_ibadah' => 'required',
             'hari' => 'required',
-            'waktu' => 'required',
+            'jam' => 'required',
+            'keterangan' => 'required',
         ]);
 
-        $schedule->update($request->all());
+        // $schedule = Schedule::findOrFail($id);
+        // $schedule->update($request->all());
+        Schedule::find($id)->update($request->all());
         return redirect()->route('schedule.index')->with('success', 'Jadwal ibadah berhasil diperbarui.');
     }
 

@@ -50,38 +50,47 @@ class NewsController extends Controller
         return view('news.edit', compact('newss'));
     }
 
-    public function update(Request $request, News $newss)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'required',
             'description' => 'required',
             'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
+        $news = News::findOrFail($id);
+        $imagePath = $news->file;
+        // if ($request->hasFile('file')) {
+        //     Storage::delete('public/' . $newss->file);
+        //     $imagePath = $request->file('file')->store('images', 'public');
+        // } else {
+        //     $imagePath = $newss->file;
+        // }
         if ($request->hasFile('file')) {
-            Storage::delete('public/' . $newss->file);
+            if (Storage::exists('public/' . $imagePath)) {
+                Storage::delete('public/' . $imagePath);
+            }
             $imagePath = $request->file('file')->store('images', 'public');
-        } else {
-            $imagePath = $newss->file;
         }
 
-        $newss->update([
+        $news->update([
             'title' => $request->title,
             'description' => $request->description,
             'file' => $imagePath,
         ]);
 
         return redirect()->route('news.index')
-            ->with('success', 'Galeri updated successfully.');
+            ->with('success', 'News updated successfully.');
     }
 
-    public function destroy(News $newss)
+    public function destroy($id)
     {
-        Storage::delete('public/' . $newss->file);
-        $newss->delete();
-
+        $news = News::findOrFail($id);
+        if ($news->file && Storage::exists('public/' . $news->file)) {
+            Storage::delete('public/' . $news->file);
+        }
+        $news->delete();
         return redirect()->route('news.index')
-            ->with('success', 'Galeri deleted successfully.');
+            ->with('success', 'news deleted successfully.');
     }
 
 

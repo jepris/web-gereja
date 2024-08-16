@@ -11,9 +11,6 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-        @if (session('success'))
-            <div class="alert alert-success mt-3">{{ session('success') }}</div>
-        @endif
         <div class="data-jemaat">
             <table class="table table-bordered border border-dark border-3">
                 <thead class="">
@@ -21,6 +18,7 @@
                         <th scope="col">No.</th>
                         <th scope="col">Nama Ibadah</th>
                         <th scope="col">Hari</th>
+                        <th scope="col">Jam</th>
                         <th scope="col">Keterangan</th>
                         <th scope="col" c>Action</th>
                     </tr>
@@ -32,6 +30,7 @@
                         <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                         <td>{{ $schedule-> nama_ibadah}}</td>
                         <td>{{ $schedule-> hari}}</td>
+                        <td>{{ $schedule-> jam}}</td>
                         <td>{{ $schedule-> keterangan}}</td>
                         <td class="text-center">
                             <div class="action">
@@ -64,8 +63,12 @@
                                         <input type="text" name="hari" class="form-control" value="{{ $schedule->hari }}" required>
                                     </div>
                                     <div class="form-group">
+                                        <label>Jam</label>
+                                        <input type="text" name="jam" class="form-control" value="{{ $schedule->jam }}" required>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Keterangan</label>
-                                        <input type="keterangan" name="waktu" class="form-control" value="{{ $schedule->keterangan }}" required>
+                                        <input type="text" name="keterangan" class="form-control" value="{{ $schedule->keterangan }}" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </form>
@@ -121,6 +124,10 @@
                         <div class="form-group">
                             <label>Hari</label>
                             <input type="text" name="hari" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Jam</label>
+                            <input type="text" name="jam" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Keterangan</label>
