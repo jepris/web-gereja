@@ -38,13 +38,13 @@ class KeuanganController extends Controller
 
     }
 
-    public function update(Request $request, Keuangan $keuangan){
+    public function update(Request $request, $id){
         $request->validate([
             'tanggal' => 'required|date',
             'birth_date' => 'required',
             'file' => 'sometimes|mimes:pdf|max:15728640'
         ]);
-
+        $keuangan = Keuangan::findOrFail($id);
         $data = $request->only('tanggal', 'keterangan');
         if($request->hasFile('file')){
             if ($keuangan->file && file_exists(public_path($keuangan->file))) {
@@ -60,6 +60,28 @@ class KeuanganController extends Controller
         $keuangan->update($data);
 
         return redirect()->route('keuangan.index');
+    // public function update(Request $request, Keuangan $keuangan){
+    //     $request->validate([
+    //         'tanggal' => 'required|date',
+    //         'birth_date' => 'required',
+    //         'file' => 'sometimes|mimes:pdf|max:15728640'
+    //     ]);
+
+    //     $data = $request->only('tanggal', 'keterangan');
+    //     if($request->hasFile('file')){
+    //         if ($keuangan->file && file_exists(public_path($keuangan->file))) {
+    //             unlink(public_path($keuangan->file));
+    //         }
+    //         $file = $request->file('file');
+    //         $fileName = time().'_'.$file->getClientOriginalName();
+    //         $filePath = 'files/' . $fileName;
+    //         $file->move(public_path('files'), $fileName);
+        
+    //     $data['file'] = $filePath;
+    //     }
+    //     $keuangan->update($data);
+
+    //     return redirect()->route('keuangan.index');
     }
 
     public function destroy(Keuangan $keuangan){

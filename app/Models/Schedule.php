@@ -11,6 +11,7 @@ class Schedule extends Model
     protected $fillable = [
         'nama_ibadah', 
         'hari', 
+        'jam', 
         'keterangan'
     ];
 }

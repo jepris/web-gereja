@@ -80,7 +80,20 @@ class DatabaseSeeder extends Seeder
         //     ],
         //     // Tambahkan data lainnya jika diperlukan
         // ]);
+        DB::table('users')->insert([
+            [
+                'name' => 'admin',
+                'birth_date' => Carbon::createFromFormat('d-m-Y', '24-02-2002')->format('Y-m-d'),
+                'alamat' => 'jalan angsana',
+                'wijk' => '13',
+                'notelp' => '085212298588',
+                'umur' => '21',
+                'email' => 'admin@gmail.com',
+                'password' => 'admin123',
+                'role' => 'admin',
+            ]
+            ]);
 
-        News::factory()->count(5)->create();
+                    News::factory()->count(5)->create();
     }
 }

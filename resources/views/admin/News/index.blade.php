@@ -25,7 +25,7 @@
                             <tr>
                                 <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $data->title }}</td>
-                                <td>{{ $data->title }}</td>
+                                <td>{{ $data->description }}</td>
                                 <td><img src="{{ asset('storage/' . $data->file) }}" width="100"></td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
@@ -98,12 +98,14 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="title" class="form-label fw-bold">Title</label>
-                            <textarea name="title" class="form-control" id="title" required>{{ $data->title }}</textarea>
+                            <input type="text" name="title" value="{{ $data->title }}" class="form-control"
+                                id="title" required>
                         </div>
-                            <div class="mb-3">
-                                <label for="description" class="form-label fw-bold">Keterangan</label>
-                                <textarea name="description" class="form-control" id="description" required>{{ $data->description }}</textarea>
-                            </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label fw-bold">Keterangan</label>
+                            <input type="text" name="description" value="{{ $data->description }}"
+                                class="form-control" id="description" required>
+                        </div>
                             <div class="mb-3">
                                 <label for="file" class="form-label fw-bold">Gambar </label>
                                 <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png, .gif, .svg" required>
