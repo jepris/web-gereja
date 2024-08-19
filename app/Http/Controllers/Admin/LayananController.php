@@ -34,7 +34,7 @@ class LayananController extends Controller
         ]);
         $lahir = Lahir::findOrFail($id);
         $lahir->update($request->all());
-        return redirect()->route('lahirs.indexlahir');
+        return redirect()->route('lahirs.indexlahir')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroylahir($id){
@@ -60,7 +60,7 @@ class LayananController extends Controller
         ]);
         $pindah = Pindah::findOrFail($id);
         $pindah->update($request->all());
-        return redirect()->route('pindahs.indexpindah');
+        return redirect()->route('pindahs.indexpindah')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroypindah($id){
@@ -86,7 +86,7 @@ class LayananController extends Controller
         ]);
         $baptis = Baptis::findOrFail($id);
         $baptis->update($request->all());
-        return redirect()->route('baptis.indexbaptis');
+        return redirect()->route('baptis.indexbaptis')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroybaptis( $id){
@@ -155,7 +155,7 @@ class LayananController extends Controller
         $fileRecord->fileakte = $fileName1;
         $fileRecord->filebaptis = $fileName2;
         $fileRecord->save();
-        return redirect()->route('sidis.indexsidi');
+        return redirect()->route('sidis.indexsidi')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroysidi($id){
@@ -181,7 +181,7 @@ class LayananController extends Controller
         ]);
         $nikah = Nikah::findOrFail($id);
         $nikah->update($request->all());
-        return redirect()->route('nikahs.indexnikah');
+        return redirect()->route('nikahs.indexnikah')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroynikah($id){
@@ -207,7 +207,7 @@ class LayananController extends Controller
         ]);
         $sakit = Sakit::findOrFail($id);
         $sakit->update($request->all());
-        return redirect()->route('sakits.indexsakit');
+        return redirect()->route('sakits.indexsakit')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroysakit($id){
@@ -233,7 +233,7 @@ class LayananController extends Controller
         ]);
         $meninggal = Meninggal::findOrFail($id);
         $meninggal->update($request->all());
-        return redirect()->route('meninggals.indexmeninggal');
+        return redirect()->route('meninggals.indexmeninggal')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroymeninggal($id){
@@ -259,7 +259,7 @@ class LayananController extends Controller
         ]);
         $kontak = Kontak::findOrFail($id);
         $kontak->update($request->all());
-        return redirect()->route('kontaks.indexkontak');
+        return redirect()->route('kontaks.indexkontak')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroykontak($id){

@@ -76,7 +76,7 @@
             <div class="row">
                 @foreach ($news   as $item)
                 <div class="col-6 konten-coloum">
-                    <a href="">
+                    <a href="{{ route('news.show', $item->id) }}">
                         <div class="row">
                             <div class="col">
                                 <img src="{{ asset('storage/' . $item->file) }}" class="galeri-img" alt="{{ $item->title }}">

@@ -24,7 +24,7 @@
                             <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                             <td>{{ $data->name }}</td>
                             <td>{{ $data->wijk }}</td>
-                            <td>{{ $data->notelp }}</td>
+                            <td>0{{ $data->notelp }}</td>
                             <td>{{ $data->alamat }}</td>
                             <td>{{ $data->email }}</td>
                             <td>{{ $data->keterangan }}</td>

@@ -104,7 +104,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <p class="text-center fw-bold">Sudah punya akun ? <span><a href="/register"
+                                <p class="text-center fw-bold">Sudah punya akun ? <span><a href="/login"
                                             class="text-decoration-none fw-bold" style="color: blue;">Login</a></span>
                                 </p>
                                 <div class="d-flex justify-content-center">

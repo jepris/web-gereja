@@ -57,17 +57,16 @@
                             <!-- Item menu khusus admin -->
                             <li><a href="{{ route('dashboard') }}" class="ms-3" style="text-decoration: none;color:black;"">Admin Dashboard</a></li>
                             @endif
-                            
-                        @else
-                            <li><a class="dropdown-item" href="/login">Login</a></li>
-
-                        @endauth
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                    <button type="submit" class="dropdown-item mt-2">Logout</button>
                                 </form>
                             </li>
+                        @else
+                            <li><a class="dropdown-item" href="/login">Login</a></li>
+
+                        @endauth
                         </ul>
                     </li>
                 </ul>

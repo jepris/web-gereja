@@ -84,7 +84,7 @@ class CreateController extends Controller
 
         // Session::flash('message', 'Data berhasil disimpan!');
         return redirect()->route('hurias.index')
-            ->with('message', 'Data created successfully.');
+            ->with('message', 'Pendataan Jemaat Lahir Berhasil Terkirim');
     }
     public function storebaptis(Request $request)
     {
@@ -108,7 +108,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-            ->with('message', 'Data created successfully.');
+            ->with('message', 'Pendataan Jemaat Baptis Berhasil Terkirim');
     }
     public function storesidi(Request $request)
     {
@@ -149,7 +149,7 @@ class CreateController extends Controller
         $fileRecord->save();
 
         return redirect()->route('hurias.index')
-            ->with('message', 'Data created successfully.');
+            ->with('message', 'Pendataan Jemaat Sidi Berhasil Terkirim');
     }
     public function storenikah(Request $request)
     {
@@ -175,7 +175,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-            ->with('message', 'Data created successfully.');
+            ->with('message', 'Pendataan Jemaat Nikah Berhasil Terkirim');
     }
     public function storesakit(Request $request)
     {
@@ -200,7 +200,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-        ->with('message', 'Data created successfully.');
+        ->with('message', 'Pendataan Jemaat Sakit Berhasil Terkirim');
     }
     public function storepindah(Request $request)
     {
@@ -226,7 +226,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-        ->with('message', 'Data created successfully.');
+        ->with('message', 'Pendataan Jemaat Pindah Berhasil Terkirim');
     }
     public function storemeninggal(Request $request)
     {
@@ -251,7 +251,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-        ->with('message', 'Data created successfully.');
+        ->with('message', 'Pendataan Jemaat Meninggal Berhasil Terkirim');
     }
     public function storekontak(Request $request)
     {
@@ -276,7 +276,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('tentang.tentang')
-        ->with('message', 'Data created successfully.');
+        ->with('message', 'Layanan Kontak Berhasil Terkirim');
     }
 
 }

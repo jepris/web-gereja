@@ -3,6 +3,11 @@
 @section('title', 'Tentang - HKBP Perumnas Batu Onom')
 @section('content')
     <div class="container">
+        @if (Session::has('message'))
+            <div id="success-alert" class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
         <div class="image">
             <img src="/img/aset4.jpg" class="tentang-image1" alt="foto lebar parhalado/gereja">
         </div>
@@ -17,7 +22,8 @@
                             <img src="{{ asset('/img/aset1.jpg') }}" class="tentang-gereja-image1" alt="foto gereja">
                         </div>
                         <div class="col-8 mt-4">
-                            <h3 class="ms-4 fw-bold" style="text-decoration: underline">Sejarah Gereja HKBP Perumnas Batu Onom</h3>
+                            <h3 class="ms-4 fw-bold" style="text-decoration: underline">Sejarah Gereja HKBP Perumnas Batu
+                                Onom</h3>
                             <p><span class="fw-bold" style="color: blue; font-size:1.7rem;">P</span>ada tanggal 13 Maret
                                 1983 merupakan hari kelahiran HKBP Perumnas Batu Onom karena pada hari
                                 Minggu tersebut merupakan kebaktian minggu yang pertama dan dilakukan di Gedung SD No 126915
@@ -43,40 +49,48 @@
                             <p class="fw-bold">Misi HKBP Perumnas Batu Onom : </p>
                             <ul style="list-style: none">
                                 <li>
-                                    <p><span class="fw-bold">1. </span>Beribadah kepada Allah Tri Tunggal Bapa, Anak dan Roh Kudus dan bersekutu dengan
+                                    <p><span class="fw-bold">1. </span>Beribadah kepada Allah Tri Tunggal Bapa, Anak dan Roh
+                                        Kudus dan bersekutu dengan
                                         saudara - saudara seiman</p>
                                 </li>
                                 <li>
-                                    <p><span class="fw-bold">2. </span>mendidik warga jemaat supaya sungguh - sungguh menjadi anak Allah dan warganegara
+                                    <p><span class="fw-bold">2. </span>mendidik warga jemaat supaya sungguh - sungguh
+                                        menjadi anak Allah dan warganegara
                                         yang
                                         baik</p>
                                 </li>
                                 <li>
-                                    <p><span class="fw-bold">3. </span>Mengabarkan Injil kepada yang belum mengenal Kristus dan yang sudah menjauh dari
+                                    <p><span class="fw-bold">3. </span>Mengabarkan Injil kepada yang belum mengenal Kristus
+                                        dan yang sudah menjauh dari
                                         gereja
                                     </p>
 
                                 </li>
                                 <li>
-                                    <p><span class="fw-bold">4. </span> Mendoakan dan menyampaikan pesan kenabian kepada masyarakat dan Negara</p>
+                                    <p><span class="fw-bold">4. </span> Mendoakan dan menyampaikan pesan kenabian kepada
+                                        masyarakat dan Negara</p>
                                 </li>
                                 <li>
-                                    <p><span class="fw-bold">5. </span>Menggarami dan menerangi budaya Batak, Indonesia dan Global dengan Injil</p>
+                                    <p><span class="fw-bold">5. </span>Menggarami dan menerangi budaya Batak, Indonesia dan
+                                        Global dengan Injil</p>
 
 
                                 </li>
                                 <li>
-                                    <p><span class="fw-bold">6. </span>Memulihkan harkat dan martabat orang kecil dan tersisij melalui pendidikan,
+                                    <p><span class="fw-bold">6. </span>Memulihkan harkat dan martabat orang kecil dan
+                                        tersisij melalui pendidikan,
                                         kesehatan
                                         dan
                                         pemberdayaan ekonomi masyarakat</p>
                                 </li>
                                 <li>
-                                    <p><span class="fw-bold">7. </span>Mengembangkan kerjasama oikumene antar gereja dan membangun dialog lintas agama
+                                    <p><span class="fw-bold">7. </span>Mengembangkan kerjasama oikumene antar gereja dan
+                                        membangun dialog lintas agama
                                     </p>
                                 </li>
                                 <li>
-                                    <p><span class="fw-bold">8. </span>Mengembangkan penatalayanan (pelayan, organisasi, administrasi, keuangan dan aset)
+                                    <p><span class="fw-bold">8. </span>Mengembangkan penatalayanan (pelayan, organisasi,
+                                        administrasi, keuangan dan aset)
                                         yang
                                         bersih, rapih, transparan, akuntabel dan melaksanakan pembangunan gereja</p>
                                 </li>
@@ -113,9 +127,10 @@
                             </tr>
                             <tr>
                                 <td>Atau anda dapat mengirim pesan</td>
-                                <td> : <button type="button" class="btn btn-success" >
-                                    <a href="/hurias/newkontak" style="text-decoration: none;color:white" role="button">Disini</a>
-                                  </button></td>
+                                <td> : <button type="button" class="btn btn-success">
+                                        <a href="/hurias/newkontak" style="text-decoration: none;color:white"
+                                            role="button">Disini</a>
+                                    </button></td>
                             </tr>
                         </tbody>
                     </table>

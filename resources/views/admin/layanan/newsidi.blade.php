@@ -30,7 +30,7 @@
                                 <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $data->wali }}</td>
                                 <td>{{ $data->wijk }}</td>
-                                <td>{{ $data->notelp }}</td>
+                                <td>0{{ $data->notelp }}</td>
                                 <td>{{ $data->alamat }}</td>
                                 <td>{{ $data->email }}</td>
                                 <td>{{ $data->keterangan }}</td>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="notelp" class="form-label fw-bold">No. Handphone</label>
-                            <input type="number" value="08{{ $data->notelp }}" name="notelp" class="form-control"
+                            <input type="number" value="0{{ $data->notelp }}" name="notelp" class="form-control"
                                     id="notelp" required>
                         </div>
                         <div class="mb-3">

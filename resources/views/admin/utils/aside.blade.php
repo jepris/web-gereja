@@ -233,14 +233,13 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="pages/kanban.html" class="nav-link">
-                                {{-- <i class="nav-icon fas fa-columns"></i> --}}
                                 <p>
                                     Rincian Ibadah Mingguan
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="/birthday" class="nav-link">
                                 {{-- <i class="nav-icon far fa-envelope"></i> --}}
