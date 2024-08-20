@@ -13,8 +13,8 @@ class JemaatController extends Controller
 {
     // crud function for data jemaat
     public function index(){
-            $jemaats = Jemaat::paginate(10);
-            return view('admin.data_jemaat.index', compact('jemaats'));
+        $jemaats = Jemaat::orderBy('name', 'asc')->paginate(10);
+        return view('admin.data_jemaat.index', compact('jemaats'));
     }
 
     public function store(Request $request){
@@ -52,7 +52,8 @@ class JemaatController extends Controller
 
     // menarik data jemaat ke dashboard
     public function dashboard(){
-        $jemaats = Jemaat::all();
+        // $jemaats = Jemaat::all();
+        $jemaats = Jemaat::orderBy('name', 'asc')->get();
         return view('admin.dashboard', compact('jemaats'));
     }
 

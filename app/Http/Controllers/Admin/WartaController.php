@@ -12,7 +12,7 @@ class WartaController extends Controller
 {
     //
     public function index(){
-        $wartas = Warta::all();
+        $wartas = Warta::orderBy('created_at', 'desc')->get();
         return view('admin.wartas.index', compact('wartas'));
     }
 

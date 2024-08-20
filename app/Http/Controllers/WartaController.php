@@ -13,7 +13,7 @@ class WartaController extends Controller
     public function index()
     {
         $schedules = Schedule::all();
-        $news = News::orderBy('created_at', 'desc')->take(4)->get();
+        $news = News::orderBy('created_at', 'desc')->get();
         return view('warta', compact('schedules', 'news'));
     }
 
