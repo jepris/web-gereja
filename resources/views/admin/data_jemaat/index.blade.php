@@ -37,14 +37,32 @@
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"
                                             data-target="#editdata{{ $data->id }}">Edit</button>
-                                        <form action="{{ route('jemaat.destroy', $data->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
+                                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $data->id }}">Hapus</button>
                                     </div>
+
                                 </td>
                             </tr>
+                            <div class="modal fade" id="deleteModal{{ $data->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $data->id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalLabel{{ $data->id }}">Hapus data Jemaat Ibadah</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Apakah Anda yakin ingin menghapus Jemaat ini?</p>
+                                            <form action="{{ route('jemaat.destroy', $data->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
                         @endforeach
                     </tbody>
                 </table>
@@ -54,6 +72,7 @@
             </div>
         </div>
     </section>
+    
 
     {{-- create data modal --}}
     <div class="modal fade" id="createdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

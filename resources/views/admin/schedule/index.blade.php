@@ -6,6 +6,11 @@
         <h3 class="mt-3 fw-bold">Jadwal Ibadah HKBP Perumnas Batu Onom</h3>
         <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
         <br><br>
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
         @if (session('success'))
             <div class="alert alert-success mt-3">{{ session('success') }}</div>
         @endif
@@ -16,7 +21,6 @@
                         <th scope="col">No.</th>
                         <th scope="col">Nama Ibadah</th>
                         <th scope="col">Hari</th>
-                        <th scope="col">Jam</th>
                         <th scope="col">Keterangan</th>
                         <th scope="col" c>Action</th>
                     </tr>
@@ -66,7 +70,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Keterangan</label>
-                                        <input type="text" name="keterangan" class="form-control" value="{{ $schedule->keterangan }}" required>
+                                        <input type="text" name="jam" class="form-control" value="{{ $schedule->keterangan }}" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </form>
