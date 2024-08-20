@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use Carbon\Carbon;
 use App\Models\Sidi;
+use App\Models\User;
 use App\Models\Lahir;
 use App\Models\Nikah;
 use App\Models\Sakit;
@@ -12,11 +13,12 @@ use App\Models\Pindah;
 use App\Models\Meninggal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 
 
 class LayananController extends Controller
 {
+
+
     // crud function for data jemaat
     public function indexlahir(){
             $lahirs = Lahir::all();
@@ -285,5 +287,10 @@ class LayananController extends Controller
     $wartanikah = Nikah::whereBetween('created_at', [$startOfWeek, $endOfWeek])->get();
 
     return view('admin.internal.wartanikah', compact('wartanikah'));
+    }
+
+    public function indexnewjemaat(){
+        $users = User::orderBy('name', 'asc')->get();
+        return view('admin.layanan.newjemaat', compact('users'));
     }
 }
