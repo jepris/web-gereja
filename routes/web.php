@@ -58,9 +58,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/wartameninggal',[LayananController::class, 'wartameninggal'])->name('wartameninggal');
     Route::get('/wartanikah',[LayananController::class, 'wartanikah'])->name('wartanikah');
 
-    // Route::get('/pdf/{filename}', [WartaController::class, 'show'])->name('pdf.show');
-    // Route::get('/download/pdf/{filename}', [WartaController::class, 'download'])->name('pdf.download');
-
     Route::delete('/lahirs/{id}', [LayananController::class, 'destroylahir'])->name('lahirs.destroylahir');
     Route::delete('/pindahs/{id}', [LayananController::class, 'destroypindah'])->name('pindahs.destroypindah');
     Route::delete('/baptis/{id}', [LayananController::class, 'destroybaptis'])->name('baptis.destroybaptis');
@@ -104,7 +101,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 // Bagian User route
-// get function 
+
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/beranda', [DashboardController::class, 'index'])->name('beranda');
 Route::get('/warta-jemaat', [DashboardController::class, 'wartajemaat']);
@@ -115,7 +112,7 @@ Route::get('/layanan', [DashboardController::class, 'layanan']);
 Route::get('/hurias', [CreateController::class, 'index'])->name('hurias.index');
 Route::get('/tentang', [CreateController::class, 'tentang'])->name('tentang.tentang');
 Route::get('/warta-jemaat/{id}', [DashboardController::class, 'shownews'])->name('news.show');
-// post function
+
 
 
 
