@@ -32,6 +32,7 @@
                         <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                         <td>{{ $schedule-> nama_ibadah}}</td>
                         <td>{{ $schedule-> hari}}</td>
+                        <td>{{ $schedule-> jam}}</td>
                         <td>{{ $schedule-> keterangan}}</td>
                         <td class="text-center">
                             <div class="action">
@@ -65,7 +66,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Jam</label>
-                                        <input type="text" name="hari" class="form-control" value="{{ $schedule->jam }}" required>
+                                        <input type="text" name="jam" class="form-control" value="{{ $schedule->jam }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Keterangan</label>
