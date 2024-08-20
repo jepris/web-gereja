@@ -23,8 +23,6 @@
                                         <a class="btn btn-success" href="{{ asset('storage/' . $data->file) }}"
                                             target="_blank">Download</a>
                                     </td>
-
-                                    {{-- <td><a href="{{ route('downloadWarta') }}" class="btn btn-primary">Download Warta Jemaat</a></td> --}}
                             @endforeach
 
                         </tbody>

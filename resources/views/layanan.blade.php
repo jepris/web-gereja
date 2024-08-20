@@ -46,11 +46,18 @@
         </section>
     </div>
     <script>
-      setTimeout(function() {
+      document.addEventListener('DOMContentLoaded', function() {
+          // Ambil elemen pesan
           var alert = document.getElementById('success-alert');
           if (alert) {
-              alert.style.display = 'none';
+              // Timer untuk menghilangkan pesan setelah 5 detik
+              setTimeout(function() {
+                  alert.style.opacity = 0;
+                  setTimeout(function() {
+                      alert.style.display = 'none';
+                  }, 600); // Delay sebelum menghilangkan elemen dari layout
+              }, 3000); // Waktu delay (5000ms = 5 detik)
           }
-      }, 5000); // Pesan akan menghilang setelah 5 detik
+      });
   </script>
 @endsection
