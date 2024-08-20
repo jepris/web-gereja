@@ -2,63 +2,81 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - HKBP Perumnas Batu Onom</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
     <section>
-        <!-- form box -->
-        <div class="form-box">
-            <div class="form-value">
-                @if(Session::has('message'))
-                    <div id="success-alert" class="alert alert-success">
-                        {{ Session::get('message') }}
-                    </div>
-                @endif
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <h2>
-                        <!-- <ion-icon name="ticket-outline"></ion-icon> -->
-                        Login</h2>
-                    <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input type="number" class="form-control  @error('notelp') is-invalid @enderror" id="notelp" name="notelp" required value="{{ old('notelp') }}>
-                        <label for="notelp" class="form-label fw-bold">No. Handphone</label>
-                        @error('notelp')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
+        <nav class="navbar">
+            <div class="container-fluid d-flex justify-content-end">
+                <a class="navbar-brand fw-bold" href="/login">
+                    <img src="{{ asset('img/logo hkbp.png')}}" alt="Logo" width="50" height="50"
+                        class="d-inline-block align-text-center">
+                    HKBP Perumnas Batu Onom
+                </a>
+            </div>
+        </nav>
+    </section>
+    <section>
+        <div class="container">
+            <div class="login d-flex justify-content-end" style="align-items: center;margin-top: 150px;">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
+                                <h3 class="fw-bold text-center mb-3">Login</h3>
+                                @if (Session::has('message'))
+                                    <div id="success-alert" class="alert alert-success">
+                                        {{ Session::get('message') }}
+                                    </div>
+                                @endif
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label fw-bold">Nomor Handphone</label>
+                                    <input type="number" class="form-control  @error('notelp') is-invalid @enderror"
+                                        id="notelp" name="notelp" required value="{{ old('notelp') }}">
+                                    @error('notelp')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
-                        @enderror
-                    </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" class="form-control  @error('password') is-invalid @enderror" id="password" name="password" required>
-                        <label for="password" class="form-label fw-bold">Password</label>
-                        @error('password')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
+                                    <input type="password" class="form-control  @error('password') is-invalid @enderror"
+                                        id="password" name="password" required>
+                                    @error('password')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
-                        @enderror
+                                <p class="text-center fw-bold">belum punya akun ? <span><a href="/register"
+                                            class="text-decoration-none fw-bold" style="color: blue;">Buat
+                                            Akun</a></span></p>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember me | <a href="#"><b>Forget Password</b></a></label>
-                    </div>
-                    <button class="button">Log in</button>
-                    <div class="register">
-                        <p>Don't Have a Account |
-                            <a href="/register" class="a-register">
-                                <b>Register</b></a>
-                        </p>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </section>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+    <!-- bootstap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

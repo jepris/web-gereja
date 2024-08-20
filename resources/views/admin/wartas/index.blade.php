@@ -26,17 +26,8 @@
                                 <td scope="row" class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $data->title }}</td>
                                 <td>{{ \Carbon\Carbon::parse($data->date)->format('d-m-Y') }}</td>
-                                {{-- <td align="center">
-                                    <a href="warta/{{ $data->file }}"><button class="btn btn-success" type="button">
-                                        Download</button></a>
-                                </td> --}}
-                                {{-- <td> <a href="{{ route('pdf.show', ['filename' => $data]) }}" target="_blank">Lihat {{ $data }}</a> |</td> --}}
-                                <td>
-                                {{-- <a href="{{ route('pdf.download', ['filename' => $data->file]) }}">Download {{ $data->file }}</a> --}}
-                                <a href="{{ route('wartas.show', $data->id) }}" target="_blank">Lihat PDF</a> |
-                                <a class="btn btn-success" href="{{ asset($data->file) }}"
-                                    target="_blank">Download</a>
-                                </td>
+                                <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ Storage::url($data->file) }}"
+                                    target="_blank">Download</a></td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"

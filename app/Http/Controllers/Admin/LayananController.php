@@ -1,17 +1,18 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use App\Models\Sidi;
+use App\Models\Lahir;
+use App\Models\Nikah;
+use App\Models\Sakit;
 use App\Models\Baptis;
 use App\Models\Kontak;
-use App\Models\Lahir;
-use App\Models\Meninggal;
-use App\Models\Nikah;
 use App\Models\Pindah;
-use App\Models\Sakit;
-use App\Models\Sidi;
-use Carbon\Carbon;
+use App\Models\Meninggal;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 
 class LayananController extends Controller
@@ -34,7 +35,7 @@ class LayananController extends Controller
         ]);
         $lahir = Lahir::findOrFail($id);
         $lahir->update($request->all());
-        return redirect()->route('lahirs.indexlahir');
+        return redirect()->route('lahirs.indexlahir')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroylahir($id){
@@ -60,7 +61,7 @@ class LayananController extends Controller
         ]);
         $pindah = Pindah::findOrFail($id);
         $pindah->update($request->all());
-        return redirect()->route('pindahs.indexpindah');
+        return redirect()->route('pindahs.indexpindah')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroypindah($id){
@@ -86,7 +87,7 @@ class LayananController extends Controller
         ]);
         $baptis = Baptis::findOrFail($id);
         $baptis->update($request->all());
-        return redirect()->route('baptis.indexbaptis');
+        return redirect()->route('baptis.indexbaptis')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroybaptis( $id){
@@ -96,7 +97,7 @@ class LayananController extends Controller
     }
     // Controller sidi
     public function indexsidi(){
-        $sidis = Baptis::all();
+        $sidis = Sidi::all();
         return view('admin.layanan.newsidi', compact('sidis'));
     }
 
@@ -112,50 +113,30 @@ class LayananController extends Controller
             'filebaptis' => 'nullable|mimes:pdf|max:15728640',
         ]);
     
-        $fileRecord = Sidi::findOrFail($id);  // Temukan data berdasarkan ID
-        $uploadPath = public_path('sidi');
-        $fileName1 = $fileRecord->fileakte;  // Simpan nama file lama untuk file akte
-        $fileName2 = $fileRecord->filebaptis;  // Simpan nama file lama untuk file baptis
-    
-        // Handle file akte
+        $sidi = Sidi::findOrFail($id);  // Temukan data berdasarkan ID
+        $data = $request->only('tanggal','wijk','notelp','alamat','email', 'keterangan',);
+
         if ($request->hasFile('fileakte')) {
-            // Hapus file lama jika ada
-            if ($fileRecord->fileakte && file_exists(public_path($fileRecord->fileakte))) {
-                unlink(public_path($fileRecord->fileakte));
+            if ($sidi->fileakte && Storage::disk('public')->exists($sidi->fileakte)) {
+                Storage::disk('public')->delete($sidi->fileakte); 
             }
-    
-            // Upload file baru
-            $fileakte = $request->file('fileakte');
-            $fileName1 = time() . '_1_' . $fileakte->getClientOriginalName();
-            $fileakte->move($uploadPath, $fileName1);
-            $fileName1 = 'uploads/' . $fileName1;  // Update path baru
+            $file1 = $request->file('file');
+            $fileName1 = time() . '_akte_' . $file1->getClientOriginalName();
+            $filePath1 = $file1->storeAs('filessidi', $fileName1, 'public');  
+            $data['fileakte'] = $filePath1;
         }
-    
-        // Handle file baptis
         if ($request->hasFile('filebaptis')) {
-            // Hapus file lama jika ada
-            if ($fileRecord->filebaptis && file_exists(public_path($fileRecord->filebaptis))) {
-                unlink(public_path($fileRecord->filebaptis));
+            if ($sidi->fileakte && Storage::disk('public')->exists($sidi->fileakte)) {
+                Storage::disk('public')->delete($sidi->fileakte); 
             }
-    
-            // Upload file baru
-            $filebaptis = $request->file('filebaptis');
-            $fileName2 = time() . '_2_' . $filebaptis->getClientOriginalName();
-            $filebaptis->move($uploadPath, $fileName2);
-            $fileName2 = 'uploads/' . $fileName2;  // Update path baru
+            $file2 = $request->file('file');
+            $fileName2 = time() . '_baptis_' . $file2->getClientOriginalName();
+            $filePath2 = $file2->storeAs('filessidi', $fileName2, 'public');  
+            $data['filebaptis'] = $filePath2;
         }
-    
-        // Update data lain
-        $fileRecord->wali = $request->input('wali');
-        $fileRecord->wijk = $request->input('wijk');
-        $fileRecord->notelp = $request->input('notelp');
-        $fileRecord->alamat = $request->input('alamat');
-        $fileRecord->email = $request->input('email');
-        $fileRecord->keterangan = $request->input('keterangan');
-        $fileRecord->fileakte = $fileName1;
-        $fileRecord->filebaptis = $fileName2;
-        $fileRecord->save();
-        return redirect()->route('sidis.indexsidi');
+
+        $sidi->update($data);
+        return redirect()->route('sidis.indexsidi')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroysidi($id){
@@ -181,7 +162,7 @@ class LayananController extends Controller
         ]);
         $nikah = Nikah::findOrFail($id);
         $nikah->update($request->all());
-        return redirect()->route('nikahs.indexnikah');
+        return redirect()->route('nikahs.indexnikah')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroynikah($id){
@@ -207,7 +188,7 @@ class LayananController extends Controller
         ]);
         $sakit = Sakit::findOrFail($id);
         $sakit->update($request->all());
-        return redirect()->route('sakits.indexsakit');
+        return redirect()->route('sakits.indexsakit')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroysakit($id){
@@ -233,7 +214,7 @@ class LayananController extends Controller
         ]);
         $meninggal = Meninggal::findOrFail($id);
         $meninggal->update($request->all());
-        return redirect()->route('meninggals.indexmeninggal');
+        return redirect()->route('meninggals.indexmeninggal')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroymeninggal($id){
@@ -259,7 +240,7 @@ class LayananController extends Controller
         ]);
         $kontak = Kontak::findOrFail($id);
         $kontak->update($request->all());
-        return redirect()->route('kontaks.indexkontak');
+        return redirect()->route('kontaks.indexkontak')->with('message', 'Data berhasil Diganti');
     }
 
     public function destroykontak($id){

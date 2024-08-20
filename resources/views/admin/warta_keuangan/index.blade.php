@@ -24,9 +24,9 @@
                         @foreach ($keuangans as $data)
                             <tr>
                                 <td scope="row" class="text-center">{{ $loop->iteration }}</td>
-                                <td>{{ $data->keterangan }}</td>
                                 <td>{{ \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
-                                <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ asset($data->file) }}"
+                                <td>{{ $data->keterangan }}</td>
+                                <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ Storage::url($data->file) }}"
                                         target="_blank">Download</a></td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
@@ -40,6 +40,42 @@
                                     </div>
                                 </td>
                             </tr>
+
+                            <div class="modal fade" id="editdata{{ $data->id }}" tabindex="-1"
+                                aria-labelledby="editdataLabel{{ $data->id }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <div class="form-judul">
+                                                <h4 class="card-title fw-bold d-flex justify-content-center">Edit Warta Keuangan</h4>
+                                            </div>
+                                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form action="{{ route('keuangan.update', $data->id) }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                                <div class="mb-3">
+                                                    <label for="tanggal" class="form-label fw-bold">Tanggal</label>
+                                                    <input type="text" value="{{ $data->tanggal }}" name="tanggal" class="form-control" id="tanggal"
+                                                        required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="keterangan" class="form-label fw-bold">Keterangan</label>
+                                                    <textarea name="keterangan" class="form-control" id="keterangan" required>{{ $data->keterangan }}</textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="file" class="form-label fw-bold">File Warta Keuangan (.pdf)</label>
+                                                    <input type="file" class="form-control" id="file" name="file" accept=".pdf" required>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-success">Save changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
                     </tbody>
                 </table>
@@ -82,7 +118,7 @@
     </div>
 
     {{-- edit data modal --}}
-    @foreach ($keuangans as $data)
+    {{-- @foreach ($keuangans as $data)
         <div class="modal fade" id="editdata{{ $data->id }}" tabindex="-1"
             aria-labelledby="editdataLabel{{ $data->id }}" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -118,5 +154,5 @@
                 </div>
             </div>
         </div>
-    @endforeach
+    @endforeach --}}
 @endsection

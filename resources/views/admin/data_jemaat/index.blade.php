@@ -26,7 +26,7 @@
                     <tbody>
                         @foreach ($jemaats as $data)
                             <tr>
-                                <td scope="row" class="text-center">{{ $loop->iteration }}</td>
+                                <td scope="row" class="text-center">{{ $loop->iteration + ($jemaats->currentPage() - 1) * $jemaats->perPage()}}</td>
                                 <td>{{ $data->name }}</td>
                                 <td>{{ \Carbon\Carbon::parse($data->birth_date)->format('d-m-Y') }}</td>
                                 <td>{{ $data->alamat }}</td>
@@ -83,14 +83,15 @@
                         <div class="mb-3">
                             <label for="wijk" class="form-label fw-bold">Wijk</label>
                             <select class="form-select" name="wijk" aria-label="Default select example" id="wijk">
-                                @for ($i = 1; $i <= 20; $i++)
+                                @for ($i = 1; $i <= 16; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="notelp" class="form-label fw-bold">no, Handphone</label>
-                            <input type="number" name="notelp" class="form-control" id="notelp" required>
+                            <input type="tel" name="notelp"  class="form-control" id="notelp" pattern="[0-9\-+\s]+" placeholder="08-123-4567-8901" required>
+                                <small class="form-text text-muted">Format: 08-123-4567-8901</small>
                         </div>
                         <div class="mb-3">
                             <label for="umur" class="form-label fw-bold">Umur</label>
@@ -140,15 +141,15 @@
                             <div class="mb-3">
                                 <label for="wijk" class="form-label fw-bold">Wijk</label>
                                 <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>
-                                    @for ($i = 0; $i <= 20; $i++)
-                                        <option value="wijk{{ $i }}" {{ $data->wijk == "wijk".$i ? 'selected' : '' }}>{{ $i }}</option>
+                                    @for ($i = 0; $i <= 16; $i++)
+                                        <option value="{{ $i }}" {{ $data->wijk == "wijk".$i ? 'selected' : '' }}>{{ $i }}</option>
                                     @endfor
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="notelp" class="form-label fw-bold">no, Handphone</label>
-                                <input type="number" value="0{{ $data->notelp }}" name="notelp" class="form-control"
-                                    id="notelp" required>
+                                <input type="tel" name="notelp"  value="{{ $data->notelp }}" class="form-control" id="notelp" pattern="[0-9\-+\s]+" placeholder="08-123-4567-8901" required>
+                                <small class="form-text text-muted">Format: 08-123-4567-8901</small>
                             </div>
                             <div class="mb-3">
                                 <label for="umur" class="form-label fw-bold">Umur</label>

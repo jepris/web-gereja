@@ -20,7 +20,7 @@ class DashboardController extends Controller
     }
     public function wartajemaat()
     {
-        $news = News::all();
+        $news = News::orderBy('created_at', 'desc')->get();
         $wartajemaat= Warta::all();
         return view('warta', compact('news','wartajemaat'));
     }

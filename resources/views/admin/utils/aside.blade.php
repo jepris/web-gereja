@@ -68,8 +68,13 @@
                             Akun
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Beranda</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="/beranda">Beranda</a></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                   <button type="submit" class="dropdown-item mt-2">Logout</button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -228,14 +233,13 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="pages/kanban.html" class="nav-link">
-                                {{-- <i class="nav-icon fas fa-columns"></i> --}}
                                 <p>
                                     Rincian Ibadah Mingguan
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="/birthday" class="nav-link">
                                 {{-- <i class="nav-icon far fa-envelope"></i> --}}

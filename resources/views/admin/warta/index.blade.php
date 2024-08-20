@@ -16,26 +16,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($keuangans as $data)
-                            <tr>
-                                <td scope="row" class="text-center">{{ $loop->iteration }}</td>
-                                <td>{{ $data->keterangan }}</td>
-                                <td>{{ \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
-                                {{-- <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ asset($data->file) }}"
-                                        target="_blank">Download</a></td> --}}
-                                
-                                <td class="text-center">
-                                    <div class="action d-flex justify-content-center">
-                                        <button class="btn btn-warning me-3" data-toggle="modal"
-                                            data-target="#editdata{{ $data->id }}">Edit</button>
-                                        <form action="{{ route('keuangan.destroy', $data->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
+                        @foreach ($wartas as $data)
+                        <tr>
+                            <td scope="row" class="text-center">{{ $loop->iteration }}</td>
+                            <td>{{ \Carbon\Carbon::parse($data->date)->format('d-m-Y') }}</td>
+                            <td>{{ $data->keterangan }}</td>
+                            <td class="d-flex justify-content-center"><a class="btn btn-success" href="{{ Storage::url($data->file) }}"
+                                    target="_blank">Download</a></td>
+                            <td class="text-center">
+                                <div class="action d-flex justify-content-center">
+                                    <button class="btn btn-warning me-3" data-toggle="modal"
+                                        data-target="#editdata{{ $data->id }}">Edit</button>
+                                    <form action="{{ route('keuangan.destroy', $data->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>

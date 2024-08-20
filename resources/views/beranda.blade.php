@@ -74,27 +74,24 @@
         
         <div class="konten-berita">
             <div class="row">
-                @foreach ($news   as $item)
-                <div class="col-6 konten-coloum">
-                    <a href="">
-                        <div class="row">
-                            <div class="col">
-                                <img src="{{ asset('storage/' . $item->file) }}" class="galeri-img" alt="{{ $item->title }}">
-                                {{-- <img src="/img/aset4.jpg" class="img-fluid rounded-start" alt="image"> --}}
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $item->title }}</h5>
-                                    <p>{{ Str::limit($item->description, 100) }}
-                                    <a href="{{ route('news.show', $item->id) }}">Selengkapnya</a>
-                                </div>
+                @foreach ($news as $item)
+                <div class="col-md-6 konten-coloum mb-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="{{ asset('storage/' . $item->file) }}" class="img-fluid galeri-img" alt="{{ $item->title }}" style="width: 100%; height: 150px; object-fit: cover;">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->title }}</h5>
+                                <p style="color: black">{{ Str::limit($item->description, 100) }}</p>
+                                <a href="{{ route('news.show', $item->id) }}" class="fw-bold" style="color: blue; text-decoration:underline">Selengkapnya</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 @endforeach
             </div>
-        </div>
+        </div>        
         <div class="berita-selanjutnya">
             <a href="/warta-jemaat" class="">Selanjutnya >> </a>
         </div>

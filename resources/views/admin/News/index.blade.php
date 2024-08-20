@@ -5,10 +5,10 @@
             <h3 class="mt-3 fw-bold">Berita HKBP Perumnas Batu Onom</h3>
             <button class="btn btn-success mb-3" data-toggle="modal" data-target="#createdata">+ Tambah Data</button>
             @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <div class="data-jemaat">
                 <table class="table table-bordered border border-dark border-3">
                     <thead class="">
@@ -39,6 +39,49 @@
                                     </div>
                                 </td>
                             </tr>
+
+                            {{-- edit modal --}}
+                            <div class="modal fade" id="editdata{{ $data->id }}" tabindex="-1"
+                                aria-labelledby="editdataLabel{{ $data->id }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <div class="form-judul">
+                                                <h4 class="card-title fw-bold d-flex justify-content-center">Edit Berita</h4>
+                                            </div>
+                                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{ route('news.update', $data->id) }}" method="POST"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="mb-3">
+                                                    <label for="title" class="form-label fw-bold">Title</label>
+                                                    <input type="text" name="title" value="{{ $data->title }}" class="form-control"
+                                                        id="title" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="description" class="form-label fw-bold">Keterangan</label>
+                                                    {{-- <input type="text" name="description" value="{{ $data->description }}"
+                                                class="form-control" id="description" required> --}}
+                                                    <textarea class="form-control" aria-label="With textarea" name="description" style="height: 100px" id="description"
+                                                        required>{{ $data->description }}</textarea>
+                
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="file" class="form-label fw-bold">Gambar </label>
+                                                    <input type="file" class="form-control" id="file" name="file"
+                                                        accept=".jpg, .jpeg, .png, .gif, .svg" required>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-success">Save changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
                     </tbody>
                 </table>
@@ -57,66 +100,31 @@
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="title" class="form-label fw-bold">Title</label>
-                        <textarea class="form-control" name="title" id="title"></textarea>
-                      </div>
+                    <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="title" class="form-label fw-bold">Title</label>
+                            <input type="text" class="form-control" name="title" id="title" required>
+                        </div>
                         <div class="mb-3">
                             <label for="description" class="form-label fw-bold">Keterangan</label>
-                            <textarea class="form-control" name="description" id="description"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="description" style="height: 100px" id="description"
+                                required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="file" class="form-label fw-bold">Gambar </label>
-                            <input type="file" name="file" class="form-control" id="file" accept=".jpg, .jpeg, .png, .gif, .svg" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Save changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    {{-- edit data modal --}}
-    @foreach ($news as $data)
-        <div class="modal fade" id="editdata{{ $data->id }}" tabindex="-1"
-            aria-labelledby="editdataLabel{{ $data->id }}" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="form-judul">
-                            <h4 class="card-title fw-bold d-flex justify-content-center">Edit Berita</h4>
-                        </div>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <form action="{{ route('news.update', $data->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <div class="mb-3">
-                            <label for="title" class="form-label fw-bold">Title</label>
-                            <input type="text" name="title" value="{{ $data->title }}" class="form-control"
-                                id="title" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="description" class="form-label fw-bold">Keterangan</label>
-                            <input type="text" name="description" value="{{ $data->description }}"
-                                class="form-control" id="description" required>
-                        </div>
-                            <div class="mb-3">
-                                <label for="file" class="form-label fw-bold">Gambar </label>
-                                <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png, .gif, .svg" required>
-                            </div>
+                            <input type="file" name="file" class="form-control" id="file"
+                                accept=".jpg, .jpeg, .png, .gif, .svg" required>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">Save changes</button>
-                        </div>
+                            <button type="submit" class="btn btn-success">Create data</button>
                     </form>
                 </div>
             </div>
         </div>
-    @endforeach
-@endsection
+
+        {{-- edit data modal --}}
+        {{-- @foreach ($news as $data)
+            
+        @endforeach --}}
+    @endsection

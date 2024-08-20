@@ -84,7 +84,7 @@ class CreateController extends Controller
 
         // Session::flash('message', 'Data berhasil disimpan!');
         return redirect()->route('hurias.index')
-            ->with('message', 'Data created successfully.');
+            ->with('message', 'Pendataan Jemaat Lahir Berhasil Terkirim');
     }
     public function storebaptis(Request $request)
     {
@@ -108,7 +108,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-            ->with('message', 'Data created successfully.');
+            ->with('message', 'Pendataan Jemaat Baptis Berhasil Terkirim');
     }
     public function storesidi(Request $request)
     {
@@ -123,33 +123,27 @@ class CreateController extends Controller
             'filebaptis' => 'required|mimes:pdf|max:15728640'
         ]);
 
-        $uploadPath = public_path('sidi');
-        $fileName1 = '';
-        $fileName2 = '';
+        $file1 = $request->file('fileakte');
+        $fileName1 = time() . '_akte_' . $file1->getClientOriginalName();
+        $filePath1 = $file1->storeAs('filesidi', $fileName1, 'public');
 
-        if ($request->hasFile('fileakte')) {
-            $fileakte = $request->file('fileakte');
-            $fileName1 = time() . '_1_' . $fileakte->getClientOriginalName();
-            $fileakte->move($uploadPath, $fileName1);
-        }
-        if ($request->hasFile('filebaptis')) {
-            $filebaptis = $request->file('filebaptis');
-            $fileName2 = time() . '_2_' . $filebaptis->getClientOriginalName();
-            $filebaptis->move($uploadPath, $fileName2);
-        }
-        $fileRecord = new Sidi();
-        $fileRecord->wali = $request->input('wali');
-        $fileRecord->wijk = $request->input('wijk');
-        $fileRecord->notelp = $request->input('notelp');
-        $fileRecord->alamat = $request->input('alamat');
-        $fileRecord->email = $request->input('email');
-        $fileRecord->keterangan = $request->input('keterangan');
-        $fileRecord->fileakte = 'uploads/' . $fileName1;
-        $fileRecord->filebaptis = 'uploads/' . $fileName2;
-        $fileRecord->save();
-
+        $file2 = $request->file('filebaptis');
+        $fileName2 = time() . '_baptis_' . $file2->getClientOriginalName();
+        $filePath2 = $file2->storeAs('filesidi', $fileName2, 'public');
+        
+        Sidi::create([
+            'wali' => $request->wali,
+            'wijk' => $request->wijk,
+            'notelp' => $request->notelp,
+            'alamat' => $request->alamat,
+            'email' => $request->email,
+            'keterangan' => $request->keterangan,
+            'fileakte' => $filePath1,
+            'filebaptis' => $filePath2,
+        ]);
+        // dd('berhasil');
         return redirect()->route('hurias.index')
-            ->with('message', 'Data created successfully.');
+            ->with('message', 'Pendataan Jemaat Sidi Berhasil Terkirim');
     }
     public function storenikah(Request $request)
     {
@@ -175,7 +169,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-            ->with('message', 'Data created successfully.');
+            ->with('message', 'Pendataan Jemaat Nikah Berhasil Terkirim');
     }
     public function storesakit(Request $request)
     {
@@ -200,7 +194,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-        ->with('message', 'Data created successfully.');
+        ->with('message', 'Pendataan Jemaat Sakit Berhasil Terkirim');
     }
     public function storepindah(Request $request)
     {
@@ -226,7 +220,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-        ->with('message', 'Data created successfully.');
+        ->with('message', 'Pendataan Jemaat Pindah Berhasil Terkirim');
     }
     public function storemeninggal(Request $request)
     {
@@ -251,7 +245,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('hurias.index')
-        ->with('message', 'Data created successfully.');
+        ->with('message', 'Pendataan Jemaat Meninggal Berhasil Terkirim');
     }
     public function storekontak(Request $request)
     {
@@ -276,7 +270,7 @@ class CreateController extends Controller
 
 
         return redirect()->route('tentang.tentang')
-        ->with('message', 'Data created successfully.');
+        ->with('message', 'Layanan Kontak Berhasil Terkirim');
     }
 
 }

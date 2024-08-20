@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class ScheduleController extends Controller
 {
@@ -26,6 +27,7 @@ class ScheduleController extends Controller
             'nama_ibadah'=> 'required', 
             'hari'=> 'required', 
             'hari'=> 'required', 
+            'jam'=> 'required', 
             'keterangan'=> 'required',
         ]);
 
@@ -43,7 +45,8 @@ class ScheduleController extends Controller
         $request->validate([
             'nama_ibadah' => 'required',
             'hari' => 'required',
-            'waktu' => 'required',
+            'jam' => 'required',
+            'keterangan' => 'required',
         ]);
         // dd($request);
         $schedule = Schedule::findOrFail($id);

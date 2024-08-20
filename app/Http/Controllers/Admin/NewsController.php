@@ -11,7 +11,8 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::all();
+        // $news = News::all();
+        $news = News::orderBy('created_at', 'desc')->get();
         return view('admin.news.index', compact('news'));
     }
 
@@ -79,7 +80,7 @@ class NewsController extends Controller
         ]);
 
         return redirect()->route('news.index')
-            ->with('success', 'Galeri updated successfully.');
+            ->with('success', 'News updated successfully.');
     }
 
     public function destroy($id)
