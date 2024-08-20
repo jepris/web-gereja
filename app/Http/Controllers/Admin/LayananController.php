@@ -13,6 +13,7 @@ use App\Models\Pindah;
 use App\Models\Meninggal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 
 class LayananController extends Controller
