@@ -174,6 +174,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item ms-4">
+                                    <a href="/newjemaat" class="nav-link">
+                                        {{-- <i class="far fa-circle nav-icon"></i> --}}
+                                        <p>Jemaat Baru</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item ms-4">
                                     <a href="/baptis" class="nav-link">
                                         {{-- <i class="far fa-circle nav-icon"></i> --}}
                                         <p>Jemaat Baptis</p>

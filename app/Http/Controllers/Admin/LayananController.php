@@ -1,21 +1,24 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use App\Models\Sidi;
+use App\Models\User;
+use App\Models\Lahir;
+use App\Models\Nikah;
+use App\Models\Sakit;
 use App\Models\Baptis;
 use App\Models\Kontak;
-use App\Models\Lahir;
-use App\Models\Meninggal;
-use App\Models\Nikah;
 use App\Models\Pindah;
-use App\Models\Sakit;
-use App\Models\Sidi;
-use Carbon\Carbon;
+use App\Models\Meninggal;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 class LayananController extends Controller
 {
+
+
     // crud function for data jemaat
     public function indexlahir(){
             $lahirs = Lahir::all();
@@ -96,7 +99,7 @@ class LayananController extends Controller
     }
     // Controller sidi
     public function indexsidi(){
-        $sidis = Baptis::all();
+        $sidis = Sidi::all();
         return view('admin.layanan.newsidi', compact('sidis'));
     }
 
@@ -304,5 +307,10 @@ class LayananController extends Controller
     $wartanikah = Nikah::whereBetween('created_at', [$startOfWeek, $endOfWeek])->get();
 
     return view('admin.internal.wartanikah', compact('wartanikah'));
+    }
+
+    public function indexnewjemaat(){
+        $users = User::orderBy('name', 'asc')->get();
+        return view('admin.layanan.newjemaat', compact('users'));
     }
 }

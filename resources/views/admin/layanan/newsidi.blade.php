@@ -2,12 +2,12 @@
 @section('content')
     <section class="content">
         <div class="container-fluid">
-            <h3 class="mt-3 fw-bold">Jemaat Sidi  HKBP Perumnas Batu Onom</h3>
+            <h3 class="mt-3 fw-bold">Jemaat Sidi HKBP Perumnas Batu Onom</h3>
             @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <div class="data-jemaat">
                 <table class="table table-bordered border border-dark border-3">
                     <thead class="">
@@ -19,8 +19,7 @@
                             <th scope="col">Alamat </th>
                             <th scope="col">Email </th>
                             <th scope="col">Keterangan </th>
-                            <th scope="col">File Akte </th>
-                            <th scope="col">File Baptis</th>
+                            <th scope="col">File</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -34,9 +33,16 @@
                                 <td>{{ $data->alamat }}</td>
                                 <td>{{ $data->email }}</td>
                                 <td>{{ $data->keterangan }}</td>
-                                <td><a class="btn btn-success" href="{{ asset('public/sidi/'. basename($data->fileakte)) }}" target="_blank">Download</a> </td>
-                                <td><a class="btn btn-success" href="{{asset('public/sidi/'. basename($data->filebaptis)) }}"
-                                    target="_blank">Download</a></td>
+                                <td>
+                                    <div class="file d-flex grid gap-0 column-gap-2">
+                                        <a class="btn btn-success"
+                                            href="{{ asset('public/sidi/' . basename($data->fileakte)) }}"
+                                            target="_blank">File Akte</a>
+                                        <a class="btn btn-success"
+                                            href="{{ asset('public/sidi/' . basename($data->filebaptis)) }}"
+                                            target="_blank">File Baptis</a>
+                                    </div>
+                                </td>
                                 <td class="text-center">
                                     <div class="action d-flex justify-content-center">
                                         <button class="btn btn-warning me-3" data-toggle="modal"
@@ -69,52 +75,57 @@
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form action="{{ route('sidis.updatesidi', $data->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <div class="mb-3">
-                            <label for="name" class="form-label fw-bold">Nama</label>
-                            <textarea name="name" class="form-control" id="name" required>{{ $data->name }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="wijk" class="form-label fw-bold">Wijk</label>
-                            <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>{{ $data->wijk }}>
-                                @for ($i = 1; $i <= 16; $i++)
-                                    <option value="{{ $i }}">{{ $i }}</option>
-                                @endfor
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="notelp" class="form-label fw-bold">No. Handphone</label>
-                            <input type="number" value="0{{ $data->notelp }}" name="notelp" class="form-control"
+                        <form action="{{ route('sidis.updatesidi', $data->id) }}" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Nama</label>
+                                <textarea name="name" class="form-control" id="name" required>{{ $data->name }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="wijk" class="form-label fw-bold">Wijk</label>
+                                <select class="form-select" name="wijk" aria-label="Default select example"
+                                    id="wijk" required>{{ $data->wijk }}>
+                                    @for ($i = 1; $i <= 16; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notelp" class="form-label fw-bold">No. Handphone</label>
+                                <input type="number" value="0{{ $data->notelp }}" name="notelp" class="form-control"
                                     id="notelp" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="alamat" class="form-label fw-bold">Alamat</label>
-                            <textarea name="alamat" class="form-control" id="alamat" required>{{ $data->alamat }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label fw-bold">Email address</label >
-                            <input type="email" name="email"value="{{ $data->email }}" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="keterangan" class="form-label fw-bold">Keterangan</label>
-                            <textarea name="keterangan" class="form-control" id="keterangan" required>{{ $data->keterangan }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="fileakte" class="form-label">Upload Akte Kelahiran</label>
-                            <input class="form-control" name="fileakte" accept=".pdf" value="{{ $data->fileakte }}" type="file" id="fileakte" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="filebaptis" class="form-label">Upload Surat Baptis</label>
-                            <input class="form-control" name="filebaptis" accept=".pdf" value="{{ $data->filebaptis }}" type="file" id="filebaptis" required>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">Save changes</button>
-                        </div>
-                    </form>
+                            </div>
+                            <div class="mb-3">
+                                <label for="alamat" class="form-label fw-bold">Alamat</label>
+                                <textarea name="alamat" class="form-control" id="alamat" required>{{ $data->alamat }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">Email address</label>
+                                <input type="email" name="email"value="{{ $data->email }}" class="form-control"
+                                    id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="keterangan" class="form-label fw-bold">Keterangan</label>
+                                <textarea name="keterangan" class="form-control" id="keterangan" required>{{ $data->keterangan }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fileakte" class="form-label">Upload Akte Kelahiran</label>
+                                <input class="form-control" name="fileakte" accept=".pdf" value="{{ $data->fileakte }}"
+                                    type="file" id="fileakte" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="filebaptis" class="form-label">Upload Surat Baptis</label>
+                                <input class="form-control" name="filebaptis" accept=".pdf"
+                                    value="{{ $data->filebaptis }}" type="file" id="filebaptis" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
     @endforeach
 @endsection

@@ -46,7 +46,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('keuangan',KeuanganController::class);
     Route::get('/birthday',[JemaatController::class, 'birthday'])->name('birthday');
     Route::get('/lahirs',[LayananController::class, 'indexlahir'])->name('lahirs.indexlahir');
-    Route::get('/pindahs',[LayananController::class, 'indexpindah'])->name('lahirs.indexpindah');
+    Route::get('/newjemaat',[LayananController::class, 'indexnewjemaat'])->name('newjemaats.indexnewjemaat');
+    Route::get('/pindahs',[LayananController::class, 'indexpindah'])->name('pindahs.indexpindah');
     Route::get('/baptis',[LayananController::class, 'indexbaptis'])->name('baptis.indexbaptis');
     Route::get('/sidis',[LayananController::class, 'indexsidi'])->name('sidis.indexsidi');
     Route::get('/nikahs',[LayananController::class, 'indexnikah'])->name('nikahs.indexnikah');
