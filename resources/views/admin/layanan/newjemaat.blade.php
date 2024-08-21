@@ -3,7 +3,7 @@
 
 <section class="content">
     <div class="container-fluid">
-        <h3 class="mt-3 fw-bold">Data Jemaat HKBP Perumnas Batu Onom</h3>
+        <h3 class="mt-3 fw-bold">Data Jemaat Baru HKBP Perumnas Batu Onom</h3>
         <div class="data-jemaat-dashboard">
             <table class="table table-bordered">
                 <thead class="sticky-top">

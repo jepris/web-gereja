@@ -59,7 +59,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="form-judul">
-                            <h4 class="card-title fw-bold d-flex justify-content-center">Edit Data Pindah</h4>
+                            <h4 class="card-title fw-bold d-flex justify-content-center">Edit Data Jemaat</h4>
                         </div>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>

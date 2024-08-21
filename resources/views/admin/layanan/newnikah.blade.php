@@ -59,7 +59,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="form-judul">
-                            <h4 class="card-title fw-bold d-flex justify-content-center">Edit Data Pindah</h4>
+                            <h4 class="card-title fw-bold d-flex justify-content-center">Edit Data Jemaat</h4>
                         </div>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -73,9 +73,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="wijk" class="form-label fw-bold">Wijk</label>
-                            <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>{{ $data->wijk }}>
+                            <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>
                                 @for ($i = 1; $i <= 16; $i++)
-                                    <option value="{{ $i }}">{{ $i }}</option>
+                                    <option value="{{ $i }}" {{ $i == $data->wijk ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                             </select>
                         </div>

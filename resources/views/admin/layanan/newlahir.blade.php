@@ -75,13 +75,13 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="name" class="form-label fw-bold">Nama</label>
-                            <input type="text" name="name" class="form-control" id="name" required>{{ $data->name }}</input>
+                            <input type="text" name="name" value="{{ $data->name }}" class="form-control" id="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="wijk" class="form-label fw-bold">Wijk</label>
-                            <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>{{ $data->wijk }}>
+                            <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>
                                 @for ($i = 1; $i <= 16; $i++)
-                                    <option value="{{ $i }}">{{ $i }}</option>
+                                    <option value="{{ $i }}" {{ $i == $data->wijk ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                             </select>
                         </div>
@@ -92,7 +92,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label fw-bold">Alamat</label>
-                            <textarea name="alamat" class="form-control" id="alamat" required>{{ $data->alamat }}</textarea>
+                            <input name="alamat" class="form-control" value="{{ $data->alamat }}" id="alamat" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label fw-bold">Email address</label >
@@ -100,15 +100,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="lahir" class="form-label fw-bold">Nama Bayi</label>
-                            <textarea name="lahir" class="form-control" id="lahir" required>{{ $data->lahir }}</textarea>
+                            <input name="lahir" class="form-control" value="{{ $data->lahir }}"  id="lahir" required>
                         </div>
                         <div class="mb-3">
                             <label for="jeniskelamin" class="form-label fw-bold">Jenis Kelamin</label>
-                            <select class="form-select" name="jeniskelamin" aria-label="Default select example" id="jeniskelamin" required>{{ $data->jeniskelamin }}>
-                                <option value="pria" selected>Laki - Laki </option>
-                                <option value="wanita">Perempuan</option>
-                              </select>
-                        </div>
+                            <select class="form-select" name="jeniskelamin" aria-label="Default select example" id="jeniskelamin" required>
+                                <option value="pria" {{ $data->jeniskelamin == 'pria' ? 'selected' : '' }}>Laki - Laki</option>
+                                <option value="wanita" {{ $data->jeniskelamin == 'wanita' ? 'selected' : '' }}>Perempuan</option>
+                            </select>
+                        </div>                        
                         <div class="mb-3">
                             <label for="rs" class="form-label fw-bold">Nama Tempat Kelahiran</label>
                             <textarea name="rs" class="form-control" id="rs" required>{{ $data->rs }}</textarea>

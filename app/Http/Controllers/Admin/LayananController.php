@@ -209,11 +209,11 @@ class LayananController extends Controller
     public function updatemeninggal(Request $request,$id){
         $request->validate([
             'name' => 'required',
-            'birth_date' => 'required',
-            'alamat' => 'required',
             'wijk' => 'required',
             'notelp' => 'required',
-            'umur' => 'required',
+            'alamat' => 'required',
+            'email' => 'required',
+            'keterangan' => 'required',
         ]);
         $meninggal = Meninggal::findOrFail($id);
         $meninggal->update($request->all());

@@ -22,6 +22,7 @@
                         <th scope="col">Nama Ibadah</th>
                         <th scope="col">Hari</th>
                         <th scope="col">Keterangan</th>
+                        <th scope="col">Lokasi</th>
                         <th scope="col" c>Action</th>
                     </tr>
                 </thead>

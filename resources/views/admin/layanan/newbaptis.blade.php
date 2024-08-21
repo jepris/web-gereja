@@ -59,7 +59,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="form-judul">
-                            <h4 class="card-title fw-bold d-flex justify-content-center">Edit Data Pindah</h4>
+                            <h4 class="card-title fw-bold d-flex justify-content-center">Edit Data Jemaat</h4>
                         </div>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -69,13 +69,13 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="name" class="form-label fw-bold">Nama</label>
-                            <textarea name="name" class="form-control" id="name" required>{{ $data->name }}</textarea>
+                            <input name="name" class="form-control" value="{{ $data->name }}" id="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="wijk" class="form-label fw-bold">Wijk</label>
-                            <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>{{ $data->wijk }}>
+                            <select class="form-select" name="wijk" aria-label="Default select example" id="wijk" required>
                                 @for ($i = 1; $i <= 16; $i++)
-                                    <option value="{{ $i }}">{{ $i }}</option>
+                                    <option value="{{ $i }}" {{ $i == $data->wijk ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                             </select>
                         </div>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label fw-bold">Alamat</label>
-                            <textarea name="alamat" class="form-control" id="alamat" required>{{ $data->alamat }}</textarea>
+                            <input name="alamat" class="form-control" value="{{ $data->alamat }}" id="alamat" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label fw-bold">Email address</label >
