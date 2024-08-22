@@ -104,43 +104,45 @@ class LayananController extends Controller
         return view('admin.layanan.newsidi', compact('sidis'));
     }
 
-    public function updatesidi(Request $request,$id){
-        $request->validate([
-            'wali' => 'required',
-            'wijk' => 'required',
-            'notelp' => 'required',
-            'alamat' => 'required',
-            'email' => 'required',
-            'keterangan' => 'required',
-            'fileakte' => 'nullable|mimes:pdf|max:15728640', // nullable untuk mengizinkan tidak ada perubahan file
-            'filebaptis' => 'nullable|mimes:pdf|max:15728640',
-        ]);
-    
-        $sidi = Sidi::findOrFail($id);  // Temukan data berdasarkan ID
-        $data = $request->only('tanggal','wijk','notelp','alamat','email', 'keterangan',);
+    public function updatesidi(Request $request, $id)
+{
+    $request->validate([
+        'wali' => 'required',
+        'wijk' => 'required',
+        'notelp' => 'required',
+        'alamat' => 'required',
+        'email' => 'required',
+        'keterangan' => 'required',
+        'fileakte' => 'nullable|mimes:pdf|max:15728640', // nullable untuk mengizinkan tidak ada perubahan file
+        'filebaptis' => 'nullable|mimes:pdf|max:15728640',
+    ]);
 
-        if ($request->hasFile('fileakte')) {
-            if ($sidi->fileakte && Storage::disk('public')->exists($sidi->fileakte)) {
-                Storage::disk('public')->delete($sidi->fileakte); 
-            }
-            $file1 = $request->file('file');
-            $fileName1 = time() . '_akte_' . $file1->getClientOriginalName();
-            $filePath1 = $file1->storeAs('filessidi', $fileName1, 'public');  
-            $data['fileakte'] = $filePath1;
-        }
-        if ($request->hasFile('filebaptis')) {
-            if ($sidi->fileakte && Storage::disk('public')->exists($sidi->fileakte)) {
-                Storage::disk('public')->delete($sidi->fileakte); 
-            }
-            $file2 = $request->file('file');
-            $fileName2 = time() . '_baptis_' . $file2->getClientOriginalName();
-            $filePath2 = $file2->storeAs('filessidi', $fileName2, 'public');  
-            $data['filebaptis'] = $filePath2;
-        }
+    $sidi = Sidi::findOrFail($id);  // Temukan data berdasarkan ID
+    $data = $request->only('wali', 'tanggal', 'wijk', 'notelp', 'alamat', 'email', 'keterangan');
 
-        $sidi->update($data);
-        return redirect()->route('sidis.indexsidi')->with('message', 'Data berhasil Diganti');
+    if ($request->hasFile('fileakte')) {
+        if ($sidi->fileakte && Storage::disk('public')->exists($sidi->fileakte)) {
+            Storage::disk('public')->delete($sidi->fileakte); 
+        }
+        $file1 = $request->file('fileakte');
+        $fileName1 = time() . '_akte_' . $file1->getClientOriginalName();
+        $filePath1 = $file1->storeAs('filessidi', $fileName1, 'public');  
+        $data['fileakte'] = $filePath1;
     }
+
+    if ($request->hasFile('filebaptis')) {
+        if ($sidi->filebaptis && Storage::disk('public')->exists($sidi->filebaptis)) {
+            Storage::disk('public')->delete($sidi->filebaptis); 
+        }
+        $file2 = $request->file('filebaptis');
+        $fileName2 = time() . '_baptis_' . $file2->getClientOriginalName();
+        $filePath2 = $file2->storeAs('filesbaptis', $fileName2, 'public');  
+        $data['filebaptis'] = $filePath2;
+    }
+
+    $sidi->update($data);
+    return redirect()->route('sidis.indexsidi')->with('message', 'Data berhasil Diganti');
+}
 
     public function destroysidi($id){
         $sidi = Sidi::findOrFail($id);
@@ -157,11 +159,11 @@ class LayananController extends Controller
     public function updatenikah(Request $request, $id){
         $request->validate([
             'name' => 'required',
-            'birth_date' => 'required',
-            'alamat' => 'required',
             'wijk' => 'required',
             'notelp' => 'required',
-            'umur' => 'required',
+            'alamat' => 'required',
+            'email' => 'required',
+            'keterangan' => 'required',
         ]);
         $nikah = Nikah::findOrFail($id);
         $nikah->update($request->all());
@@ -169,7 +171,7 @@ class LayananController extends Controller
     }
 
     public function destroynikah($id){
-        $nikah = Baptis::findOrFail($id);
+        $nikah = Nikah::findOrFail($id);
         $nikah->delete();
         return redirect()->route('nikahs.indexnikah');
     }
@@ -183,11 +185,11 @@ class LayananController extends Controller
     public function updatesakit(Request $request, $id){
         $request->validate([
             'name' => 'required',
-            'birth_date' => 'required',
-            'alamat' => 'required',
             'wijk' => 'required',
             'notelp' => 'required',
-            'umur' => 'required',
+            'alamat' => 'required',
+            'email' => 'required',
+            'keterangan' => 'required',
         ]);
         $sakit = Sakit::findOrFail($id);
         $sakit->update($request->all());

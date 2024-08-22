@@ -69,7 +69,7 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="name" class="form-label fw-bold">Nama</label>
-                            <textarea name="name" class="form-control" id="name" required>{{ $data->name }}</textarea>
+                            <input name="name" class="form-control" value="{{ $data->name }}" id="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="wijk" class="form-label fw-bold">Wijk</label>
@@ -86,11 +86,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label fw-bold">Alamat</label>
-                            <textarea name="alamat" class="form-control" id="alamat" required>{{ $data->alamat }}</textarea>
+                            <input name="alamat" class="form-control" value="{{ $data->alamat }}" id="alamat" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label fw-bold">Email address</label >
-                            <input type="email" name="email"value="{{ $data->email }}" class="form-control" id="email" required>
+                            <input type="email" name="email" value="{{ $data->email }}" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="keterangan" class="form-label fw-bold">Keterangan</label>

@@ -167,8 +167,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="notelp" class="form-label fw-bold">no, Handphone</label>
-                                <input type="tel" name="notelp"  value="{{ $data->notelp }}" class="form-control" id="notelp" pattern="[0-9\-+\s]+" placeholder="08-123-4567-8901" required>
-                                <small class="form-text text-muted">Format: 08-123-4567-8901</small>
+                                <input type="tel" name="notelp"  value="0{{ $data->notelp }}" class="form-control" id="notelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="umur" class="form-label fw-bold">Umur</label>

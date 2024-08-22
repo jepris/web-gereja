@@ -18,15 +18,17 @@
                             @foreach ($wartajemaat as $data)
                                 <tr>
                                     <td class="ps-3 pt-3">{{ $data->title }}</td>
-                                    <td class="ps-3 pt-3">{{ $data->date }}</td>
+                                    <td class="ps-3 pt-3">{{ \Carbon\Carbon::parse($data->date)->format('d-m-Y') }}</td>
                                     <td class="d-flex justify-content-center">
                                         <a class="btn btn-success" href="{{ asset('storage/' . $data->file) }}"
                                             target="_blank">Download</a>
                                     </td>
                             @endforeach
-
                         </tbody>
                     </table>
+                    <nav aria-label="Page navigation">
+                        {{ $wartajemaat->links('pagination::bootstrap-5') }}
+                    </nav>
                 </div>
             </div>
         </section>
